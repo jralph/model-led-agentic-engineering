@@ -126,10 +126,10 @@ linked_challenges:
   - TASK-139
 
 decision_basis:
-  accepted:
-    - DEC-41
-    - DEC-67
-  proposed: []
+  - DEC-41
+  - DEC-67
+
+proposed_decisions: []
 
 areas:
   - authentication
@@ -452,6 +452,8 @@ The Project now preserves:
 
 A useful rule for the product is:
 
-> **Humans manage potential work as Intents and Challenges. Agents derive execution work from the resulting Decision basis.**
+> **Tasks explain why work exists. Accepted Decisions explain what authority governs the result. Agents derive execution work from that Decision basis.**
+
+A new Decision is required only when the existing accepted basis cannot authorise the intended semantics.
 
 Task is simply the platform's container that makes that practical.
