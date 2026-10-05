@@ -1,6 +1,6 @@
 # .decisions
 
-This directory is the project's append-only library of accepted human decisions.
+This directory is the project's append-only library of human-accepted semantic Decisions.
 
 Read [Decision library](../docs/decision-library.md) for the methodology.
 
