@@ -28,6 +28,21 @@ The filename aids navigation. The `id` inside front matter is the stable identit
 
 Offset timestamps are allowed in metadata even when filenames are normalised to UTC.
 
+## Required vs optional front matter
+
+Required semantic fields:
+
+- `id`;
+- `title`;
+- `type`;
+- `supersedes`.
+
+Optional provenance/indexing fields include `author`, `accepted_by`, `recorded_at`, `accepted_at`, `decided_at`, `scope`, `related` and `tags`.
+
+`author` and `accepted_by` may name the same person, different people, several people, or be omitted entirely.
+
+These fields describe provenance only. They do not prove human acceptance. Where the surrounding repository/review workflow already provides trustworthy provenance, that history is preferred over duplicating it in Decision metadata.
+
 ## Accepted history
 
 Where the repository uses an accepted branch as the durable representation of human acceptance, a validator should treat changes to already-accepted Decision files as:
