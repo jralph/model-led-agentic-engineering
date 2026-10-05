@@ -35,7 +35,9 @@ Model
   Decisions
   Areas
   History
-Challenges
+Tasks
+  Intents
+  Challenges
 Decision Reviews
 Evidence
 Agents
@@ -66,7 +68,7 @@ The home view should answer human questions first.
 ### What is changing?
 
 - open Decision Reviews;
-- Challenges under investigation;
+- Tasks under exploration/research;
 - active agent workspaces;
 - candidate implementations being compared.
 
@@ -160,11 +162,25 @@ Example:
 
 Git history remains available under Implementation.
 
-## Challenges instead of Issues
+## Tasks instead of Issues
 
-Challenges should feel less like backlog tickets and more like structured questions against current understanding.
+The platform uses **Task** as the human-facing work item that replaces much of the traditional Issue/ticket model.
 
-A Challenge creation flow can ask:
+A Task is primarily driven by either:
+
+- **Intent** — a human-owned outcome being pursued;
+- **Challenge** — something that deserves investigation.
+
+This is a platform convention, not a new Model-led primitive.
+
+An Intent Task creation flow can ask:
+
+- What outcome are you trying to achieve?
+- Why does it matter?
+- Which Decisions or Areas may constrain it?
+- What would make the work not worth pursuing?
+
+A Challenge Task creation flow can ask:
 
 ### What are you challenging?
 
@@ -191,11 +207,15 @@ Suggested automatically, editable by humans.
 
 Logs, benchmark output, user reports, traces, source references.
 
-A Challenge does not need a solution.
+A Challenge Task does not need a solution.
 
-## Agent-created Challenges
+Either Task kind may close after exploration or research without creating a Decision or implementation.
 
-Agent findings should become Challenges rather than quietly turning into implementation or new Decisions.
+See [Task model](future-git-platform-tasks.md).
+
+## Agent-created Challenge Tasks
+
+Agent findings should become Challenge Tasks rather than quietly turning into implementation or new Decisions.
 
 Example:
 
@@ -211,7 +231,8 @@ The human can:
 - ask another agent to investigate;
 - classify it as implementation drift under an existing Decision;
 - request stronger evidence;
-- open a Decision Review;
+- define an Intent if a desired outcome now exists;
+- open a Decision Review when there is something to accept;
 - accept risk.
 
 This gives agents a safe way to say:
@@ -480,24 +501,27 @@ These queries can use structured relationships rather than relying only on seman
 
 ## Planning
 
-Traditional boards organise Issues into work.
+Traditional boards organise Issues into implementation work.
 
 A decision-native board could organise:
 
-- Challenges awaiting investigation;
-- Challenges under agent investigation;
-- Decision Reviews awaiting human Decisions;
-- reviews implementing;
+- Intent Tasks awaiting exploration;
+- Challenge Tasks awaiting investigation;
+- Tasks needing a human Decision;
+- Tasks ready for implementation under an existing Decision basis;
+- Decision Reviews implementing;
 - reviews qualifying;
 - residual risk awaiting acceptance.
 
 The work queue becomes closer to:
 
-> **questions and decisions the organisation needs to resolve**
+> **outcomes, questions and decisions the organisation needs to resolve**
 
 than:
 
 > tickets developers need to code.
+
+Agents derive low-level execution steps underneath these Tasks rather than flooding the human planning surface with machine subtasks.
 
 ## Releases
 
