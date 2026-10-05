@@ -1,59 +1,95 @@
-# Engineering intent brief
+# Engineering Intent brief
 
 Use only the sections that add value.
 
-## Problem
+This is a working projection of the Model for one piece of work. It is not itself a source of semantic authority.
 
-What is wrong or missing?
+## Intent
 
-## Outcome
+What human-owned outcome is being pursued?
 
-What should be observably different when this work is complete?
+State the outcome without prescribing implementation where possible.
+
+## Trigger / context
+
+Why is this being considered now?
+
+Link or describe any originating problem, observation or context.
+
+## Related Challenges
+
+Which unresolved questions are relevant?
+
+- 
+
+## Decision basis
+
+Which **accepted Decisions** already govern this work?
+
+- 
+
+If none are known, say so explicitly rather than inferring authority from current implementation.
+
+## Proposed Decisions
+
+Which semantic choices are currently being proposed but have **not yet received human acceptance**?
+
+- 
+
+Proposed Decisions may guide exploration, candidate implementation and review. Do not treat them as authoritative until human acceptance occurs.
 
 ## Current behaviour
 
 What happens today?
 
-## Desired behaviour
+Distinguish observed behaviour from assumptions.
 
-Describe the mechanics and flow in implementation-independent terms.
+## Desired outcome / behaviour
 
-## Invariants
+What should be observably different if this Intent is achieved?
 
-What must remain true?
+Describe only behaviour supported by the accepted Decision basis or clearly mark unresolved semantic choices as proposed Decisions or Challenges.
 
-- 
+## Invariants / constraints
+
+Which accepted properties must remain true?
+
+Security, data, compatibility, performance, cost, operational and product constraints belong here when they are already authoritative.
+
 - 
 
 ## Non-goals
 
-What plausible work is deliberately outside this change?
+What plausible work is deliberately outside this Intent?
 
 - 
-- 
-
-## Known constraints
-
-Security, data, compatibility, performance, cost, operational or product constraints.
 
 ## Interfaces / contracts
 
 Only where relevant.
 
-## Local implementation freedom
+## Local implementation discretion
 
-Which choices can the implementation agent make without asking?
+Which choices may the implementation agent make within the current Decision basis without further human acceptance?
 
 ## Escalate if
 
-Which discoveries require the model owner to decide before implementation continues?
+Surface a Challenge and/or propose a Decision when:
 
-## Acceptance
+- satisfying the Intent requires new semantic authority;
+- an accepted Decision appears wrong, incomplete or conflicting;
+- implementation would need to violate the current Decision basis;
+- the Intent itself appears to need changing;
+- evidence is too weak to support a required claim.
 
-What observable conditions mean the change is correct?
+## Acceptance conditions
+
+What observable conditions mean the implementation has achieved the Intent?
+
+These conditions do not themselves confer semantic Decision authority.
 
 ## Qualification
 
-What evidence is required?
+What evidence is required, against which implementation/build/revision and Decision basis?
 
 Do not describe evidence more strongly than it deserves.
