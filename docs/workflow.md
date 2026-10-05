@@ -80,9 +80,11 @@ See [Decision library](decision-library.md).
 
 ## 6. Crystallise intent
 
-For non-trivial work, turn the accepted model into an artefact another agent can execute.
+For non-trivial work, turn enough of the accepted model into an artefact another agent can execute.
 
-Use the [intent brief](../templates/intent-brief.md) as a starting point.
+This does not require a particular specification workflow. A full spec-driven process may be appropriate for some work; a short intent brief may be enough for other work.
+
+Use the [intent brief](../templates/intent-brief.md) as one lightweight starting point.
 
 A useful brief usually captures:
 
