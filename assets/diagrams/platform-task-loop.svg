@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="700" viewBox="0 0 1240 700" role="img" aria-labelledby="title desc">
+<title id="title">Platform Task lifecycle</title>
+<desc id="desc">The platform represents Intent and Challenge as Task kinds. Tasks enter exploration and research, can stop with no change, proceed under an existing Decision basis, or require a human Decision before implementation and Decision Review.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#64748b"/></marker><style>.t{font-family:Inter,"Segoe UI",Arial,sans-serif;fill:#0f172a}.m{fill:#475569}.b{fill:#fff;stroke:#cbd5e1;stroke-width:2}.l{fill:none;stroke:#64748b;stroke-width:2;marker-end:url(#a)}</style></defs>
+<rect width="1240" height="700" rx="20" fill="#f8fafc"/>
+<text class="t" x="620" y="48" text-anchor="middle" font-size="27" font-weight="700">Task is the platform work item, not a Model-led primitive</text>
+<text class="t m" x="620" y="78" text-anchor="middle" font-size="15">Intent and Challenge keep their distinct methodology semantics inside the platform Task model.</text>
+
+<rect x="55" y="120" width="245" height="135" rx="18" fill="#fff" stroke="#94a3b8" stroke-width="2.5"/>
+<text class="t" x="177.5" y="157" text-anchor="middle" font-size="20" font-weight="700">Task</text>
+<rect x="78" y="180" width="92" height="45" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+<text class="t" x="124" y="208" text-anchor="middle" font-size="14" font-weight="700">Intent</text>
+<rect x="185" y="180" width="92" height="45" rx="10" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+<text class="t" x="231" y="208" text-anchor="middle" font-size="14" font-weight="700">Challenge</text>
+
+<path class="l" d="M300 188 H385"/>
+
+<rect x="395" y="120" width="225" height="135" rx="18" class="b"/>
+<text class="t" x="507.5" y="158" text-anchor="middle" font-size="18" font-weight="700">Explore / Research</text>
+<text class="t m" x="507.5" y="187" text-anchor="middle" font-size="13">understand context</text>
+<text class="t m" x="507.5" y="210" text-anchor="middle" font-size="13">test assumptions</text>
+<text class="t m" x="507.5" y="233" text-anchor="middle" font-size="13">gather evidence</text>
+
+<path class="l" d="M620 188 H690"/>
+
+<rect x="700" y="75" width="220" height="82" rx="14" class="b"/>
+<text class="t" x="810" y="108" text-anchor="middle" font-size="16" font-weight="700">Close / defer</text>
+<text class="t m" x="810" y="133" text-anchor="middle" font-size="12">no implementation</text>
+
+<rect x="700" y="190" width="220" height="95" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+<text class="t" x="810" y="224" text-anchor="middle" font-size="16" font-weight="700">Decision basis sufficient</text>
+<text class="t m" x="810" y="250" text-anchor="middle" font-size="12">existing authority is enough</text>
+
+<rect x="700" y="320" width="220" height="100" rx="14" fill="#eef2ff" stroke="#6366f1" stroke-width="2.5"/>
+<text class="t" x="810" y="354" text-anchor="middle" font-size="16" font-weight="700">Decision required</text>
+<text class="t m" x="810" y="380" text-anchor="middle" font-size="12">human creates semantic authority</text>
+<text class="t m" x="810" y="402" text-anchor="middle" font-size="12">before implementation establishes it</text>
+
+<path class="l" d="M665 188 C665 115 680 116 690 116"/>
+<path class="l" d="M665 188 C665 237 680 237 690 237"/>
+<path class="l" d="M665 188 C665 365 680 370 690 370"/>
+
+<path class="l" d="M920 237 H970"/>
+<path class="l" d="M920 370 C955 370 955 290 970 290"/>
+
+<rect x="980" y="195" width="205" height="145" rx="16" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
+<text class="t" x="1082.5" y="232" text-anchor="middle" font-size="18" font-weight="700">Agent execution</text>
+<text class="t m" x="1082.5" y="260" text-anchor="middle" font-size="13">derive implementation steps</text>
+<text class="t m" x="1082.5" y="283" text-anchor="middle" font-size="13">implement · review</text>
+<text class="t m" x="1082.5" y="306" text-anchor="middle" font-size="13">qualify</text>
+
+<path class="l" d="M1082 340 V415"/>
+
+<rect x="955" y="425" width="255" height="110" rx="16" fill="#fff" stroke="#7c3aed" stroke-width="2.5"/>
+<text class="t" x="1082.5" y="463" text-anchor="middle" font-size="18" font-weight="700">Decision Review</text>
+<text class="t m" x="1082.5" y="491" text-anchor="middle" font-size="13">accept Decisions + candidate</text>
+<text class="t m" x="1082.5" y="514" text-anchor="middle" font-size="13">Evidence + residual risk</text>
+
+<rect x="240" y="535" width="590" height="105" rx="16" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+<text class="t" x="535" y="571" text-anchor="middle" font-size="17" font-weight="700">Agents derive execution steps; humans do not maintain machine task trees</text>
+<text class="t m" x="535" y="599" text-anchor="middle" font-size="13">The Project Task stays focused on the Intent or Challenge that made the work worth considering.</text>
+<text class="t m" x="535" y="621" text-anchor="middle" font-size="13">Investigation may still end before any Decision Review is needed.</text>
+</svg>
