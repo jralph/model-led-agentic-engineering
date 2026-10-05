@@ -48,15 +48,17 @@ A researcher should be free to discover evidence, not silently choose product di
 
 Authority should be explicit enough that ambiguity causes escalation rather than silent redesign.
 
-## 6. Accepted decisions are human-authored and durable
+## 6. Semantic Decision authority is human
 
-Agents can help explore, challenge, write and review decisions.
+Agents can explore, challenge, reason about, propose, write and review semantic Decisions.
 
-They must not silently create accepted decisions of their own.
+The distinction is authority: a semantic Decision becomes authoritative only through human acceptance.
 
-When a decision materially constrains future engineering, record it in a durable decision library. A proposed record may change during review; once accepted it becomes immutable and is changed only through an explicit later decision that supersedes it.
+That acceptance may happen before the record is written, during review, or through another explicit workflow event. A pull-request merge after human review is a useful acceptance mechanism, but Model-led does not require Git or pull requests to define authority.
 
-A pull request is a useful acceptance boundary because the decision, implementation and evidence can be reviewed together.
+Agents may make ordinary local implementation decisions inside delegated authority without separate human approval for every choice.
+
+When a semantic Decision materially constrains future engineering, record it in the durable Decision library. A proposal may change before acceptance; once accepted its record becomes immutable and is changed only through an explicit later Decision that supersedes it.
 
 ## 7. Preserve unresolved questions as Challenges
 
@@ -64,9 +66,9 @@ Not every problem should be forced immediately into a solution or Decision.
 
 A Challenge records something about the current model, implementation, evidence or observed behaviour that may need attention. Humans and agents may both raise Challenges because doing so does not change the authoritative model.
 
-Agents should raise a Challenge when they discover semantic ambiguity outside their authority rather than silently inventing a Decision.
+Agents should raise a Challenge when they discover semantic ambiguity outside their delegated authority rather than silently making that choice binding on the system.
 
-When a Challenge is resolved, implementation may be corrected under an existing Decision, evidence may be improved, or a human may author a new Decision.
+When a Challenge is resolved, implementation may be corrected under an existing Decision, evidence may be improved, or an agent/human may propose a new Decision that becomes authoritative only through human acceptance.
 
 ## 8. Review decisions before implementation detail
 
