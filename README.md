@@ -188,7 +188,7 @@ A user can give the agent this repository and ask:
 
 The source [AGENTS.md](AGENTS.md) contains bootstrap instructions. The minimum setup is intentionally small: a canonical `.decisions/` library plus Model-led authority guidance merged into the target repository's existing `AGENTS.md`.
 
-For an existing repository, the explicit adoption request will normally become the first proposed Decision: adopt Model-led as the repository's engineering governance method. For a new project created as Model-led from inception, no adoption Decision is necessary.
+For an existing repository, the explicit adoption request will normally be the first recorded Decision: adopt Model-led as the repository's engineering governance method. The human request itself supplies the semantic acceptance; the repository's normal review/publication workflow still applies. For a new project created as Model-led from inception, no adoption Decision is necessary.
 
 See [Adopting Model-led](docs/adoption.md).
 
