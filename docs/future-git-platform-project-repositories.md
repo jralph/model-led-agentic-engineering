@@ -198,8 +198,12 @@ For example:
 
 ```text
 DR-42
-Intent
-  Change session architecture
+Origin
+  TASK-42 (Intent: Change session architecture)
+
+Decision basis
+  DEC-38
+  DEC-67
 
 Proposed Decisions
   DEC-P142
@@ -254,7 +258,8 @@ The harness requests the Decision Review and receives:
 
 - originating/linked Task context;
 - Intent where present;
-- active and proposed Decision basis;
+- accepted Decision basis;
+- proposed Decisions under evaluation;
 - relevant Challenges;
 - affected Areas;
 - candidate baseline revisions;
@@ -335,8 +340,8 @@ Candidate B
 
 Both candidates are reviewed against:
 
-- the same proposed Decisions;
-- the same applicable active Decisions;
+- the same accepted Decision basis;
+- the same proposed Decisions under evaluation;
 - the same Challenges;
 - the same qualification requirements.
 
