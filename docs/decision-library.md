@@ -94,8 +94,12 @@ Example:
 id: DEC-20261005-185500-resolver-authority
 title: Speculative results cannot silently become authoritative
 type: invariant
-decided_at: 2026-10-05T18:55:00+01:00
-author: jralph
+# Optional provenance:
+author: agent:example
+accepted_by:
+  - human:example
+recorded_at: 2026-10-05T18:50:00+01:00
+accepted_at: 2026-10-05T18:55:00+01:00
 scope:
   areas:
     - resolver
@@ -129,23 +133,35 @@ execution semantics would trade latency for incorrect actions.
 
 The prose and even the proposed semantic choice may be AI-originated. The Decision becomes authoritative only through human acceptance.
 
-## Required metadata
+## Decision metadata
 
-The initial schema requires:
+The canonical schema requires only fields that describe the semantic Decision itself:
 
 - `id` — stable unique identifier;
-- `title` — concise human-readable decision;
-- `type` — the kind of decision;
-- `decided_at` — offset-aware date/time associated with recording/formulating the Decision;
-- `author` — provenance for who originated/authored the record or proposal; it does **not** confer or prove human acceptance;
-- `supersedes` — earlier decisions replaced by this one, or an empty list.
+- `title` — concise human-readable Decision;
+- `type` — the kind of Decision;
+- `supersedes` — earlier Decisions replaced by this one, or an empty list.
 
-Optional structured fields include:
+Everything else is optional provenance or indexing metadata.
+
+Optional provenance fields include:
+
+- `author` — who originated/authored the record or proposal;
+- `accepted_by` — human(s) recorded as accepting the Decision;
+- `recorded_at` — when the record/proposal was written;
+- `accepted_at` — when human acceptance was recorded;
+- `decided_at` — retained as an optional legacy/general timestamp for backwards compatibility.
+
+Optional indexing fields include:
 
 - `scope.areas`;
 - `scope.paths`;
 - `related`;
 - `tags`.
+
+Provenance metadata is descriptive only. It does not independently establish human acceptance or semantic authority.
+
+Where repository/review history already provides trustworthy provenance, prefer that rather than duplicating the same workflow state in YAML. Front matter remains useful where external provenance is unavailable, when portability matters, or when the project deliberately wants the metadata inline.
 
 The schema is intentionally small. More metadata should be added only when real tooling needs it.
 
