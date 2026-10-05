@@ -88,6 +88,16 @@ This also changes review priority: humans can focus more attention on decisions,
 
 See [Decision library](docs/decision-library.md) and [Decision-first review](docs/decision-review.md).
 
+## Why now?
+
+AI has increased implementation throughput much faster than human review throughput.
+
+A process built around humans manually reading every changed line becomes harder to sustain when agents can produce large, coherent changes in minutes. The answer is not to stop reviewing implementation; it is to move scarce human attention towards the semantic decisions that shape it, then use agents and qualification evidence to verify that the implementation conforms.
+
+This pressure is starting to appear in wider tooling discussions too. Cloudflare's October 2026 challenge to build a Git platform for an agent-heavy world explicitly asks developers to rethink repositories, branches, pull requests, worktrees, code review and merge conflicts for large numbers of concurrent agents. That does not validate this methodology, but it is a useful signal that the collaboration primitives around software are becoming part of the problem.
+
+See [Model-led vs other AI engineering approaches](docs/model-led-vs.md#why-this-matters-now).
+
 ## What this is not
 
 This is not:
