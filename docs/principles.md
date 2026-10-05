@@ -34,7 +34,17 @@ A researcher should be free to discover evidence, not silently choose product di
 
 Authority should be explicit enough that ambiguity causes escalation rather than silent redesign.
 
-## 5. Preserve invariants more strongly than implementation details
+## 5. Accepted decisions are human-authored and durable
+
+Agents can help explore, challenge, write and review decisions.
+
+They must not silently create accepted decisions of their own.
+
+When a decision materially constrains future engineering, record it in a durable decision library. A proposed record may change during review; once accepted it becomes immutable and is changed only through an explicit later decision that supersedes it.
+
+A pull request is a useful acceptance boundary because the decision, implementation and evidence can be reviewed together.
+
+## 6. Preserve invariants more strongly than implementation details
 
 Implementation is expected to change.
 
@@ -49,7 +59,7 @@ Examples:
 
 If an invariant matters, encode it in more than somebody's memory.
 
-## 6. Evidence beats confidence
+## 7. Evidence beats confidence
 
 Agent confidence is not evidence.
 
@@ -57,7 +67,7 @@ Compilation is not evidence of correct behaviour. Unit tests are not evidence of
 
 Match the evidence to the claim.
 
-## 7. Separate exploration from commitment
+## 8. Separate exploration from commitment
 
 Agents should be allowed to explore broadly without every suggestion becoming architecture.
 
@@ -70,7 +80,7 @@ A useful workflow has a deliberate decision boundary between:
 
 This lets AI increase the breadth of investigation without allowing it to increase architectural randomness.
 
-## 8. Optimise for semantic throughput, not code volume
+## 9. Optimise for semantic throughput, not code volume
 
 Lines of code are a poor measure of this style of engineering.
 
@@ -78,7 +88,7 @@ The useful output is validated capability: correct behaviours, safe abstractions
 
 The aim is to increase the amount of engineering intent that can become working software per unit of human attention.
 
-## 9. Keep the model reconstructable
+## 10. Keep the model reconstructable
 
 A purely mental model works surprisingly well for one engineer, until it does not.
 
@@ -93,7 +103,7 @@ Externalise the parts another engineer or future agent would need to safely cont
 
 Do not attempt to document every thought.
 
-## 10. The human should be able to explain the system
+## 11. The human should be able to explain the system
 
 A useful ownership test is whether the engineer can explain the logic and behaviour of the system without hiding behind the generated source.
 
