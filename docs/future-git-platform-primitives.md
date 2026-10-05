@@ -78,7 +78,7 @@ A Decision may define:
 - product boundaries;
 - process.
 
-An agent may recommend or draft Decision text. It may not authorise a Decision.
+An agent may reason about, originate, recommend and draft a proposed semantic Decision. Human acceptance is what authorises it.
 
 The platform should understand the repository's `.decisions/` history as a native object model rather than treating it as ordinary Markdown.
 
@@ -188,7 +188,7 @@ The active Decision is correct and the code is not.
 
 ### Decision change
 
-A human proposes a new or superseding Decision.
+An agent or human may propose a new or superseding Decision; a human must accept it before it becomes authoritative.
 
 ### Evidence correction
 
@@ -429,15 +429,15 @@ A possible platform default:
 | Create Challenge | Yes | Yes |
 | Investigate Challenge | Yes | Yes |
 | Define/change Intent | Yes | Draft/recommend |
-| Draft proposed Decision | Yes | Yes |
-| Authorise Decision | Yes | No |
+| Draft/originate proposed Decision | Yes | Yes |
+| Confer semantic authority / accept Decision | Yes | No |
 | Implement against Decision basis | Yes | Yes |
 | Produce Evidence | Yes | Yes |
 | Review conformance | Yes | Yes |
 | Accept residual semantic risk | Yes | No |
 | Merge accepted Decision Review | Yes/policy | No by default |
 
-Repository policy may automate more, but an agent cannot satisfy the human-authority requirement by approving its own Decision.
+Repository policy may automate more execution, but an agent cannot satisfy the human-acceptance requirement for its own semantic Decision proposal.
 
 ## Portability
 
