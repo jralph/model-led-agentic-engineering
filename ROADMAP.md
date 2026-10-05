@@ -64,6 +64,26 @@ Potential outputs:
 
 At this point the repository may be suitable for public release.
 
+## Exploratory application: decision-native Git collaboration
+
+This is **not** part of the current methodology requirement.
+
+A future implementation may explore whether the decision library can become a first-class collaboration primitive rather than remaining only a repository convention.
+
+Potential experiments:
+
+- render active and proposed decisions as first-class repository objects;
+- replace or augment Pull Requests with Decision Reviews;
+- compare several agent implementations against the same proposed decisions;
+- detect likely semantic conflicts where Git has no textual conflict;
+- rerun implementation, conformance review and qualification after a human changes a proposed decision;
+- attach evidence levels and residual risk directly to the review;
+- retain traditional code diffs as a drill-down rather than the only primary review surface.
+
+The proposal is documented in [Potential future Git platform](docs/future-git-platform.md).
+
+It should remain clearly separated from the core methodology until implementation and user testing show whether the model is actually useful.
+
 ## Stage 5: candidate standard
 
 Only pursue this if earlier stages provide evidence that a more formal standard would be useful.
