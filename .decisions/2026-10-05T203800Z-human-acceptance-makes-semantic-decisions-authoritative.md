@@ -59,6 +59,8 @@ Likewise, pull requests are a useful acceptance mechanism but are not part of th
 
 ## Consequences
 
+For current Model-led terminology, earlier references to a "human-authored Decision" should be read as requiring **human semantic authority/acceptance**, not necessarily human origination or typing.
+
 - agents may originate proposed semantic Decisions;
 - proposed Decisions do not become authoritative solely because an agent writes or commits them;
 - humans own semantic Decision authority;
