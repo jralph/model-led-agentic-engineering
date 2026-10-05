@@ -59,7 +59,9 @@ Typical work:
 
 **Authority:** representational.
 
-Specify mode should not invent major requirements to make the document look complete. Missing decisions should be surfaced.
+Specify mode may draft a decision record only after the underlying decision has been made by a human. It must not convert its own recommendation, an implementation choice or an unresolved discussion into an accepted decision.
+
+Missing decisions should be surfaced rather than invented to make a document look complete.
 
 **Output:** intent brief, plan, decision record, acceptance criteria.
 
@@ -101,6 +103,8 @@ Review should report issues. It should not quietly move the goalposts or "fix" t
 
 **Output:** findings with severity, evidence and suggested next action.
 
+Where a decision library exists, Review mode should retrieve the active decisions relevant to the changed areas and explicitly check the implementation for conformance and conflicts.
+
 ## Qualify
 
 **Purpose:** establish what the implementation has actually demonstrated.
@@ -129,6 +133,7 @@ The useful checkpoints are where the semantic model might change.
 
 Typical decision points:
 
+- accepting a new decision record into the repository;
 - choosing an architecture after exploration;
 - accepting a newly discovered constraint;
 - changing an invariant;
