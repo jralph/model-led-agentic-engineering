@@ -93,14 +93,15 @@ Start here:
 
 1. [Core principles](docs/principles.md)
 2. [The human-owned system model](docs/model.md)
-3. [Agent modes and authority](docs/modes.md)
-4. [The working loop](docs/workflow.md)
-5. [Externalising intent](docs/externalising-intent.md)
-6. [Verification and evidence](docs/verification.md)
-7. [Measuring effectiveness](docs/measurement.md)
-8. [Anti-patterns](docs/anti-patterns.md)
-9. [Abstract examples](docs/examples.md)
-10. [Maturity model](docs/maturity.md)
+3. [Authorship, ownership and understanding](docs/authorship-and-ownership.md)
+4. [Agent modes and authority](docs/modes.md)
+5. [The working loop](docs/workflow.md)
+6. [Externalising intent](docs/externalising-intent.md)
+7. [Verification and evidence](docs/verification.md)
+8. [Measuring effectiveness](docs/measurement.md)
+9. [Anti-patterns](docs/anti-patterns.md)
+10. [Abstract examples](docs/examples.md)
+11. [Maturity model](docs/maturity.md)
 
 Practical templates:
 
@@ -108,6 +109,9 @@ Practical templates:
 - [Decision record](templates/decision-record.md)
 - [Adversarial review brief](templates/adversarial-review.md)
 - [Qualification plan](templates/qualification-plan.md)
+- [Session measurement](templates/session-measurement.md)
+
+Experimental measurement work lives in [experiments/](experiments/).
 
 ## Current status
 
