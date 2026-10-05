@@ -26,7 +26,7 @@ An Intent describes a human-owned outcome being pursued.
 
 It can be refined, deferred or abandoned during exploration. It does not itself authorise new system semantics.
 
-Implementation may proceed under existing Decisions when they provide a sufficient basis. If a new semantic choice is required, a human Decision is needed.
+Implementation may proceed under existing accepted Decisions when they provide a sufficient basis. If a new semantic choice is required, an agent or human may propose it, but human acceptance is needed before that semantic choice becomes authoritative or releasable.
 
 Important behaviours, algorithms, invariants and boundaries should still be understandable without relying on the syntax of a particular language.
 
@@ -74,7 +74,7 @@ When a Challenge is resolved, implementation may be corrected under an existing 
 
 When agent-generated changes are large, human review should prioritise the decisions, semantic changes, trade-offs and accepted risk that shape the implementation.
 
-Agents can perform exhaustive conformance review against active and proposed decisions, supported by qualification evidence. Human code inspection remains available wherever risk, novelty or direct judgement warrants it.
+Agents can perform exhaustive conformance review against the accepted Decision basis and separately evaluate candidate implementation against proposed Decisions, supported by qualification evidence. Human code inspection remains available wherever risk, novelty or direct judgement warrants it.
 
 Changing a proposed decision during review should cause the implementation and evidence to be re-evaluated against that new intent.
 
