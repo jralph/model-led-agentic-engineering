@@ -4,14 +4,19 @@ There is no requirement to follow these steps mechanically.
 
 They describe the loop I tend to use when the work is substantial enough to justify it.
 
-## 1. Frame the problem
+## 1. Frame the Intent or Challenge
 
-Start with the outcome, not a technology.
+Work commonly begins from either:
+
+- an **Intent** — a human-owned outcome being pursued;
+- a **Challenge** — something about the current model, Decision basis, implementation or evidence that deserves investigation.
+
+Start with the outcome or question, not a technology.
 
 Questions:
 
-- What is actually wrong?
-- Who experiences it?
+- What are we trying to achieve or understand?
+- Who experiences the problem or benefit?
 - What would a good outcome look like?
 - What constraints already exist?
 - Which parts are facts and which are assumptions?
@@ -52,7 +57,17 @@ AI may introduce ideas here.
 
 Nothing becomes architecture merely because it was suggested.
 
-## 4. Preserve unresolved questions
+## 4. Decide whether anything should change
+
+Exploration and research do not imply implementation.
+
+An Intent may be abandoned, deferred, already satisfied or judged not worth the trade-off.
+
+A Challenge may be disproved, resolved by existing Decisions, or turn out to be an evidence problem rather than a model problem.
+
+If no change is required, the work can end here.
+
+If something remains unresolved but the correct change is not yet known, preserve it as a Challenge.
 
 Not every investigation is ready to become a Decision.
 
@@ -62,7 +77,13 @@ A Challenge can be raised by a human or agent and may target an existing Decisio
 
 See [Challenges](challenges.md).
 
-## 5. Decide
+## 5. Establish the Decision basis
+
+Identify the accepted Decisions that already govern the work.
+
+If they are sufficient, no new Decision is required.
+
+If the work requires a semantic choice that is not already authorised, a human Decision is required before implementation establishes that behaviour.
 
 Integrate useful findings into the model.
 
@@ -88,9 +109,9 @@ Keep the proposed record in the same branch or pull request as the implementatio
 
 See [Decision library](decision-library.md).
 
-## 7. Crystallise intent
+## 7. Crystallise implementation context
 
-For non-trivial work, turn enough of the accepted model into an artefact another agent can execute.
+For non-trivial work, turn enough of the active Intent, Decision basis and accepted model into an artefact another agent can execute.
 
 This does not require a particular specification workflow. A full spec-driven process may be appropriate for some work; a short intent brief may be enough for other work.
 
@@ -98,7 +119,7 @@ Use the [intent brief](../templates/intent-brief.md) as one lightweight starting
 
 A useful brief usually captures:
 
-- outcome;
+- active Intent/outcome;
 - current behaviour;
 - desired behaviour;
 - invariants;
