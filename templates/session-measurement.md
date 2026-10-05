@@ -41,9 +41,8 @@ Do not infer acceptance from metadata alone. Record the relevant workflow proven
 What happened?
 
 - [ ] ended after exploration / research, no system change
-- [ ] implementation correction under existing Decisions
-- [ ] implementation completed with no new semantic Decision
-- [ ] new / superseding Decision accepted and implemented
+- [ ] implementation completed under existing accepted Decision basis; no new Decision
+- [ ] new / superseding Decision human-accepted and implemented
 - [ ] deferred / abandoned
 - [ ] other
 
