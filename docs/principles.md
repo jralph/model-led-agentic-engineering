@@ -26,7 +26,15 @@ Important behaviours, algorithms, invariants and boundaries should be understand
 
 Language constraints still matter. A Rust implementation may need a different shape from a Go implementation. The point is that the underlying behaviour and reasoning should not disappear when the language changes.
 
-## 4. Give agents bounded authority
+## 4. Govern above the implementation workflow
+
+Model-led engineering does not prescribe one way to turn intent into software.
+
+Spec-driven development, autonomous agents, lightweight briefs, conventional tickets and manual coding can all operate inside the same human-owned model.
+
+The methodology governs authority, durable decisions, review and evidence rather than requiring a particular delivery sequence.
+
+## 5. Give agents bounded authority
 
 Different tasks need different freedom.
 
@@ -34,7 +42,7 @@ A researcher should be free to discover evidence, not silently choose product di
 
 Authority should be explicit enough that ambiguity causes escalation rather than silent redesign.
 
-## 5. Accepted decisions are human-authored and durable
+## 6. Accepted decisions are human-authored and durable
 
 Agents can help explore, challenge, write and review decisions.
 
@@ -44,7 +52,15 @@ When a decision materially constrains future engineering, record it in a durable
 
 A pull request is a useful acceptance boundary because the decision, implementation and evidence can be reviewed together.
 
-## 6. Preserve invariants more strongly than implementation details
+## 7. Review decisions before implementation detail
+
+When agent-generated changes are large, human review should prioritise the decisions, semantic changes, trade-offs and accepted risk that shape the implementation.
+
+Agents can perform exhaustive conformance review against active and proposed decisions, supported by qualification evidence. Human code inspection remains available wherever risk, novelty or direct judgement warrants it.
+
+Changing a proposed decision during review should cause the implementation and evidence to be re-evaluated against that new intent.
+
+## 8. Preserve invariants more strongly than implementation details
 
 Implementation is expected to change.
 
@@ -59,7 +75,7 @@ Examples:
 
 If an invariant matters, encode it in more than somebody's memory.
 
-## 7. Evidence beats confidence
+## 9. Evidence beats confidence
 
 Agent confidence is not evidence.
 
@@ -67,7 +83,7 @@ Compilation is not evidence of correct behaviour. Unit tests are not evidence of
 
 Match the evidence to the claim.
 
-## 8. Separate exploration from commitment
+## 10. Separate exploration from commitment
 
 Agents should be allowed to explore broadly without every suggestion becoming architecture.
 
@@ -80,7 +96,7 @@ A useful workflow has a deliberate decision boundary between:
 
 This lets AI increase the breadth of investigation without allowing it to increase architectural randomness.
 
-## 9. Optimise for semantic throughput, not code volume
+## 11. Optimise for semantic throughput, not code volume
 
 Lines of code are a poor measure of this style of engineering.
 
@@ -88,7 +104,7 @@ The useful output is validated capability: correct behaviours, safe abstractions
 
 The aim is to increase the amount of engineering intent that can become working software per unit of human attention.
 
-## 10. Keep the model reconstructable
+## 12. Keep the model reconstructable
 
 A purely mental model works surprisingly well for one engineer, until it does not.
 
@@ -103,7 +119,7 @@ Externalise the parts another engineer or future agent would need to safely cont
 
 Do not attempt to document every thought.
 
-## 11. The human should be able to explain the system
+## 13. The human should be able to explain the system
 
 A useful ownership test is whether the engineer can explain the logic and behaviour of the system without hiding behind the generated source.
 

@@ -47,6 +47,18 @@ If the same system were reimplemented in another language, most of the model wou
 
 See [The model](docs/model.md).
 
+## A practice, not an implementation workflow
+
+Model-led agentic engineering does **not** prescribe how a feature must be implemented.
+
+A project can use spec-driven development, an autonomous coding agent, a lightweight intent brief, a conventional ticket, or manual implementation. Those are delivery mechanisms inside the practice.
+
+Model-led governs a different layer: who owns the semantic model, where accepted decisions live, what authority agents have, how implementation is reviewed against human intent, and what evidence is required before accepting the result.
+
+A specification can be useful, but it is only one projection of the model for a particular piece of work.
+
+See [Model-led vs other AI engineering approaches](docs/model-led-vs.md).
+
 ## Why "mode-based" as well?
 
 Agents are more useful when they are not treated as one undifferentiated intelligence.
@@ -76,6 +88,16 @@ This also changes review priority: humans can focus more attention on decisions,
 
 See [Decision library](docs/decision-library.md) and [Decision-first review](docs/decision-review.md).
 
+## Why now?
+
+AI has increased implementation throughput much faster than human review throughput.
+
+A process built around humans manually reading every changed line becomes harder to sustain when agents can produce large, coherent changes in minutes. The answer is not to stop reviewing implementation; it is to move scarce human attention towards the semantic decisions that shape it, then use agents and qualification evidence to verify that the implementation conforms.
+
+This pressure is starting to appear in wider tooling discussions too. Cloudflare's October 2026 challenge to build a Git platform for an agent-heavy world explicitly asks developers to rethink repositories, branches, pull requests, worktrees, code review and merge conflicts for large numbers of concurrent agents. That does not validate this methodology, but it is a useful signal that the collaboration primitives around software are becoming part of the problem.
+
+See [Model-led vs other AI engineering approaches](docs/model-led-vs.md#why-this-matters-now).
+
 ## What this is not
 
 This is not:
@@ -101,12 +123,13 @@ Start here:
 5. [The working loop](docs/workflow.md)
 6. [Decision library](docs/decision-library.md)
 7. [Decision-first review](docs/decision-review.md)
-8. [Externalising intent](docs/externalising-intent.md)
-9. [Verification and evidence](docs/verification.md)
-10. [Measuring effectiveness](docs/measurement.md)
-11. [Anti-patterns](docs/anti-patterns.md)
-12. [Abstract examples](docs/examples.md)
-13. [Maturity model](docs/maturity.md)
+8. [Model-led vs other AI engineering approaches](docs/model-led-vs.md)
+9. [Externalising intent](docs/externalising-intent.md)
+10. [Verification and evidence](docs/verification.md)
+11. [Measuring effectiveness](docs/measurement.md)
+12. [Anti-patterns](docs/anti-patterns.md)
+13. [Abstract examples](docs/examples.md)
+14. [Maturity model](docs/maturity.md)
 
 Practical templates:
 

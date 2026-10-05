@@ -61,3 +61,15 @@ This is a concept rather than a fully defined metric.
 A durable projection of the model created for a particular piece of work.
 
 It does not need to contain the whole system model.
+
+## Decision-first review
+
+A review model where human attention prioritises engineering decisions, semantic changes, trade-offs and accepted risk, while agents can perform exhaustive implementation-conformance review against those decisions.
+
+It does not prohibit direct human code review.
+
+## Implementation workflow
+
+The process used to turn intent into software, such as spec-driven development, autonomous agent execution, conventional tickets or manual coding.
+
+Model-led agentic engineering does not prescribe one implementation workflow.

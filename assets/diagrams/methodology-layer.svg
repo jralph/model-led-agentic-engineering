@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Where model-led agentic engineering sits</title>
+  <desc id="desc">Model-led agentic engineering sits above implementation workflows such as spec-driven development, autonomous agents and manual implementation. Decisions and evidence connect human intent to whichever implementation mechanism is used.</desc>
+  <defs>
+    <style>
+      .t { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .muted { fill: #475569; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="650" rx="20" fill="#f8fafc"/>
+  <text class="t" x="600" y="50" text-anchor="middle" font-size="27" font-weight="700">Model-led governs the engineering model, not the implementation workflow</text>
+  <text class="t muted" x="600" y="80" text-anchor="middle" font-size="16">Different delivery methods can operate inside the same human-owned decision and evidence model.</text>
+
+  <rect x="130" y="125" width="940" height="120" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text class="t" x="600" y="163" text-anchor="middle" font-size="21" font-weight="700">Model-led agentic engineering</text>
+  <text class="t muted" x="600" y="194" text-anchor="middle" font-size="15">semantic model · human decisions · agent authority · decision-first review · qualification</text>
+  <text class="t muted" x="600" y="219" text-anchor="middle" font-size="14">governs what is authoritative and how implementation is accepted</text>
+
+  <rect x="90" y="310" width="235" height="125" rx="15" class="box"/>
+  <text class="t" x="207.5" y="347" text-anchor="middle" font-size="18" font-weight="700">Spec-driven</text>
+  <text class="t muted" x="207.5" y="374" text-anchor="middle" font-size="14">requirements · design</text>
+  <text class="t muted" x="207.5" y="397" text-anchor="middle" font-size="14">tasks · implementation</text>
+
+  <rect x="360" y="310" width="235" height="125" rx="15" class="box"/>
+  <text class="t" x="477.5" y="347" text-anchor="middle" font-size="18" font-weight="700">Autonomous agent</text>
+  <text class="t muted" x="477.5" y="374" text-anchor="middle" font-size="14">goal → plan → code</text>
+  <text class="t muted" x="477.5" y="397" text-anchor="middle" font-size="14">test → pull request</text>
+
+  <rect x="630" y="310" width="235" height="125" rx="15" class="box"/>
+  <text class="t" x="747.5" y="347" text-anchor="middle" font-size="18" font-weight="700">Agent workflow</text>
+  <text class="t muted" x="747.5" y="374" text-anchor="middle" font-size="14">multi-agent orchestration</text>
+  <text class="t muted" x="747.5" y="397" text-anchor="middle" font-size="14">modes · tools · hand-offs</text>
+
+  <rect x="900" y="310" width="210" height="125" rx="15" class="box"/>
+  <text class="t" x="1005" y="347" text-anchor="middle" font-size="18" font-weight="700">Manual</text>
+  <text class="t muted" x="1005" y="374" text-anchor="middle" font-size="14">human-written code</text>
+  <text class="t muted" x="1005" y="397" text-anchor="middle" font-size="14">traditional workflow</text>
+
+  <path d="M207.5 310 V270 H1005 V310" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M477.5 270 V310 M747.5 270 V310" fill="none" stroke="#94a3b8" stroke-width="2"/>
+
+  <rect x="240" y="500" width="720" height="90" rx="15" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
+  <text class="t" x="600" y="535" text-anchor="middle" font-size="18" font-weight="700">Shared acceptance model</text>
+  <text class="t muted" x="600" y="563" text-anchor="middle" font-size="14">accepted decisions + implementation conformance + evidence + residual risk</text>
+
+  <path d="M207.5 435 V470 H1005 V435" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M477.5 435 V470 M747.5 435 V470" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M600 470 V500" fill="none" stroke="#94a3b8" stroke-width="2"/>
+
+  <text class="t muted" x="600" y="625" text-anchor="middle" font-size="13">Model-led can wrap any implementation process that preserves human authority and supports verification.</text>
+</svg>

@@ -26,7 +26,14 @@ Goals:
 - distinguish implementation corrections from design/model corrections;
 - record which mode found defects;
 - measure rework after the initial merge or release;
-- identify where the model was not transferred to an agent accurately.
+- identify where the model was not transferred to an agent accurately;
+- prototype decision-library tooling around real work:
+  - validate append-only records and supersession graphs;
+  - resolve active decisions for a changed path or semantic area;
+  - generate compact decision context for agents;
+  - summarise proposed decision changes in pull requests;
+  - check implementation conformance against active and proposed decisions;
+  - rerun conformance and qualification when a proposed decision changes.
 
 The important question is not "how many tokens did the agent use?" It is "how faithfully and efficiently did engineering intent become a correct outcome?"
 
@@ -38,7 +45,9 @@ Goals:
 - have another experienced engineer try the method;
 - compare tasks with and without explicit mode separation;
 - test how much of the method survives different models and harnesses;
-- determine which artefacts are actually useful and which are ceremony.
+- determine which artefacts are actually useful and which are ceremony;
+- compare traditional code-first review with decision-first review on substantial agent-generated changes;
+- test whether another engineer can change a proposed decision and have agents reliably propagate that change through implementation and evidence.
 
 A personal workflow only becomes a methodology if somebody else can reproduce useful parts of it.
 

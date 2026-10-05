@@ -15,7 +15,9 @@ Preserve these ideas unless the owner explicitly changes them:
 7. Language and framework constraints still matter. "Language-independent model" does not mean implementation details are irrelevant.
 8. Accepted engineering decisions require human authority. Agents may draft decision records only from explicit human decisions; they must not originate accepted decisions.
 9. Accepted files under `.decisions/` are append-only history. Never edit, rename or delete an accepted record; supersede it with a new human-authored decision.
-10. The methodology is currently a personal working method, not a validated standard.
+10. Model-led agentic engineering governs above the implementation workflow. Do not rewrite it as a mandatory spec-driven, task-driven or tool-specific process.
+11. Decision-first review is a core practice: humans prioritise decisions and accepted risk; agents can perform exhaustive conformance review; direct human code review remains risk-based.
+12. The methodology is currently a personal working method, not a validated standard.
 
 ## Writing rules
 
