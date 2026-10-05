@@ -47,6 +47,18 @@ If the same system were reimplemented in another language, most of the model wou
 
 See [The model](docs/model.md).
 
+## A practice, not an implementation workflow
+
+Model-led agentic engineering does **not** prescribe how a feature must be implemented.
+
+A project can use spec-driven development, an autonomous coding agent, a lightweight intent brief, a conventional ticket, or manual implementation. Those are delivery mechanisms inside the practice.
+
+Model-led governs a different layer: who owns the semantic model, where accepted decisions live, what authority agents have, how implementation is reviewed against human intent, and what evidence is required before accepting the result.
+
+A specification can be useful, but it is only one projection of the model for a particular piece of work.
+
+See [Model-led vs other AI engineering approaches](docs/model-led-vs.md).
+
 ## Why "mode-based" as well?
 
 Agents are more useful when they are not treated as one undifferentiated intelligence.
@@ -101,12 +113,13 @@ Start here:
 5. [The working loop](docs/workflow.md)
 6. [Decision library](docs/decision-library.md)
 7. [Decision-first review](docs/decision-review.md)
-8. [Externalising intent](docs/externalising-intent.md)
-9. [Verification and evidence](docs/verification.md)
-10. [Measuring effectiveness](docs/measurement.md)
-11. [Anti-patterns](docs/anti-patterns.md)
-12. [Abstract examples](docs/examples.md)
-13. [Maturity model](docs/maturity.md)
+8. [Model-led vs other AI engineering approaches](docs/model-led-vs.md)
+9. [Externalising intent](docs/externalising-intent.md)
+10. [Verification and evidence](docs/verification.md)
+11. [Measuring effectiveness](docs/measurement.md)
+12. [Anti-patterns](docs/anti-patterns.md)
+13. [Abstract examples](docs/examples.md)
+14. [Maturity model](docs/maturity.md)
 
 Practical templates:
 
