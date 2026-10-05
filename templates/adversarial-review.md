@@ -10,6 +10,7 @@ Do not silently redefine the requirements.
 
 - intent/spec:
 - implementation/change:
+- relevant active/proposed decisions:
 - relevant invariants:
 - accepted trade-offs:
 

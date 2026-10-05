@@ -51,6 +51,12 @@ Record what has actually been proven and what remains assumed.
 
 A repository can carry the external model through several small artefacts rather than one master specification.
 
+### Decision library
+
+An append-only `.decisions/` library preserves accepted human decisions, including invariants, architecture, boundaries and important trade-offs. Its structured metadata makes the records retrievable by tooling and agents without turning them into a mutable source of current-state documentation.
+
+See [Decision library](decision-library.md).
+
 ### Intent brief
 
 The contract for one piece of work.

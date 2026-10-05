@@ -66,7 +66,19 @@ The decision can be as simple as:
 
 That is already enough to constrain a large amount of implementation.
 
-## 5. Crystallise intent
+## 5. Record durable decisions
+
+Not every choice needs a permanent record.
+
+When forgetting a decision would make future engineers or agents likely to weaken a boundary, repeat a rejected design, change important behaviour or misunderstand an accepted trade-off, add a record to the project's `.decisions/` library.
+
+AI may draft the record from the discussion, but the decision itself must have explicit human authority.
+
+Keep the proposed record in the same branch or pull request as the implementation where practical. It can be refined during review. Once the pull request merges, the decision becomes accepted and immutable.
+
+See [Decision library](decision-library.md).
+
+## 6. Crystallise intent
 
 For non-trivial work, turn the accepted model into an artefact another agent can execute.
 
@@ -85,7 +97,7 @@ A useful brief usually captures:
 
 The goal is not prose quality. It is fidelity.
 
-## 6. Delegate implementation
+## 7. Delegate implementation
 
 Give an implementation agent the agreed model plus enough repository context.
 
@@ -95,7 +107,7 @@ Require it to stop or surface uncertainty when satisfying the task would require
 
 For large changes, implement in bounded slices so incorrect assumptions are found before they spread.
 
-## 7. Review adversarially
+## 8. Review adversarially
 
 Do not ask only:
 
@@ -112,7 +124,11 @@ Ask:
 
 A separate review context is useful because it is less invested in defending the implementation.
 
-## 8. Qualify the claims
+For projects using a decision library, review should also load the relevant active and proposed decisions and check the implementation against them. Human review should prioritise whether the decisions and trade-offs themselves are acceptable; agent review can take primary responsibility for exhaustive conformance checking.
+
+See [Decision-first review](decision-review.md).
+
+## 9. Qualify the claims
 
 Choose evidence that matches the claim.
 
@@ -124,7 +140,7 @@ Record failures and limitations.
 
 Do not reinterpret the experiment after seeing the result.
 
-## 9. Reconcile the model
+## 10. Reconcile the model
 
 Implementation and verification often reveal something new.
 
@@ -138,7 +154,7 @@ Update:
 
 Do not let the repository accumulate an old description of a system nobody believes.
 
-## 10. Release and observe
+## 11. Release and observe
 
 Production is another source of evidence.
 

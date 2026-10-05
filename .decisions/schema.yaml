@@ -1,0 +1,70 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$title: "Model-led agentic engineering decision front matter"
+type: object
+additionalProperties: false
+required:
+  - id
+  - title
+  - type
+  - decided_at
+  - author
+  - supersedes
+properties:
+  id:
+    type: string
+    pattern: "^DEC-[0-9]{8}-[0-9]{6}-[a-z0-9][a-z0-9-]*$"
+  title:
+    type: string
+    minLength: 1
+    maxLength: 160
+  type:
+    type: string
+    enum:
+      - invariant
+      - architecture
+      - behaviour
+      - interface
+      - security
+      - operational
+      - product
+      - process
+  decided_at:
+    type: string
+    format: date-time
+  author:
+    type: string
+    minLength: 1
+  scope:
+    type: object
+    additionalProperties: false
+    properties:
+      areas:
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+          minLength: 1
+      paths:
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+          minLength: 1
+  supersedes:
+    type: array
+    uniqueItems: true
+    items:
+      type: string
+      pattern: "^DEC-[0-9]{8}-[0-9]{6}-[a-z0-9][a-z0-9-]*$"
+  related:
+    type: array
+    uniqueItems: true
+    items:
+      type: string
+      pattern: "^DEC-[0-9]{8}-[0-9]{6}-[a-z0-9][a-z0-9-]*$"
+  tags:
+    type: array
+    uniqueItems: true
+    items:
+      type: string
+      pattern: "^[a-z0-9][a-z0-9-]*$"
