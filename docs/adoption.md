@@ -38,7 +38,23 @@ If the target repository already has an `AGENTS.md`, Model-led guidance should b
 
 If the target already has a compatible decision library, the agent should preserve it and report any incompatibilities rather than destructively recreating it.
 
-## Do not seed Decisions from code
+## Existing repositories usually start with an adoption Decision
+
+For an established repository, adopting Model-led changes how future semantic authority is handled.
+
+When a human explicitly asks to set up or adopt Model-led in that repository, that instruction is normally sufficient human authority to **draft** an initial process Decision:
+
+> Adopt Model-led agentic engineering as this repository's engineering governance method.
+
+Use [the adoption Decision template](../templates/adoption-decision.md) as a starting point.
+
+The record remains proposed while the bootstrap change is under review. It becomes accepted only when the change is accepted/merged.
+
+This Decision establishes the governance boundary **from adoption onward**. It does not claim that historical implementation choices were already Model-led Decisions.
+
+If the human identity required by the Decision metadata is unclear, ask rather than inventing it.
+
+## Do not seed other Decisions from code
 
 Bootstrap establishes the **mechanism** for recording Decisions.
 
@@ -56,9 +72,9 @@ Existing implementation can be used to:
 
 Only explicit human judgement can create accepted Decision authority.
 
-A newly bootstrapped `.decisions/` directory may therefore contain **zero Decision records**.
+Apart from an explicit adoption Decision for an existing repository, bootstrap should not manufacture Decision history.
 
-That is valid.
+A newly created Project using Model-led from inception may therefore begin with **zero Decision records**. That is valid.
 
 ## Canonical Decision library
 
@@ -72,7 +88,7 @@ The target repository's `.decisions/` should preserve the semantics defined by [
 
 The bootstrap agent should copy the current [decision schema](../.decisions/schema.yaml) into the target repository.
 
-The target `.decisions/README.md` should explain the same append-only rules and link back to the methodology source used for bootstrap.
+Use the portable [Decision library README template](../templates/decisions-readme.md) for the target `.decisions/README.md`.
 
 ## Canonical agent guidance
 
@@ -128,9 +144,10 @@ For an established codebase, bootstrap should normally:
 1. inspect existing repository and agent guidance;
 2. add the Decision library mechanics;
 3. merge Model-led agent rules;
-4. run existing validation appropriate to documentation/configuration changes;
-5. report that the repository now supports Model-led work;
-6. optionally identify areas where Decision authority appears absent, but **do not create Decisions without human judgement**.
+4. draft the Model-led adoption Decision from the user's explicit adoption instruction;
+5. run existing validation appropriate to documentation/configuration changes;
+6. report that the repository is ready for Model-led work and that the adoption Decision will become accepted when the bootstrap change is accepted;
+7. optionally identify areas where Decision authority appears absent, but **do not create additional Decisions without human judgement**.
 
 The repository does not need to be remodelled before useful work can begin.
 
@@ -138,9 +155,11 @@ Model-led can grow incrementally as real Intents, Challenges and Decisions arise
 
 ## New project adoption
 
-For a new project, the same minimum setup applies.
+For a new project, the same minimum repository mechanics apply, but an adoption Decision is unnecessary.
 
-Do not invent a large speculative Decision set before the project has encountered real choices.
+The project is Model-led from inception; there is no earlier governance model whose transition needs provenance.
+
+Do not invent a ceremonial adoption Decision or a large speculative Decision set before the project has encountered real choices.
 
 Begin from human Intent, explore/research, and record Decisions when durable semantic authority is actually established.
 
