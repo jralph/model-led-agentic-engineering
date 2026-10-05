@@ -13,6 +13,13 @@ That distinction is what makes it safe for both humans and agents to create Chal
 
 Challenges provide a durable place for unresolved engineering knowledge without forcing every observation into a solution or a new Decision.
 
+Challenge and [Intent](intents.md) are peer pre-decisional concepts:
+
+- Intent expresses an outcome a human wants to pursue;
+- Challenge expresses something that should be questioned or understood.
+
+Either can lead to exploration, Decisions and implementation, or end without changing the system.
+
 ![Challenge lifecycle](../assets/diagrams/challenge-lifecycle.svg)
 
 ## Why Challenges exist
@@ -349,7 +356,7 @@ This is more precise than assuming every bug report already contains the right s
 
 ## Challenges and planning
 
-Challenges are not automatically backlog tasks.
+Challenges are not automatically commitments to implementation.
 
 A project can have valid Challenges that are:
 
