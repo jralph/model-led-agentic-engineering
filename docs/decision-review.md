@@ -4,9 +4,11 @@ Agent-generated implementation changes the economics of review.
 
 Producing and mechanically inspecting code can be delegated increasingly well. Human judgement remains scarce.
 
-Model-led agentic engineering therefore treats the pull request as more than a code diff.
+Model-led agentic engineering therefore treats the **review/acceptance surface** as more than a code diff.
 
-A substantial pull request can contain:
+A pull request is one common implementation, but the methodology does not require Git or pull requests.
+
+A substantial review can contain:
 
 - **Intent** — the human-owned outcome being pursued;
 - **decisions** — what humans are proposing the system should believe or preserve;
@@ -88,7 +90,7 @@ If code cannot conform without changing the semantic model, an agent may propose
 
 Decision-first review is not a one-way approval gate.
 
-Proposed decisions are still mutable while the pull request is open. A reviewer may decide that the proposed behaviour, threshold, boundary or trade-off is wrong even when the implementation matches it perfectly.
+Proposed Decisions are still mutable until human acceptance. A reviewer may decide that the proposed behaviour, threshold, boundary or trade-off is wrong even when the implementation matches it perfectly.
 
 When a human accepts or changes a proposed Decision:
 
@@ -102,7 +104,7 @@ This is one of the main benefits of making decisions explicit. The reviewer chan
 
 This allows a human to say, for example, "the threshold should be 750 ms rather than 500 ms" or "this path must remain read-only", then have the implementation and evidence re-evaluated against that change rather than manually directing every affected line.
 
-## A possible PR review surface
+## A possible review surface
 
 A tool could eventually present a change approximately like this:
 
