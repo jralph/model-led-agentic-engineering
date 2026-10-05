@@ -38,6 +38,8 @@ Agents can implement larger coherent slices.
 
 Important requirements are externalised.
 
+This may use a spec-driven workflow, but model-led engineering does not require one.
+
 ## M3 — model-led engineering
 
 The engineer works from a language-independent semantic model of the system.
@@ -53,6 +55,8 @@ They deliberately delegate implementation while retaining ownership of:
 
 The engineer can explain the system independently of the generated syntax.
 
+Durable human decisions begin to form an explicit source of authority that implementation workflows can consume.
+
 ## M4 — mode-separated agentic engineering
 
 AI participation is separated into explicit modes such as:
@@ -67,6 +71,8 @@ AI participation is separated into explicit modes such as:
 Modes have bounded authority and deliberate hand-offs.
 
 Different models or agents may be selected for different modes.
+
+Decision-first review can move human attention towards semantic decisions while agents check implementation conformance.
 
 ## M5 — measured model-led engineering
 
