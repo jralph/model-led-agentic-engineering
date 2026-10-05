@@ -94,7 +94,7 @@ Existing Decisions already constrain:
 
 If the Intent can be achieved within those constraints, existing Decisions may provide a sufficient basis and implementation can proceed without a new Decision.
 
-If achieving the Intent requires a new semantic trade-off, such as deliberately reducing redundancy, a human Decision is required first.
+If achieving the Intent requires a new semantic trade-off, such as deliberately reducing redundancy, an agent or human may propose the Decision, but human acceptance is required before that semantic choice becomes authoritative or releasable.
 
 The governing rule is:
 
@@ -131,8 +131,8 @@ An Intent can begin the normal Model-led workflow:
 3. explore and research;
 4. determine whether change is actually required;
 5. identify the existing Decision basis;
-6. obtain new human Decisions where necessary;
-7. implement if work remains;
+6. propose and obtain human acceptance for new Decisions where additional semantic authority is necessary;
+7. implement if work remains, using the existing accepted Decision basis or the newly accepted Decision;
 8. review and qualify;
 9. reconcile what was learnt back into the model.
 
@@ -166,6 +166,6 @@ Intent is a first-class Model-led concept, not a required repository artefact.
 
 Model-led deliberately does not define a canonical `.intents/` directory.
 
-The methodology prescribes `.decisions/` because accepted Decisions need immutable, portable human authority.
+The methodology prescribes `.decisions/` because accepted Decisions need an immutable, portable representation of semantic authority.
 
 Intent does not need those same persistence semantics.
