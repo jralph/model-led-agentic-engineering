@@ -60,6 +60,24 @@ A reviewer should not silently change the implementation to make its own preferr
 
 If code cannot conform without changing the semantic model, that is a human decision point.
 
+## Review is a feedback loop
+
+Decision-first review is not a one-way approval gate.
+
+Proposed decisions are still mutable while the pull request is open. A reviewer may decide that the proposed behaviour, threshold, boundary or trade-off is wrong even when the implementation matches it perfectly.
+
+When a human changes a proposed decision:
+
+1. the updated decision becomes the new proposed authority;
+2. agents re-evaluate the implementation against it;
+3. implementation changes where conformance now differs;
+4. review runs again against all relevant active and proposed decisions;
+5. qualification is rerun where the changed decision alters the claim being accepted.
+
+This is one of the main benefits of making decisions explicit. The reviewer changes the **engineering intent**, not individual implementation details, and agents can propagate that change through the codebase.
+
+This allows a human to say, for example, "the threshold should be 750 ms rather than 500 ms" or "this path must remain read-only", then have the implementation and evidence re-evaluated against that change rather than manually directing every affected line.
+
 ## A possible PR review surface
 
 A tool could eventually present a change approximately like this:
