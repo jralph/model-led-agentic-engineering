@@ -2,14 +2,19 @@
 id: DEC-YYYYMMDD-HHMMSS-short-slug
 title: <concise decision title>
 type: invariant
-decided_at: YYYY-MM-DDTHH:MM:SS+00:00
-author: <record/proposal origin>
-scope:
-  areas: []
-  paths: []
 supersedes: []
-related: []
-tags: []
+
+# Optional provenance / indexing:
+# author: <record/proposal origin>
+# accepted_by:
+#   - <human identifier>
+# recorded_at: YYYY-MM-DDTHH:MM:SS+00:00
+# accepted_at: YYYY-MM-DDTHH:MM:SS+00:00
+# scope:
+#   areas: []
+#   paths: []
+# related: []
+# tags: []
 ---
 
 # <decision title>
@@ -44,3 +49,5 @@ Optional context that helps interpret the decision without turning this record i
 Once this Decision has received human acceptance and entered the authoritative Decision set, do not edit, rename or delete it. A later authority change creates a new Decision with this ID in `supersedes`.
 
 A branch, commit or merge is evidence of acceptance only when the project's workflow guarantees that it represents explicit human acceptance.
+
+Optional `author`, `accepted_by` and timestamp fields are descriptive provenance only and do not independently establish authority.
