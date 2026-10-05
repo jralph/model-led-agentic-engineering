@@ -22,6 +22,8 @@ Each claim needs different evidence.
 
 This is a useful working classification, not a universal standard.
 
+![Evidence ladder](../assets/diagrams/evidence-ladder.svg)
+
 ### E0 — static evidence
 
 Examples:
