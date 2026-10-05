@@ -63,7 +63,8 @@ Read and use:
 
 - `docs/adoption.md`;
 - `templates/model-led-agent-guidance.md`;
-- `.decisions/README.md`;
+- `templates/decisions-readme.md`;
+- `templates/adoption-decision.md`;
 - `.decisions/schema.yaml`.
 
 Then:
@@ -71,11 +72,11 @@ Then:
 1. **Inspect the target repository first.** Read its existing root/subtree agent instructions, documentation and structure. Do not assume a blank repository.
 2. **Preserve existing guidance.** If the target has `AGENTS.md`, merge the reusable Model-led guidance into it. Do not replace repository-specific build, test, language, security, architecture or release instructions.
 3. **Create the canonical Decision library** at `.decisions/` if it does not exist:
-   - `.decisions/README.md` using the current portable append-only rules;
-   - `.decisions/schema.yaml` using the current schema.
+   - `.decisions/README.md` from `templates/decisions-readme.md`;
+   - `.decisions/schema.yaml` from the current schema.
 4. **Do not create `.intents/`, `.challenges/`, `.model/` or a generic Task system** unless the target repository's chosen workflow explicitly calls for them.
 5. **Do not infer historical Decisions from code.** Existing source, tests and architecture may reveal behaviour or missing authority, but they are not proof of human Decisions.
-6. **Existing repository adoption:** when the user explicitly asks to retrofit Model-led into an established repository, that request is normally sufficient human authority to draft the first proposed process Decision stating that the repository adopts Model-led as its engineering governance method. The Decision is not accepted until the bootstrap change is accepted/merged. Do not backfill any other Decisions without explicit human judgement.
+6. **Existing repository adoption:** when the user explicitly asks to retrofit Model-led into an established repository, that request is normally sufficient human authority to draft the first proposed process Decision stating that the repository adopts Model-led as its engineering governance method. Use `templates/adoption-decision.md`. The Decision is not accepted until the bootstrap change is accepted/merged. If the human identity required for metadata is unclear, ask rather than inventing it. Do not backfill any other Decisions without explicit human judgement.
 7. **New project adoption:** when the project is being created as Model-led from inception, do not create a ceremonial adoption Decision. Begin with an empty Decision library and record Decisions only as real semantic choices arise.
 8. **Validate conservatively.** Run appropriate existing checks for the files changed and report any ambiguity or incompatibility rather than overwriting it.
 9. **Explain the resulting boundary:** Intent and Challenge are storage-agnostic; accepted Decisions live in `.decisions/`; meaningful semantic implementation must have a sufficient Decision basis.
