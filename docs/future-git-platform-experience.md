@@ -255,13 +255,18 @@ A possible header:
 DR-42
 Reduce cold-start latency without increasing incorrect execution
 
-Decision state
-  2 proposed Decisions
-  12 applicable active Decisions
-  0 semantic conflicts
+Origin
+  TASK-42 (Intent)
+  resolves CH-81, CH-83
 
-Challenges
-  resolves C-81, C-83
+Decision basis
+  DEC-18, DEC-31, DEC-92
+
+Proposed Decisions
+  2 awaiting human acceptance
+
+Semantic conflicts
+  0
 
 Implementation candidates
   A — conforms 14/14 — E4
@@ -277,8 +282,9 @@ Human attention
 Possible tabs:
 
 ```text
-Intent
-Decisions
+Origin
+Decision basis
+Proposed Decisions
 Challenges
 Candidates
 Conformance
@@ -288,6 +294,8 @@ Activity
 ```
 
 The Code tab exists, but it is not the front page.
+
+A Decision Review does not imply that a new Decision exists. For implementation under established semantics, the review can simply link its originating Task to the existing accepted Decision basis and contain zero proposed Decisions.
 
 ## Changing a proposed Decision
 
