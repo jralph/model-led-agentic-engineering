@@ -42,13 +42,13 @@ If the target already has a compatible decision library, the agent should preser
 
 For an established repository, adopting Model-led changes how future semantic authority is handled.
 
-When a human explicitly asks to set up or adopt Model-led in that repository, that instruction is normally sufficient human authority to **draft** an initial process Decision:
+When a human explicitly asks to set up or adopt Model-led in that repository, that instruction is normally the **human acceptance event for the semantic choice itself**:
 
 > Adopt Model-led agentic engineering as this repository's engineering governance method.
 
-Use [the adoption Decision template](../templates/adoption-decision.md) as a starting point.
+Use [the adoption Decision template](../templates/adoption-decision.md) to record that Decision.
 
-The record remains proposed while the bootstrap change is under review. It becomes accepted only when the change is accepted/merged.
+The repository's normal workflow may still require review/merge before the record reaches its accepted history. That workflow requirement should be preserved, but it is not a second semantic Decision unless the project chooses to make it one.
 
 This Decision establishes the governance boundary **from adoption onward**. It does not claim that historical implementation choices were already Model-led Decisions.
 
@@ -70,9 +70,9 @@ Existing implementation can be used to:
 - raise or report Challenges;
 - ask humans which existing choices should become explicit Decisions.
 
-Only explicit human judgement can create accepted Decision authority.
+Only explicit human acceptance can make a semantic Decision authoritative.
 
-Apart from an explicit adoption Decision for an existing repository, bootstrap should not manufacture Decision history.
+Agents may propose other Decisions during bootstrap if useful, but bootstrap should not make them authoritative without human acceptance and should not manufacture historical Decision authority from code.
 
 A newly created Project using Model-led from inception may therefore begin with **zero Decision records**. That is valid.
 
@@ -144,10 +144,11 @@ For an established codebase, bootstrap should normally:
 1. inspect existing repository and agent guidance;
 2. add the Decision library mechanics;
 3. merge Model-led agent rules;
-4. draft the Model-led adoption Decision from the user's explicit adoption instruction;
-5. run existing validation appropriate to documentation/configuration changes;
-6. report that the repository is ready for Model-led work and that the adoption Decision will become accepted when the bootstrap change is accepted;
-7. optionally identify areas where Decision authority appears absent, but **do not create additional Decisions without human judgement**.
+4. record the Model-led adoption Decision from the user's explicit adoption instruction;
+5. preserve the repository's normal publication/review mechanism for getting that accepted Decision record into durable history;
+6. run existing validation appropriate to documentation/configuration changes;
+7. report that the repository is ready for Model-led work;
+8. optionally identify areas where Decision authority appears absent; agents may propose Decisions, but must not make them authoritative without human acceptance.
 
 The repository does not need to be remodelled before useful work can begin.
 
@@ -174,6 +175,6 @@ When asked to update Model-led from a newer methodology source:
 - never rewrite accepted Decision records;
 - preserve target-specific additions;
 - surface material methodology changes to the human;
-- do not silently adopt a new semantic rule if it would alter existing human authority.
+- agents may propose new semantic rules, but do not make them authoritative without human acceptance.
 
 Bootstrap and upgrades should remain conservative.
