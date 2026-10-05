@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">Semantic model to implementation layers</title>
+  <desc id="desc">Four layers from intent to language-specific implementation, with human ownership spanning all layers and agents able to assist at every layer.</desc>
+  <defs>
+    <style>
+      .t { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .muted { fill: #475569; }
+      .layer { stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1100" height="620" rx="20" fill="#f8fafc"/>
+  <text class="t" x="550" y="52" text-anchor="middle" font-size="27" font-weight="700">A system exists above its source code</text>
+  <text class="t muted" x="550" y="82" text-anchor="middle" font-size="16">The implementation language changes how the model is expressed, not why the system exists.</text>
+
+  <rect class="layer" x="255" y="125" width="590" height="86" rx="14" fill="#eef2ff" stroke="#6366f1"/>
+  <text class="t" x="550" y="158" text-anchor="middle" font-size="19" font-weight="700">Intent</text>
+  <text class="t muted" x="550" y="184" text-anchor="middle" font-size="14">outcome · priorities · accepted trade-offs · non-goals</text>
+
+  <rect class="layer" x="255" y="230" width="590" height="106" rx="14" fill="#eff6ff" stroke="#2563eb"/>
+  <text class="t" x="550" y="264" text-anchor="middle" font-size="19" font-weight="700">Semantic model</text>
+  <text class="t muted" x="550" y="290" text-anchor="middle" font-size="14">components · state · algorithms · invariants · trust boundaries</text>
+  <text class="t muted" x="550" y="314" text-anchor="middle" font-size="14">failure behaviour · performance · cost · ownership</text>
+
+  <rect class="layer" x="255" y="355" width="590" height="86" rx="14" fill="#f0fdf4" stroke="#16a34a"/>
+  <text class="t" x="550" y="388" text-anchor="middle" font-size="19" font-weight="700">Behavioural contracts</text>
+  <text class="t muted" x="550" y="414" text-anchor="middle" font-size="14">inputs · outputs · state transitions · retries · acceptance conditions</text>
+
+  <rect class="layer" x="255" y="460" width="590" height="96" rx="14" fill="#fff7ed" stroke="#f59e0b"/>
+  <text class="t" x="550" y="493" text-anchor="middle" font-size="19" font-weight="700">Language-specific implementation</text>
+  <text class="t muted" x="550" y="519" text-anchor="middle" font-size="14">Go · TypeScript · Rust · SQL · Terraform · framework/runtime choices</text>
+  <text class="t muted" x="550" y="540" text-anchor="middle" font-size="13">syntax and idioms matter here, but the system is not rediscovered here</text>
+
+  <line x1="190" y1="132" x2="190" y2="548" stroke="#0f172a" stroke-width="2"/>
+  <line x1="180" y1="132" x2="200" y2="132" stroke="#0f172a" stroke-width="2"/>
+  <line x1="180" y1="548" x2="200" y2="548" stroke="#0f172a" stroke-width="2"/>
+  <text class="t" transform="translate(150 340) rotate(-90)" text-anchor="middle" font-size="15" font-weight="700">Human ownership spans every layer</text>
+
+  <line x1="910" y1="132" x2="910" y2="548" stroke="#2563eb" stroke-width="2"/>
+  <line x1="900" y1="132" x2="920" y2="132" stroke="#2563eb" stroke-width="2"/>
+  <line x1="900" y1="548" x2="920" y2="548" stroke="#2563eb" stroke-width="2"/>
+  <text class="t" transform="translate(952 340) rotate(90)" text-anchor="middle" font-size="15" font-weight="700">Agents can assist or execute at every layer</text>
+
+  <text class="t muted" x="550" y="595" text-anchor="middle" font-size="14">The engineer may delegate syntax production without delegating understanding or accountability.</text>
+</svg>
