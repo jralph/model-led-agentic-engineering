@@ -1,6 +1,6 @@
 # .decisions
 
-This directory is the append-only library of accepted human Decisions for this repository.
+This directory is the append-only library of human-accepted semantic Decisions for this repository.
 
 The repository uses [Model-led agentic engineering](https://github.com/jralph/model-led-agentic-engineering).
 
