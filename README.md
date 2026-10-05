@@ -141,6 +141,14 @@ Practical templates:
 
 Experimental measurement work lives in [experiments/](experiments/).
 
+## Future applications
+
+The methodology does not require new source-control tooling, but it suggests some collaboration primitives that may be better suited to agent-heavy engineering.
+
+One exploratory direction is a **decision-native Git platform** where `.decisions/` records are first-class repository objects and a traditional Pull Request becomes a **Decision Review**: humans review proposed decisions, semantics and accepted risk while agents implement, review conformance and gather evidence.
+
+See [Potential future Git platform](docs/future-git-platform.md).
+
 ## Current status
 
 **v0.1: personal working methodology.**

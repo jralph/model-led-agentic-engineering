@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="700" viewBox="0 0 1280 700" role="img" aria-labelledby="title desc">
+  <title id="title">Decision-native Git collaboration</title>
+  <desc id="desc">A human proposes decisions, multiple agents implement and review them, evidence is gathered, and a Decision Review presents decisions, implementation conformance and evidence before merge.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+    <style>
+      .t { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .muted { fill: #475569; }
+      .box { fill: #fff; stroke: #cbd5e1; stroke-width: 2; }
+      .line { stroke: #475569; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1280" height="700" rx="20" fill="#f8fafc"/>
+  <text class="t" x="640" y="48" text-anchor="middle" font-size="27" font-weight="700">Decision-native collaboration for agent-heavy software</text>
+  <text class="t muted" x="640" y="78" text-anchor="middle" font-size="16">Humans own decisions. Agents implement, challenge and qualify them. Merge accepts the whole change.</text>
+
+  <rect x="70" y="145" width="220" height="130" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text class="t" x="180" y="182" text-anchor="middle" font-size="19" font-weight="700">Human decisions</text>
+  <text class="t muted" x="180" y="211" text-anchor="middle" font-size="14">proposed model changes</text>
+  <text class="t muted" x="180" y="235" text-anchor="middle" font-size="14">invariants · trade-offs</text>
+  <text class="t muted" x="180" y="258" text-anchor="middle" font-size="14">boundaries · accepted risk</text>
+
+  <path class="line" d="M290 210 H355"/>
+
+  <rect x="365" y="105" width="245" height="90" rx="14" class="box"/>
+  <text class="t" x="487.5" y="140" text-anchor="middle" font-size="17" font-weight="700">Implementation agents</text>
+  <text class="t muted" x="487.5" y="166" text-anchor="middle" font-size="14">parallel isolated workspaces</text>
+
+  <rect x="365" y="215" width="245" height="90" rx="14" class="box"/>
+  <text class="t" x="487.5" y="250" text-anchor="middle" font-size="17" font-weight="700">Review agents</text>
+  <text class="t muted" x="487.5" y="276" text-anchor="middle" font-size="14">decision conformance + conflicts</text>
+
+  <rect x="365" y="325" width="245" height="90" rx="14" class="box"/>
+  <text class="t" x="487.5" y="360" text-anchor="middle" font-size="17" font-weight="700">Qualification</text>
+  <text class="t muted" x="487.5" y="386" text-anchor="middle" font-size="14">tests · benchmarks · evidence</text>
+
+  <path class="line" d="M610 150 C680 150, 680 220, 730 220"/>
+  <path class="line" d="M610 260 H730"/>
+  <path class="line" d="M610 370 C680 370, 680 300, 730 300"/>
+
+  <rect x="740" y="135" width="300" height="265" rx="18" fill="#ffffff" stroke="#6366f1" stroke-width="2.5"/>
+  <text class="t" x="890" y="173" text-anchor="middle" font-size="20" font-weight="700">Decision Review</text>
+
+  <text class="t" x="785" y="215" font-size="15" font-weight="700">Decisions</text>
+  <text class="t muted" x="970" y="215" text-anchor="end" font-size="14">3 proposed · 14 affected</text>
+  <line x1="785" y1="231" x2="995" y2="231" stroke="#e2e8f0"/>
+
+  <text class="t" x="785" y="265" font-size="15" font-weight="700">Conformance</text>
+  <text class="t muted" x="970" y="265" text-anchor="end" font-size="14">16 / 17 satisfied</text>
+  <line x1="785" y1="281" x2="995" y2="281" stroke="#e2e8f0"/>
+
+  <text class="t" x="785" y="315" font-size="15" font-weight="700">Evidence</text>
+  <text class="t muted" x="970" y="315" text-anchor="end" font-size="14">E3 · residual gap</text>
+  <line x1="785" y1="331" x2="995" y2="331" stroke="#e2e8f0"/>
+
+  <text class="t" x="785" y="365" font-size="15" font-weight="700">Code</text>
+  <text class="t muted" x="970" y="365" text-anchor="end" font-size="14">diff available on demand</text>
+
+  <path class="line" d="M1040 267 H1100"/>
+
+  <rect x="1110" y="195" width="120" height="145" rx="16" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
+  <text class="t" x="1170" y="237" text-anchor="middle" font-size="18" font-weight="700">Merge</text>
+  <text class="t muted" x="1170" y="266" text-anchor="middle" font-size="13">implementation</text>
+  <text class="t muted" x="1170" y="287" text-anchor="middle" font-size="13">+ decisions</text>
+  <text class="t muted" x="1170" y="316" text-anchor="middle" font-size="12">accepted together</text>
+
+  <rect x="160" y="505" width="960" height="110" rx="16" fill="#fff7ed" stroke="#f59e0b" stroke-width="2.5"/>
+  <text class="t" x="640" y="540" text-anchor="middle" font-size="18" font-weight="700">Review feedback changes intent, not just lines</text>
+  <text class="t muted" x="640" y="568" text-anchor="middle" font-size="14">A human changes a proposed decision → affected agents re-evaluate implementation → conformance and evidence rerun.</text>
+  <text class="t muted" x="640" y="592" text-anchor="middle" font-size="14">Traditional code review remains available wherever direct human inspection adds value.</text>
+
+  <path d="M890 400 C890 455, 640 455, 640 495" stroke="#f59e0b" stroke-width="2.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M160 560 C90 560, 90 320, 165 285" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7 7" fill="none" marker-end="url(#arrow)"/>
+
+  <text class="t muted" x="640" y="665" text-anchor="middle" font-size="13">Potential platform direction, not a required part of the methodology.</text>
+</svg>
