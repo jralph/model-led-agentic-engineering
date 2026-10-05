@@ -221,15 +221,17 @@ No Decision Review or implementation is required.
 
 If implementation is useful and accepted Decisions already constrain it adequately, work can proceed without proposing a new Decision.
 
-A Decision Review can still be used as the acceptance surface.
+The Task explains why the work exists. The existing Decision basis explains what semantic authority governs the result.
+
+A Decision Review can then link the Task to that existing Decision basis and accept the resulting implementation/evidence without creating any new Decision.
 
 ### New semantic authority is required
 
-The Task has exposed a missing choice.
+The Task has exposed a missing semantic choice.
 
-A human proposes a new or superseding Decision.
+An agent or human may propose a new or superseding Decision.
 
-Implementation must not establish that behaviour first and ask for approval afterwards.
+Agents may explore and build candidate implementation against the proposal, but the resulting semantics must not become authoritative or releasable until a human accepts the Decision.
 
 ### Implementation and qualification
 
@@ -237,9 +239,25 @@ Agents derive execution work, implement against the Decision basis, review confo
 
 ### Acceptance
 
-A Decision Review accepts the relevant Decisions, exact implementation candidate and Evidence.
+A Decision Review records:
+
+- the originating Task;
+- the accepted Decision basis;
+- any newly human-accepted Decisions;
+- the exact implementation candidate;
+- applicable Evidence and residual risk.
 
 The Task can then resolve against that accepted result.
+
+## Why work and authority are separate
+
+A Task and a Decision answer different questions:
+
+> **Task / Intent / Challenge:** why are we spending attention on this?
+
+> **Decision basis:** what accepted semantic authority governs any resulting implementation?
+
+A Task can complete after research with no implementation. If semantic implementation is accepted, it should be traceable to an accepted Decision basis even when no new Decision was created.
 
 ## Tasks do not replace Decisions
 
@@ -345,7 +363,7 @@ Task
         |
         +---- close / defer
         |
-        +---- sufficient Decision basis
+        +---- sufficient accepted Decision basis
         |          |
         |      implementation
         |          |
@@ -353,9 +371,11 @@ Task
         |
         +---- new Decision required
                    |
-              human Decision
+              proposed Decision
                    |
-              implementation
+              candidate implementation
+                   |
+              human acceptance
                    |
               Decision Review
 ```
