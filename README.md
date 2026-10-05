@@ -31,18 +31,9 @@ Historically, implementation was a serial bottleneck. I could reason through a p
 
 That does **not** mean delegating understanding.
 
-The workflow becomes roughly:
+The workflow becomes a loop: the engineer maintains the system model, agents help turn that model into implementation and evidence, and what is learnt feeds back into the model.
 
-```text
-problem
-  -> human-owned semantic model
-  -> collaborative exploration
-  -> explicit intent and constraints
-  -> agent implementation
-  -> adversarial review
-  -> evidence-based qualification
-  -> updated model
-```
+![Model-led agentic engineering loop](assets/diagrams/core-loop.svg)
 
 AI can contribute ideas, research, local reasoning and implementation choices. The human remains responsible for the coherence of the system and for deciding what is accepted.
 
