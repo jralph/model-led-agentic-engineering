@@ -1,35 +1,44 @@
-# Decision record: <decision>
+---
+id: DEC-YYYYMMDD-HHMMSS-short-slug
+title: <concise decision title>
+type: invariant
+decided_at: YYYY-MM-DDTHH:MM:SS+00:00
+author: <human decision owner>
+scope:
+  areas: []
+  paths: []
+supersedes: []
+related: []
+tags: []
+---
 
-**Status:** proposed | accepted | superseded  
-**Date:** YYYY-MM-DD
+# <decision title>
 
-## Context
-
-What decision is required and why now?
+> An agent may draft this record only after the underlying decision has been made by a human.
 
 ## Decision
 
-What are we doing?
+What has been decided?
+
+State the durable behaviour, constraint or trade-off directly.
 
 ## Why
 
-What evidence and trade-offs led here?
+Why was this decision made?
 
-## Alternatives considered
-
-### <alternative>
-
-Why was it not selected?
-
-## Invariants created or affected
-
-- 
-- 
+Include the evidence or rejected alternatives that future engineers or agents are likely to otherwise rediscover incorrectly.
 
 ## Consequences
 
-What becomes easier, harder or impossible because of this decision?
+What does this require, permit or prevent?
 
-## Revisit when
+- 
+- 
 
-What new evidence or changed condition should cause us to reconsider?
+## Notes
+
+Optional context that helps interpret the decision without turning this record into mutable current-state documentation.
+
+---
+
+Once this record is accepted into the main repository history, do not edit, rename or delete it. A later change creates a new decision with this ID in `supersedes`.
