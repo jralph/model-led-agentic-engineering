@@ -18,7 +18,7 @@ tags:
 
 This repository adopts Model-led agentic engineering as its engineering governance method.
 
-Future meaningful semantic implementation must have a sufficient Decision basis. Intent remains human-owned; Challenges may be raised by humans or agents; accepted Decisions require human authority; and evidence bounds what may be claimed.
+Future meaningful semantic implementation must have a sufficient Decision basis. Intent remains human-owned; Challenges may be raised by humans or agents; agents may propose semantic Decisions; human acceptance makes those Decisions authoritative; and evidence bounds what may be claimed.
 
 ## Why
 
@@ -29,6 +29,6 @@ This Decision does not attempt to reconstruct or legitimise historical architect
 ## Consequences
 
 - accepted human Decisions are recorded in `.decisions/`;
-- agents may not invent semantic authority when the Decision basis is insufficient;
+- agents may propose missing semantic Decisions when the Decision basis is insufficient, but those proposals do not become authoritative without human acceptance;
 - existing repository-specific engineering practices remain in force unless separately changed;
 - historical implementation is not automatically converted into Decision history.
