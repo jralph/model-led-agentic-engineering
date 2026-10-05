@@ -140,7 +140,7 @@ This gives research, review and qualification agents a safe output when they dis
 - opportunities;
 - possible Decision violations.
 
-Agents should prefer raising a Challenge over silently inventing a Decision.
+Agents should prefer raising a Challenge over silently making an unaccepted semantic choice authoritative.
 
 ## Challenges should not require a solution
 
