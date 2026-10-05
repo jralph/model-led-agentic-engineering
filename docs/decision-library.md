@@ -136,8 +136,8 @@ The initial schema requires:
 - `id` — stable unique identifier;
 - `title` — concise human-readable decision;
 - `type` — the kind of decision;
-- `decided_at` — offset-aware date/time;
-- `author` — the human source of authority;
+- `decided_at` — offset-aware date/time associated with recording/formulating the Decision;
+- `author` — provenance for who originated/authored the record or proposal; it does **not** confer or prove human acceptance;
 - `supersedes` — earlier decisions replaced by this one, or an empty list.
 
 Optional structured fields include:
@@ -229,10 +229,10 @@ An invariant with broad system impact may intentionally omit paths or use a broa
 
 ## Active decisions
 
-A decision is active when:
+A Decision is active when:
 
-- it exists on the accepted branch; and
-- no accepted decision supersedes it.
+- it has received human acceptance and entered the project's authoritative Decision set; and
+- no later human-accepted Decision supersedes it.
 
 A tool should derive this rather than mutate records.
 
