@@ -83,7 +83,7 @@ Identify the accepted Decisions that already govern the work.
 
 If they are sufficient, no new Decision is required.
 
-If the work requires a semantic choice that is not already authorised, a human Decision is required before implementation establishes that behaviour.
+If the work requires a semantic choice that is not already authorised, an agent or human may propose a Decision. Human acceptance is required before that semantic choice becomes authoritative or releasable behaviour. Candidate implementation may be explored against the proposal before acceptance.
 
 Integrate useful findings into the model.
 
@@ -103,15 +103,17 @@ Not every choice needs a permanent record.
 
 When forgetting a decision would make future engineers or agents likely to weaken a boundary, repeat a rejected design, change important behaviour or misunderstand an accepted trade-off, add a record to the project's `.decisions/` library.
 
-AI may draft the record from the discussion, but the decision itself must have explicit human authority.
+An agent may originate or draft the proposed Decision record. The semantic Decision becomes authoritative only through human acceptance.
 
-Keep the proposed record in the same branch or pull request as the implementation where practical. It can be refined during review. Once the pull request merges, the decision becomes accepted and immutable.
+Keep proposed Decisions with the implementation/review context where practical. They may be refined before acceptance. A pull-request merge can represent human acceptance when the repository workflow guarantees that relationship, but Model-led does not require Git or pull requests.
+
+Once accepted into the authoritative Decision set, the Decision record becomes immutable.
 
 See [Decision library](decision-library.md).
 
 ## 7. Crystallise implementation context
 
-For non-trivial work, turn enough of the active Intent, Decision basis and accepted model into an artefact another agent can execute.
+For non-trivial work, turn enough of the active Intent or Challenge, accepted Decision basis, proposed Decisions under evaluation and relevant model context into an artefact another agent can execute.
 
 This does not require a particular specification workflow. A full spec-driven process may be appropriate for some work; a short intent brief may be enough for other work.
 
@@ -119,7 +121,9 @@ Use the [intent brief](../templates/intent-brief.md) as one lightweight starting
 
 A useful brief usually captures:
 
-- active Intent/outcome;
+- active Intent and/or Challenge;
+- accepted Decision basis;
+- proposed Decisions under evaluation;
 - current behaviour;
 - desired behaviour;
 - invariants;
