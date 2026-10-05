@@ -4,6 +4,8 @@
 
 It means the engineer's semantic understanding of the system.
 
+![Semantic model to implementation layers](../assets/diagrams/semantic-layers.svg)
+
 ## What the model contains
 
 The model can include:
