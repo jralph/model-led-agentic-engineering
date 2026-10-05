@@ -1,6 +1,6 @@
 # Challenge
 
-> A Challenge records something that may be wrong, incomplete or worth reconsidering. It does not change the system model.
+> A Challenge records something that may be wrong, incomplete or worth reconsidering. It does not change semantic authority.
 
 ## Title
 
@@ -18,19 +18,31 @@ What was observed or discovered?
 
 What could be wrong, unsafe, incomplete or suboptimal?
 
+## Related Intent
+
+Is there an active human-owned Intent related to this Challenge?
+
+Optional.
+
 ## Targets
 
-### Decisions
+### Decision basis
 
-Which active Decisions may be relevant?
+Which accepted Decisions may be relevant?
 
-If the Challenge may exist because no adequate Decision exists, state that explicitly.
+If the Challenge may exist because no adequate authoritative Decision basis exists, state that explicitly.
+
+- 
+
+### Proposed Decisions
+
+Are any non-authoritative proposed Decisions relevant to the investigation?
 
 - 
 
 ### Areas / implementation
 
-Which semantic areas, systems or paths appear relevant?
+Which semantic areas, systems or implementation surfaces appear relevant?
 
 - 
 
@@ -46,19 +58,21 @@ Optional.
 
 Do not invent a solution just to complete the template.
 
+An agent may propose a semantic Decision here, but that proposal does not become authoritative without human acceptance.
+
 ## Investigation
 
 Add findings as the Challenge evolves.
 
 ## Decision gap
 
-Does this Challenge expose behaviour that appears to lack an adequate human Decision?
+Does this Challenge expose behaviour that appears to lack an adequate authoritative Decision basis?
 
 - [ ] No
 - [ ] Possibly
 - [ ] Yes
 
-If yes, do not allow implementation to establish the missing semantic behaviour by default.
+If yes, candidate work may explore a proposed Decision, but do not allow that semantic behaviour to become accepted/released authority until a human accepts the required Decision.
 
 ## Resolution
 
@@ -73,6 +87,8 @@ When resolved, record one of:
 
 ### Resulting Decisions
 
+Record accepted or proposed Decisions distinctly.
+
 - 
 
 ### Resulting implementation / review
@@ -82,3 +98,5 @@ When resolved, record one of:
 ### Resolution notes
 
 What did we learn and why is the Challenge considered resolved?
+
+If resolution depends on a semantic Decision change, record how human acceptance was established or point to the workflow provenance that does so.

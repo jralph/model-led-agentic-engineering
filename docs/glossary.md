@@ -83,9 +83,11 @@ A Challenge is not defined by a particular file, folder or storage format. Chall
 
 ## Decision basis
 
-The active and proposed Decisions that govern a meaningful semantic implementation change.
+The accepted Decisions that authoritatively govern a meaningful semantic implementation change.
 
-A Challenge may reveal that no adequate Decision basis exists. An agent must not silently fill that gap with its own authority.
+Proposed Decisions may guide candidate implementation, review and qualification while under consideration, but they do not join the authoritative Decision basis until human acceptance.
+
+A Challenge may reveal that no adequate Decision basis exists. An agent may propose the missing Decision but must not make it authoritative without human acceptance.
 
 
 ## Intent

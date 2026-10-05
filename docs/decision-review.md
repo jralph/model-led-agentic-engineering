@@ -11,7 +11,7 @@ A pull request is one common implementation, but the methodology does not requir
 A substantial review can contain:
 
 - **Intent** — the human-owned outcome being pursued;
-- **decisions** — what humans are proposing the system should believe or preserve;
+- **Decisions** — accepted authority plus any semantic Decisions currently proposed for human acceptance;
 - **Challenges** — unresolved questions the change is intended to resolve;
 - **implementation** — how those decisions are expressed;
 - **evidence** — what has been demonstrated about the result.
@@ -29,6 +29,8 @@ Intent does not itself create authority for semantic implementation. The review 
 ## Challenges entering review
 
 A Decision Review may be opened because one or more Challenges show that the current model or implementation needs attention.
+
+A review does not require a new Decision. It may exist purely to accept implementation that restores or realises an existing Decision basis.
 
 The review should make clear whether each Challenge is expected to resolve through:
 
@@ -92,15 +94,15 @@ Decision-first review is not a one-way approval gate.
 
 Proposed Decisions are still mutable until human acceptance. A reviewer may decide that the proposed behaviour, threshold, boundary or trade-off is wrong even when the implementation matches it perfectly.
 
-When a human accepts or changes a proposed Decision:
+When a human changes a proposed Decision before acceptance:
 
-1. the updated decision becomes the new proposed authority;
+1. the updated proposal becomes the candidate semantic direction;
 2. agents re-evaluate the implementation against it;
 3. implementation changes where conformance now differs;
 4. review runs again against all relevant active and proposed decisions;
 5. qualification is rerun where the changed decision alters the claim being accepted.
 
-This is one of the main benefits of making decisions explicit. The reviewer changes the **engineering intent**, not individual implementation details, and agents can propagate that change through the codebase.
+This is one of the main benefits of making Decisions explicit. The reviewer changes the **proposed semantic direction**, not individual implementation details, and agents can propagate that change through the codebase before acceptance.
 
 This allows a human to say, for example, "the threshold should be 750 ms rather than 500 ms" or "this path must remain read-only", then have the implementation and evidence re-evaluated against that change rather than manually directing every affected line.
 

@@ -14,7 +14,7 @@ This repository uses Model-led agentic engineering.
 - **Intent** is a human-owned, mutable outcome being pursued. Agents may help refine or research it but must not silently change the objective and treat the change as authoritative.
 - **Challenge** is a pre-decisional question. Humans or agents may raise Challenges against Decisions, missing Decision authority, implementation, evidence, behaviour, opportunities or unknowns.
 - **Decision** is durable semantic authority once human-accepted. Agents may reason about, originate, recommend and draft proposed semantic Decisions; human acceptance is what makes them authoritative.
-- **Decision basis** is the set of accepted and proposed Decisions sufficient to govern a meaningful semantic implementation change.
+- **Decision basis** is the set of accepted Decisions that currently governs a meaningful semantic implementation change. Proposed Decisions may be evaluated alongside it for candidate work, but they are not authoritative until human acceptance.
 - **Implementation** is how current authority is realised. Ordinary local implementation choices may be delegated.
 - **Evidence** bounds what may be claimed about correctness, safety, behaviour, performance or other outcomes.
 
@@ -39,13 +39,14 @@ Before making a meaningful semantic change:
 1. identify the active Intent or Challenge;
 2. identify the relevant Decision basis;
 3. determine whether existing Decisions are sufficient;
-4. if new semantic authority is required, an agent may propose the Decision, but obtain human acceptance before establishing that behaviour as authoritative implementation;
-5. implement with bounded local discretion;
-6. review implementation for conformance with all relevant active/proposed Decisions;
-7. qualify claims with evidence appropriate to the claim;
-8. report uncertainty, residual risk and unresolved Challenges.
+4. if existing accepted Decisions are sufficient, implementation may proceed with no new Decision;
+5. if new semantic authority is required, an agent may propose the Decision and build/review a candidate against it, but obtain human acceptance before that semantic behaviour becomes authoritative or releasable;
+6. implement with bounded local discretion;
+7. review implementation for conformance with the accepted Decision basis and separately against any proposed Decisions under evaluation;
+8. qualify claims with evidence appropriate to the claim;
+9. report uncertainty, residual risk and unresolved Challenges.
 
-Intent or Challenge may legitimately end after exploration/research without implementation.
+Intent or Challenge may legitimately end after exploration/research without implementation. Work does not need a new Decision merely because work occurred.
 
 ### Agent modes
 
