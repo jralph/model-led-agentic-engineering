@@ -96,8 +96,8 @@ A `.decisions/` library is:
 - append-only after acceptance;
 - designed to be retrieved automatically for agent work;
 - able to contain invariants, behaviour, security, interfaces, product and process decisions;
-- tied to PR acceptance;
-- explicitly human-authoritative even when AI drafts the prose.
+- tied to explicit human acceptance rather than a specific review tool;
+- able to contain agent-originated proposals while keeping semantic authority human-accepted.
 
 ADRs can coexist with the decision library. A project may choose to represent architecture decisions in both systems or use a decision record as its ADR equivalent.
 
@@ -141,7 +141,7 @@ Model-led engineering moves the human review centre towards:
 - trust boundaries;
 - accepted risk.
 
-Agents can then perform exhaustive implementation-conformance review against both proposed and already accepted decisions.
+Agents can then perform exhaustive implementation-conformance review against the accepted Decision basis and separately evaluate candidates against proposed Decisions under consideration.
 
 The implementation is still reviewed. The scarce human attention is simply moved towards the parts where human judgement adds the most value.
 
