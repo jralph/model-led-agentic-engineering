@@ -5,7 +5,9 @@
 
 The biggest UI change is not adding an AI panel.
 
-It is changing what a repository appears to **be**.
+It is changing the top-level object from **Repository** to **Project**.
+
+A Project is the human-facing system/product model. It may be backed by one Model Repository and several independent Implementation Repositories.
 
 Traditional Git hosts make the file tree, commits, branches, issues and pull requests central because those were the objects humans directly manipulated.
 
@@ -23,7 +25,7 @@ The human-facing product therefore centres on:
 
 Files and branches remain available as implementation drill-downs.
 
-## Repository navigation
+## Project navigation
 
 A possible top-level navigation:
 
@@ -38,6 +40,7 @@ Decision Reviews
 Evidence
 Agents
 Implementation
+  Repositories
   Code
   Commits
   Branches
@@ -46,7 +49,7 @@ Implementation
 
 This hierarchy is deliberate.
 
-A repository opens on **what the system believes and what needs human attention**, not on a directory listing.
+A Project opens on **what the system believes and what needs human attention**, not on a repository list or directory listing.
 
 ## Overview
 
@@ -140,7 +143,9 @@ Implementation
   1 database schema
 ```
 
-The implementation section reveals concrete files and services when needed.
+The implementation section reveals concrete repositories, files and services when needed.
+
+This creates a **semantic monorepo** experience even when Authentication is physically implemented across API, web, identity and infrastructure repositories.
 
 ### History
 
@@ -219,7 +224,9 @@ without granting:
 
 ## Decision Review
 
-The default Decision Review should not open on Files Changed.
+The default Decision Review should not open on Files Changed, and it should not be scoped to one repository.
+
+A Decision Review belongs to the Project and can carry one implementation candidate spanning several repositories.
 
 A possible header:
 
@@ -319,6 +326,18 @@ or:
 
 The work becomes closer to design evaluation than line-by-line implementation supervision.
 
+## Implementation repositories
+
+Implementation repositories remain ordinary Git repositories.
+
+They are visible when a human wants low-level control, local work, debugging or implementation inspection, but they are not the primary Project navigation model.
+
+A Decision Review can show an implementation candidate as a set of exact repository revisions rather than several unrelated pull requests.
+
+External agents and harnesses should be able to pick up a Decision Review locally, work across the required repositories, and attach their candidate revisions back to the Project.
+
+See [Project and repository model](future-git-platform-project-repositories.md).
+
 ## Code view
 
 Code remains fully available.
@@ -395,7 +414,9 @@ It simply stops forcing humans to use implementation layout as their primary men
 
 ## Branches and commits
 
-Branches become implementation workspaces rather than the primary human coordination object.
+Branches become low-level implementation workspaces rather than the primary human coordination object.
+
+One Agent Workspace may contain branches, forks or worktrees in several repositories while appearing to the human as one candidate implementation.
 
 A human may see:
 
@@ -480,10 +501,11 @@ than:
 
 ## Releases
 
-A release can snapshot:
+A release can point to one immutable Project State and therefore snapshot:
 
 - accepted Decision graph;
-- implementation revision;
+- Model Repository revision;
+- exact revisions for every Implementation Repository;
 - applicable qualification evidence;
 - known open Challenges;
 - explicitly accepted residual risk.
