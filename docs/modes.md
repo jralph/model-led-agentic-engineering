@@ -24,7 +24,7 @@ Typical work:
 
 Explore mode can be creative. It should not silently commit architecture.
 
-**Output:** options, questions, risks, hypotheses.
+**Output:** options, questions, risks, hypotheses, and Challenges where an unresolved concern should be preserved.
 
 ## Research
 
@@ -43,7 +43,7 @@ Typical work:
 
 Research may recommend. It should preserve uncertainty and source boundaries.
 
-**Output:** findings, evidence, limitations, recommendations.
+**Output:** findings, evidence, limitations, recommendations, and Challenges when research contradicts or weakens the current model.
 
 ## Specify
 
@@ -82,7 +82,7 @@ Typical work:
 
 Implementation agents should be free to make ordinary coding decisions. They should escalate when a choice changes architecture, security, product semantics, data ownership or another stated invariant.
 
-**Output:** a concrete change plus its local verification.
+**Output:** a concrete change plus its local verification. If implementation exposes semantic ambiguity outside local authority, raise a Challenge rather than silently deciding it.
 
 ## Review
 
@@ -101,7 +101,7 @@ Typical work:
 
 Review should report issues. It should not quietly move the goalposts or "fix" the requirements.
 
-**Output:** findings with severity, evidence and suggested next action.
+**Output:** findings with severity, evidence and suggested next action. Material unresolved findings may be preserved as Challenges.
 
 Where a decision library exists, Review mode should retrieve the active decisions relevant to the changed areas and explicitly check the implementation for conformance and conflicts.
 
@@ -123,7 +123,7 @@ Typical work:
 
 Qualification must not change thresholds after seeing the result simply to produce a pass.
 
-**Output:** evidence, result, limitations and residual risk.
+**Output:** evidence, result, limitations and residual risk. Missing, stale or contradictory evidence may create a Challenge.
 
 ## Human decision points
 

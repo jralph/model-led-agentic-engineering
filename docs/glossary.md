@@ -73,3 +73,16 @@ It does not prohibit direct human code review.
 The process used to turn intent into software, such as spec-driven development, autonomous agent execution, conventional tickets or manual coding.
 
 Model-led agentic engineering does not prescribe one implementation workflow.
+
+
+## Challenge
+
+A semantic primitive that questions the current Decision set, the absence of a Decision where human authority appears necessary, implementation, evidence, observed behaviour or an engineering opportunity without changing the authoritative semantic model.
+
+A Challenge is not defined by a particular file, folder or storage format. Challenges may be raised by humans or agents and may remain unresolved while evidence is gathered.
+
+## Decision basis
+
+The active and proposed Decisions that govern a meaningful semantic implementation change.
+
+A Challenge may reveal that no adequate Decision basis exists. An agent must not silently fill that gap with its own authority.

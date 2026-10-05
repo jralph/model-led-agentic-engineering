@@ -57,6 +57,14 @@ An append-only `.decisions/` library preserves accepted human decisions, includi
 
 See [Decision library](decision-library.md).
 
+### Challenges
+
+Challenges preserve unresolved questions, suspected model or implementation mismatches, weak evidence, observed failures and opportunities before they have necessarily been solutionised.
+
+Unlike accepted Decisions, Challenges are mutable during investigation and may be authored by agents as well as humans.
+
+See [Challenges](challenges.md).
+
 ### Intent brief
 
 The contract for one piece of work.
