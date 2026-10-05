@@ -52,7 +52,17 @@ When a decision materially constrains future engineering, record it in a durable
 
 A pull request is a useful acceptance boundary because the decision, implementation and evidence can be reviewed together.
 
-## 7. Review decisions before implementation detail
+## 7. Preserve unresolved questions as Challenges
+
+Not every problem should be forced immediately into a solution or Decision.
+
+A Challenge records something about the current model, implementation, evidence or observed behaviour that may need attention. Humans and agents may both raise Challenges because doing so does not change the authoritative model.
+
+Agents should raise a Challenge when they discover semantic ambiguity outside their authority rather than silently inventing a Decision.
+
+When a Challenge is resolved, implementation may be corrected under an existing Decision, evidence may be improved, or a human may author a new Decision.
+
+## 8. Review decisions before implementation detail
 
 When agent-generated changes are large, human review should prioritise the decisions, semantic changes, trade-offs and accepted risk that shape the implementation.
 
@@ -60,7 +70,7 @@ Agents can perform exhaustive conformance review against active and proposed dec
 
 Changing a proposed decision during review should cause the implementation and evidence to be re-evaluated against that new intent.
 
-## 8. Preserve invariants more strongly than implementation details
+## 9. Preserve invariants more strongly than implementation details
 
 Implementation is expected to change.
 
@@ -75,7 +85,7 @@ Examples:
 
 If an invariant matters, encode it in more than somebody's memory.
 
-## 9. Evidence beats confidence
+## 10. Evidence beats confidence
 
 Agent confidence is not evidence.
 
@@ -83,7 +93,7 @@ Compilation is not evidence of correct behaviour. Unit tests are not evidence of
 
 Match the evidence to the claim.
 
-## 10. Separate exploration from commitment
+## 11. Separate exploration from commitment
 
 Agents should be allowed to explore broadly without every suggestion becoming architecture.
 
@@ -96,7 +106,7 @@ A useful workflow has a deliberate decision boundary between:
 
 This lets AI increase the breadth of investigation without allowing it to increase architectural randomness.
 
-## 11. Optimise for semantic throughput, not code volume
+## 12. Optimise for semantic throughput, not code volume
 
 Lines of code are a poor measure of this style of engineering.
 
@@ -104,7 +114,7 @@ The useful output is validated capability: correct behaviours, safe abstractions
 
 The aim is to increase the amount of engineering intent that can become working software per unit of human attention.
 
-## 12. Keep the model reconstructable
+## 13. Keep the model reconstructable
 
 A purely mental model works surprisingly well for one engineer, until it does not.
 
@@ -119,7 +129,7 @@ Externalise the parts another engineer or future agent would need to safely cont
 
 Do not attempt to document every thought.
 
-## 13. The human should be able to explain the system
+## 14. The human should be able to explain the system
 
 A useful ownership test is whether the engineer can explain the logic and behaviour of the system without hiding behind the generated source.
 

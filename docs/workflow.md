@@ -52,7 +52,17 @@ AI may introduce ideas here.
 
 Nothing becomes architecture merely because it was suggested.
 
-## 4. Decide
+## 4. Preserve unresolved questions
+
+Not every investigation is ready to become a Decision.
+
+When something appears wrong, incomplete or uncertain but the correct change is not yet known, record a **Challenge** rather than forcing a solution.
+
+A Challenge can be raised by a human or agent and may target an existing Decision, implementation that may not conform, weak or stale evidence, unexplained observed behaviour, an opportunity worth investigating, or a genuine unknown.
+
+See [Challenges](challenges.md).
+
+## 5. Decide
 
 Integrate useful findings into the model.
 
@@ -66,7 +76,7 @@ The decision can be as simple as:
 
 That is already enough to constrain a large amount of implementation.
 
-## 5. Record durable decisions
+## 6. Record durable decisions
 
 Not every choice needs a permanent record.
 
@@ -78,7 +88,7 @@ Keep the proposed record in the same branch or pull request as the implementatio
 
 See [Decision library](decision-library.md).
 
-## 6. Crystallise intent
+## 7. Crystallise intent
 
 For non-trivial work, turn enough of the accepted model into an artefact another agent can execute.
 
@@ -99,7 +109,7 @@ A useful brief usually captures:
 
 The goal is not prose quality. It is fidelity.
 
-## 7. Delegate implementation
+## 8. Delegate implementation
 
 Give an implementation agent the agreed model plus enough repository context.
 
@@ -109,7 +119,7 @@ Require it to stop or surface uncertainty when satisfying the task would require
 
 For large changes, implement in bounded slices so incorrect assumptions are found before they spread.
 
-## 8. Review adversarially
+## 9. Review adversarially
 
 Do not ask only:
 
@@ -130,7 +140,7 @@ For projects using a decision library, review should also load the relevant acti
 
 See [Decision-first review](decision-review.md).
 
-## 9. Qualify the claims
+## 10. Qualify the claims
 
 Choose evidence that matches the claim.
 
@@ -142,7 +152,7 @@ Record failures and limitations.
 
 Do not reinterpret the experiment after seeing the result.
 
-## 10. Reconcile the model
+## 11. Reconcile the model
 
 Implementation and verification often reveal something new.
 
@@ -156,7 +166,7 @@ Update:
 
 Do not let the repository accumulate an old description of a system nobody believes.
 
-## 11. Release and observe
+## 12. Release and observe
 
 Production is another source of evidence.
 

@@ -9,10 +9,25 @@ Model-led agentic engineering therefore treats the pull request as more than a c
 A substantial pull request can contain:
 
 - **decisions** — what humans are proposing the system should believe or preserve;
+- **Challenges** — unresolved questions the change is intended to resolve;
 - **implementation** — how those decisions are expressed;
 - **evidence** — what has been demonstrated about the result.
 
 ![Decision-first pull request](../assets/diagrams/decision-pr-contract.svg)
+
+## Challenges entering review
+
+A Decision Review may be opened because one or more Challenges show that the current model or implementation needs attention.
+
+The review should make clear whether each Challenge is expected to resolve through:
+
+- no model change;
+- an implementation correction under existing Decisions;
+- a new or superseding Decision;
+- stronger or corrected evidence;
+- explicitly accepted risk.
+
+A Challenge is therefore an input to review, not itself a Decision.
 
 ## Human review priority
 

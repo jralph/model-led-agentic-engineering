@@ -88,6 +88,18 @@ This also changes review priority: humans can focus more attention on decisions,
 
 See [Decision library](docs/decision-library.md) and [Decision-first review](docs/decision-review.md).
 
+## Challenges before decisions
+
+Not every problem is already understood well enough to become a Decision.
+
+A **Challenge** records something about the current Decisions, implementation, evidence or observed behaviour that may be wrong, incomplete or worth reconsidering. Challenges may be created by humans or agents because raising a question does not alter the system model.
+
+A Challenge can remain unresolved while evidence is gathered. It may end in no change, an implementation correction under an existing Decision, stronger evidence, or a new human-authored Decision.
+
+This gives agents a safe way to surface bugs, contradictions and unknowns without silently becoming decision makers.
+
+See [Challenges](docs/challenges.md).
+
 ## Why now?
 
 AI has increased implementation throughput much faster than human review throughput.
@@ -122,19 +134,21 @@ Start here:
 4. [Agent modes and authority](docs/modes.md)
 5. [The working loop](docs/workflow.md)
 6. [Decision library](docs/decision-library.md)
-7. [Decision-first review](docs/decision-review.md)
-8. [Model-led vs other AI engineering approaches](docs/model-led-vs.md)
-9. [Externalising intent](docs/externalising-intent.md)
-10. [Verification and evidence](docs/verification.md)
-11. [Measuring effectiveness](docs/measurement.md)
-12. [Anti-patterns](docs/anti-patterns.md)
-13. [Abstract examples](docs/examples.md)
-14. [Maturity model](docs/maturity.md)
+7. [Challenges](docs/challenges.md)
+8. [Decision-first review](docs/decision-review.md)
+9. [Model-led vs other AI engineering approaches](docs/model-led-vs.md)
+10. [Externalising intent](docs/externalising-intent.md)
+11. [Verification and evidence](docs/verification.md)
+12. [Measuring effectiveness](docs/measurement.md)
+13. [Anti-patterns](docs/anti-patterns.md)
+14. [Abstract examples](docs/examples.md)
+15. [Maturity model](docs/maturity.md)
 
 Practical templates:
 
 - [Engineering intent brief](templates/intent-brief.md)
 - [Decision record](templates/decision-record.md)
+- [Challenge](templates/challenge.md)
 - [Adversarial review brief](templates/adversarial-review.md)
 - [Qualification plan](templates/qualification-plan.md)
 - [Session measurement](templates/session-measurement.md)
