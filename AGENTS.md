@@ -13,7 +13,9 @@ Preserve these ideas unless the owner explicitly changes them:
 5. Claims about correctness, safety, performance or productivity require evidence appropriate to the claim.
 6. Source code is one representation of engineering intent, not the only measure of engineering authorship.
 7. Language and framework constraints still matter. "Language-independent model" does not mean implementation details are irrelevant.
-8. The methodology is currently a personal working method, not a validated standard.
+8. Accepted engineering decisions require human authority. Agents may draft decision records only from explicit human decisions; they must not originate accepted decisions.
+9. Accepted files under `.decisions/` are append-only history. Never edit, rename or delete an accepted record; supersede it with a new human-authored decision.
+10. The methodology is currently a personal working method, not a validated standard.
 
 ## Writing rules
 
@@ -42,6 +44,7 @@ When documenting measurements:
 
 - `README.md`: short explanation and navigation.
 - `docs/`: current methodology.
+- `.decisions/`: immutable accepted human decision history; additions only after acceptance.
 - `templates/`: practical artefacts engineers can copy.
 - `ROADMAP.md`: proposed evolution and research, not current truth.
 
