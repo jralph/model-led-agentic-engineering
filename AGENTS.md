@@ -17,7 +17,11 @@ Preserve these ideas unless the owner explicitly changes them:
 9. Accepted files under `.decisions/` are append-only history. Never edit, rename or delete an accepted record; supersede it with a new human-authored decision.
 10. Model-led agentic engineering governs above the implementation workflow. Do not rewrite it as a mandatory spec-driven, task-driven or tool-specific process.
 11. Decision-first review is a core practice: humans prioritise decisions and accepted risk; agents can perform exhaustive conformance review; direct human code review remains risk-based.
-12. The methodology is currently a personal working method, not a validated standard.
+12. Intent is human-owned, mutable and pre-decisional. Agents may help refine or research it but must not silently change the human objective and treat the change as authoritative.
+13. Challenges are pre-decisional questions and may be raised by humans or agents. They may question existing Decisions or expose missing Decision authority without changing the model.
+14. Meaningful semantic implementation requires a sufficient Decision basis. Intent or Challenge alone does not authorise new system semantics.
+15. The methodology does not prescribe a Task object, .intents/ or .challenges/ storage convention. Those are implementation/workflow choices.
+16. The methodology is currently a personal working method, not a validated standard.
 
 ## Writing rules
 

@@ -88,7 +88,15 @@ This also changes review priority: humans can focus more attention on decisions,
 
 See [Decision library](docs/decision-library.md) and [Decision-first review](docs/decision-review.md).
 
-## Challenges before decisions
+## Intent and Challenges before decisions
+
+Not all work begins with a Decision.
+
+An **Intent** is a human-owned outcome being pursued. It gives exploration and research direction, but it does not itself create durable semantic authority.
+
+An Intent may end after exploration, proceed under an existing Decision basis, or expose a semantic choice that requires a new human Decision.
+
+See [Intents](docs/intents.md).
 
 Not every problem is already understood well enough to become a Decision.
 
@@ -134,15 +142,16 @@ Start here:
 4. [Agent modes and authority](docs/modes.md)
 5. [The working loop](docs/workflow.md)
 6. [Decision library](docs/decision-library.md)
-7. [Challenges](docs/challenges.md)
-8. [Decision-first review](docs/decision-review.md)
-9. [Model-led vs other AI engineering approaches](docs/model-led-vs.md)
-10. [Externalising intent](docs/externalising-intent.md)
-11. [Verification and evidence](docs/verification.md)
-12. [Measuring effectiveness](docs/measurement.md)
-13. [Anti-patterns](docs/anti-patterns.md)
-14. [Abstract examples](docs/examples.md)
-15. [Maturity model](docs/maturity.md)
+7. [Intents](docs/intents.md)
+8. [Challenges](docs/challenges.md)
+9. [Decision-first review](docs/decision-review.md)
+10. [Model-led vs other AI engineering approaches](docs/model-led-vs.md)
+11. [Externalising intent](docs/externalising-intent.md)
+12. [Verification and evidence](docs/verification.md)
+13. [Measuring effectiveness](docs/measurement.md)
+14. [Anti-patterns](docs/anti-patterns.md)
+15. [Abstract examples](docs/examples.md)
+16. [Maturity model](docs/maturity.md)
 
 Practical templates:
 

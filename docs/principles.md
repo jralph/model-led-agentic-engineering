@@ -20,9 +20,15 @@ They do need to understand what the implementation is meant to do, why it exists
 
 "I didn't write the code" is not the same as "I don't know the code".
 
-## 3. Intent should exist above syntax
+## 3. Intent is direction, not authority
 
-Important behaviours, algorithms, invariants and boundaries should be understandable without relying on the syntax of a particular language.
+An Intent describes a human-owned outcome being pursued.
+
+It can be refined, deferred or abandoned during exploration. It does not itself authorise new system semantics.
+
+Implementation may proceed under existing Decisions when they provide a sufficient basis. If a new semantic choice is required, a human Decision is needed.
+
+Important behaviours, algorithms, invariants and boundaries should still be understandable without relying on the syntax of a particular language.
 
 Language constraints still matter. A Rust implementation may need a different shape from a Go implementation. The point is that the underlying behaviour and reasoning should not disappear when the language changes.
 

@@ -86,3 +86,13 @@ A Challenge is not defined by a particular file, folder or storage format. Chall
 The active and proposed Decisions that govern a meaningful semantic implementation change.
 
 A Challenge may reveal that no adequate Decision basis exists. An agent must not silently fill that gap with its own authority.
+
+
+## Intent
+
+A human-owned, mutable statement of an outcome being pursued.
+
+Intent is pre-decisional: it can guide exploration, research and implementation planning, but it does not itself authorise new semantic behaviour. Meaningful semantic implementation requires a sufficient Decision basis.
+
+Intent is a semantic concept rather than a prescribed repository file type.
+

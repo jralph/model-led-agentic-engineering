@@ -8,12 +8,21 @@ Model-led agentic engineering therefore treats the pull request as more than a c
 
 A substantial pull request can contain:
 
+- **Intent** — the human-owned outcome being pursued;
 - **decisions** — what humans are proposing the system should believe or preserve;
 - **Challenges** — unresolved questions the change is intended to resolve;
 - **implementation** — how those decisions are expressed;
 - **evidence** — what has been demonstrated about the result.
 
 ![Decision-first pull request](../assets/diagrams/decision-pr-contract.svg)
+
+## Intent entering review
+
+The review should make the active Intent clear enough that humans can judge whether the proposed Decisions and implementation actually pursue the right outcome.
+
+Intent is mutable during exploration and review. Changing it may invalidate proposed Decisions, implementation or evidence and should trigger re-evaluation where necessary.
+
+Intent does not itself create authority for semantic implementation. The review still needs a sufficient Decision basis.
 
 ## Challenges entering review
 
