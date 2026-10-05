@@ -64,6 +64,18 @@ These modes have different authority. A research agent can discover facts but sh
 
 See [Agent modes and authority](docs/modes.md).
 
+## Durable decisions
+
+The human-owned model should not exist only in somebody's head or in old AI conversations.
+
+Projects can keep an append-only `.decisions/` library of accepted human decisions. Records use YAML front matter so they remain readable by people and queryable by tooling. AI may help discuss and write a decision record, but it must not create an accepted decision on its own.
+
+Decisions travel with implementation in pull requests. Merging accepts the decision, implementation and available evidence together; accepted decision records then become immutable and can only be superseded by later decisions.
+
+This also changes review priority: humans can focus more attention on decisions, semantics and accepted risk, while agents perform exhaustive implementation-conformance review. Human code inspection remains available wherever risk or judgement warrants it.
+
+See [Decision library](docs/decision-library.md) and [Decision-first review](docs/decision-review.md).
+
 ## What this is not
 
 This is not:
@@ -87,12 +99,14 @@ Start here:
 3. [Authorship, ownership and understanding](docs/authorship-and-ownership.md)
 4. [Agent modes and authority](docs/modes.md)
 5. [The working loop](docs/workflow.md)
-6. [Externalising intent](docs/externalising-intent.md)
-7. [Verification and evidence](docs/verification.md)
-8. [Measuring effectiveness](docs/measurement.md)
-9. [Anti-patterns](docs/anti-patterns.md)
-10. [Abstract examples](docs/examples.md)
-11. [Maturity model](docs/maturity.md)
+6. [Decision library](docs/decision-library.md)
+7. [Decision-first review](docs/decision-review.md)
+8. [Externalising intent](docs/externalising-intent.md)
+9. [Verification and evidence](docs/verification.md)
+10. [Measuring effectiveness](docs/measurement.md)
+11. [Anti-patterns](docs/anti-patterns.md)
+12. [Abstract examples](docs/examples.md)
+13. [Maturity model](docs/maturity.md)
 
 Practical templates:
 
