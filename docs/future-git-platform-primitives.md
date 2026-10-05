@@ -11,21 +11,35 @@ The proposed answer is to make **intent and decisions primary**, and move source
 
 ## Core objects
 
-The platform revolves around seven first-class concepts:
+The platform revolves around six primary platform objects:
 
 1. **Project** — the human-facing semantic unit above one Model Repository and one or more Implementation Repositories.
-2. **Intent** — what a human is trying to achieve.
+2. **Task** — the platform work item for potential work driven primarily by a Model-led Intent or Challenge.
 3. **Decision** — durable human-authoritative judgement.
-4. **Challenge** — a question, contradiction, bug, risk, missing Decision or observation that may require attention.
-5. **Decision Review** — the Project-level acceptance boundary for intent, Decisions, implementation and evidence.
-6. **Evidence** — what has actually been demonstrated about an implementation.
-7. **Agent Workspace** — an isolated execution context operating within explicit authority across whichever repositories a task requires.
+4. **Decision Review** — the Project-level acceptance boundary for Decisions, implementation, evidence and residual risk.
+5. **Evidence** — what has actually been demonstrated about an implementation.
+6. **Agent Workspace** — an isolated execution context operating within explicit authority across whichever repositories a Task requires.
+
+**Intent** and **Challenge** remain first-class Model-led semantic concepts. The platform represents them through Task rather than redefining them as platform-only concepts.
 
 Source code remains critical, but becomes an **implementation artefact** attached to this semantic model rather than the primary collaboration object.
 
 The detailed [Project and repository model](future-git-platform-project-repositories.md) treats a Project as a semantic monorepo over one or more physical Git repositories.
 
 ![Decision-native platform object model](../assets/diagrams/platform-object-model.svg)
+
+## Task
+
+Task is deliberately a platform primitive rather than a Model-led one.
+
+The platform needs a work item that can be listed, assigned, filtered and progressed. Its primary driver is either:
+
+- an Intent;
+- a Challenge.
+
+A Task follows the Model-led loop and may close after exploration/research without creating a Decision or implementation.
+
+See [Task model](future-git-platform-tasks.md).
 
 ## Intent
 
@@ -47,7 +61,7 @@ A Decision answers:
 
 > **What have we decided must be true while achieving it?**
 
-Intent can evolve freely while a review remains open. It becomes part of review history rather than an immutable repository invariant.
+Intent can evolve during exploration and review. In this platform it normally lives as the human-owned direction of an Intent-driven Task, or as an Intent attached to work that originated from a Challenge. It becomes provenance rather than an immutable repository invariant.
 
 ## Decision
 
@@ -96,9 +110,9 @@ That is a request for human judgement, not an invitation for an agent to invent 
 
 ## Challenge
 
-A Challenge is the proposed replacement for much of today's Issue model.
+Challenge is one Model-led semantic form that a platform Task can carry.
 
-An Issue often collapses observation, solution and work assignment into one object.
+The **Task** replaces much of today's Issue model. Traditional Issues often collapse observation, desired outcome, solution and work assignment into one object.
 
 A Challenge instead means:
 
@@ -267,7 +281,7 @@ from:
 
 ## Agent Workspace
 
-An Agent Workspace is an isolated execution context associated with a Challenge or Decision Review.
+An Agent Workspace is an isolated execution context associated with a Task or Decision Review.
 
 It belongs to the Project and may span several Implementation Repositories. The platform may host it itself or an external harness may create and attach its result.
 

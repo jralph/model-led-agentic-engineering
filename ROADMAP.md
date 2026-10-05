@@ -75,6 +75,8 @@ A central hypothesis is that **Project** should replace **Repository** as the pr
 Potential experiments:
 
 - make Project the top-level semantic collaboration object above repositories;
+- test Task as the platform work item for Intent- or Challenge-driven potential work, while keeping Task outside the Model-led methodology itself;
+- allow Tasks to close after exploration/research without forcing Decisions, branches or implementation;
 - test a dedicated Model Repository plus 1..N normal Implementation Repositories;
 - render active and proposed Decisions as first-class Project objects;
 - test semantic Areas as a human navigation model above repositories, folders and files;

@@ -26,7 +26,7 @@ A Project owns or links:
 - one **Model Repository**;
 - one or more **Implementation Repositories**;
 - semantic Areas;
-- Challenges;
+- platform **Tasks** driven by Intent or Challenge;
 - Decision Reviews;
 - Evidence;
 - Agent Workspaces;
@@ -177,8 +177,8 @@ Implementation surfaces
   identity-worker
   infrastructure
 
-Open Challenges
-  CH-88
+Open Tasks
+  TASK-88 (Challenge)
 
 Open Decision Reviews
   DR-42
@@ -252,7 +252,8 @@ Possible integration surfaces:
 
 The harness requests the Decision Review and receives:
 
-- Intent;
+- originating/linked Task context;
+- Intent where present;
 - active and proposed Decision basis;
 - relevant Challenges;
 - affected Areas;
@@ -501,9 +502,11 @@ If the change appears to alter semantic behaviour without a Decision basis, the 
 
 This is preferable to silently treating code as new authority.
 
-## Project-level Challenges
+## Project-level Tasks and Challenges
 
-Challenges belong to the Project model, not automatically to whichever repository happens to expose the symptom.
+Platform Tasks belong to the Project, not automatically to whichever repository happens to expose the work.
+
+Challenge-driven Tasks are especially useful here because a symptom may cross several implementation repositories before its cause is understood.
 
 Example:
 
@@ -530,7 +533,7 @@ PS-109
   DEC-103 accepted
   API + infrastructure changed
 
-CH-91
+TASK-91 Challenge
   duplicate-session behaviour challenged
 
 DR-42
@@ -571,8 +574,8 @@ Implementations
 Evidence
   release qualification EQ-991
 
-Open Challenges
-  CH-103 (accepted risk)
+Open Tasks / Challenges
+  TASK-103 (Challenge, accepted risk)
 ```
 
 Implementation repositories can still receive ordinary Git tags for interoperability.
