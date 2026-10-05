@@ -31,7 +31,8 @@ Preserve these ideas unless the owner explicitly changes them:
 14. Challenges are pre-decisional questions and may be raised by humans or agents. They may question existing Decisions or expose missing Decision authority without changing the model.
 15. Meaningful semantic implementation requires a sufficient Decision basis. Intent or Challenge alone does not authorise new system semantics.
 16. The methodology does not prescribe a Task object, .intents/ or .challenges/ storage convention. Those are implementation/workflow choices.
-17. The methodology is currently a personal working method, not a validated standard.
+17. Decision provenance metadata is optional. `author`, `accepted_by` and timestamps may be recorded when useful, but they do not independently prove authority; prefer repository/review history when it already provides reliable provenance.
+18. The methodology is currently a personal working method, not a validated standard.
 
 ## Writing rules
 
@@ -77,7 +78,7 @@ Then:
    - `.decisions/schema.yaml` from the current schema.
 4. **Do not create `.intents/`, `.challenges/`, `.model/` or a generic Task system** unless the target repository's chosen workflow explicitly calls for them.
 5. **Do not infer historical Decisions from code.** Existing source, tests and architecture may reveal behaviour or missing authority, but they are not proof of human Decisions.
-6. **Existing repository adoption:** when the user explicitly asks to retrofit Model-led into an established repository, that request is normally itself the human acceptance of the semantic choice to adopt Model-led. Use `templates/adoption-decision.md` to record that already-made Decision. If the repository uses reviewed pull requests as its acceptance mechanism, the bootstrap change can preserve that workflow boundary; if the user has explicitly authorised direct changes, do not invent a second ceremonial approval. If the human identity required for metadata is unclear, ask rather than inventing it. Do not backfill any other Decisions without explicit human judgement.
+6. **Existing repository adoption:** when the user explicitly asks to retrofit Model-led into an established repository, that request is normally itself the human acceptance of the semantic choice to adopt Model-led. Use `templates/adoption-decision.md` to record that already-made Decision. If the repository uses reviewed pull requests as its acceptance mechanism, the bootstrap change can preserve that workflow boundary; if the user has explicitly authorised direct changes, do not invent a second ceremonial approval. Provenance fields such as `author` and `accepted_by` are optional; do not invent identity metadata merely to fill them. Do not backfill any other Decisions without explicit human judgement.
 7. **New project adoption:** when the project is being created as Model-led from inception, do not create a ceremonial adoption Decision. Begin with an empty Decision library and record Decisions only as real semantic choices arise.
 8. **Validate conservatively.** Run appropriate existing checks for the files changed and report any ambiguity or incompatibility rather than overwriting it.
 9. **Explain the resulting boundary:** Intent and Challenge are storage-agnostic; accepted Decisions live in `.decisions/`; meaningful semantic implementation must have a sufficient Decision basis.

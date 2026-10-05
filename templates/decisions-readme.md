@@ -27,6 +27,28 @@ YYYY-MM-DDTHHMMSSZ-short-slug.md
 
 The filename aids navigation. The `id` in front matter is the stable identity.
 
+## Required vs optional front matter
+
+Required semantic fields:
+
+- `id`;
+- `title`;
+- `type`;
+- `supersedes`.
+
+Optional provenance/indexing fields include:
+
+- `author`;
+- `accepted_by`;
+- `recorded_at`;
+- `accepted_at`;
+- legacy/general `decided_at`;
+- `scope`;
+- `related`;
+- `tags`.
+
+These fields are descriptive only and do not independently prove human acceptance. Where repository/review history already provides trustworthy provenance, prefer that history rather than duplicating workflow state in YAML.
+
 ## Accepted history
 
 Where the accepted branch represents human-accepted authority, treat changes to already-accepted Decision records as:

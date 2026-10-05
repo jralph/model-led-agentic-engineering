@@ -6,8 +6,6 @@ required:
   - id
   - title
   - type
-  - decided_at
-  - author
   - supersedes
 properties:
   id:
@@ -28,14 +26,30 @@ properties:
       - operational
       - product
       - process
-  decided_at:
-    type: string
-    format: date-time
-    description: "Timestamp associated with recording/formulating the Decision. Human acceptance is a separate workflow event and is not proven by this field."
   author:
     type: string
     minLength: 1
-    description: "Provenance for who originated/authored the Decision record or proposal. This field does not prove human acceptance or confer semantic authority."
+    description: "Optional provenance for who originated/authored the Decision record or proposal. This field does not prove human acceptance or confer semantic authority."
+  accepted_by:
+    type: array
+    minItems: 1
+    uniqueItems: true
+    items:
+      type: string
+      minLength: 1
+    description: "Optional descriptive provenance for humans recorded as accepting the semantic Decision. This field does not independently prove acceptance."
+  recorded_at:
+    type: string
+    format: date-time
+    description: "Optional timestamp for when the Decision record or proposal was written."
+  accepted_at:
+    type: string
+    format: date-time
+    description: "Optional timestamp for when human acceptance was recorded. This field does not independently prove acceptance."
+  decided_at:
+    type: string
+    format: date-time
+    description: "Optional legacy/general Decision timestamp retained for backwards compatibility. Prefer recorded_at or accepted_at when the distinction matters."
   scope:
     type: object
     additionalProperties: false

@@ -97,6 +97,8 @@ The acceptance mechanism is implementation-specific. A pull-request merge after 
 
 Once accepted, a Decision record becomes immutable and can only be changed through a later superseding Decision.
 
+Decision front matter requires only the semantic core. Author/acceptor identities and timestamps are optional provenance; where the surrounding repository or review system already records that information reliably, its history is preferred over duplicating workflow state in YAML.
+
 This also changes review priority: humans can focus more attention on decisions, semantics and accepted risk, while agents perform exhaustive implementation-conformance review. Human code inspection remains available wherever risk or judgement warrants it.
 
 See [Decision library](docs/decision-library.md) and [Decision-first review](docs/decision-review.md).

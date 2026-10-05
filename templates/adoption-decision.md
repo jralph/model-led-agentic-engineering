@@ -2,16 +2,20 @@
 id: DEC-YYYYMMDD-HHMMSS-adopt-model-led
 title: Adopt Model-led agentic engineering
 type: process
-decided_at: YYYY-MM-DDTHH:MM:SS+00:00
-author: <human decision owner>
-scope:
-  areas:
-    - engineering-method
 supersedes: []
-related: []
-tags:
-  - model-led
-  - adoption
+
+# Optional provenance / indexing:
+# author: <record/proposal origin>
+# accepted_by:
+#   - <human identifier>
+# recorded_at: YYYY-MM-DDTHH:MM:SS+00:00
+# accepted_at: YYYY-MM-DDTHH:MM:SS+00:00
+# scope:
+#   areas:
+#     - engineering-method
+# tags:
+#   - model-led
+#   - adoption
 ---
 
 ## Decision
