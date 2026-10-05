@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="560" viewBox="0 0 1280 560" role="img" aria-labelledby="title desc">
+  <title id="title">Agent modes and authority</title>
+  <desc id="desc">Six agent modes with their purpose and authority: Explore, Research, Specify, Implement, Review, and Qualify.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .muted { fill: #475569; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .line { stroke: #64748b; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1280" height="560" rx="20" fill="#f8fafc"/>
+  <text class="t" x="640" y="50" text-anchor="middle" font-size="27" font-weight="700">Agent modes separate purpose from authority</text>
+  <text class="t muted" x="640" y="80" text-anchor="middle" font-size="16">The same model can use several modes. What matters is what each mode is allowed to decide.</text>
+
+  <path class="line" d="M170 182 H265"/>
+  <path class="line" d="M375 182 H470"/>
+  <path class="line" d="M580 182 H675"/>
+  <path class="line" d="M785 182 H880"/>
+  <path class="line" d="M990 182 H1085"/>
+
+  <g transform="translate(45 125)">
+    <rect class="box" width="125" height="114" rx="14"/>
+    <text class="t" x="62.5" y="35" text-anchor="middle" font-size="17" font-weight="700">Explore</text>
+    <text class="t muted" x="62.5" y="61" text-anchor="middle" font-size="13">options + challenge</text>
+    <rect x="18" y="78" width="89" height="23" rx="11.5" fill="#f1f5f9"/>
+    <text class="t muted" x="62.5" y="94" text-anchor="middle" font-size="12">advisory</text>
+  </g>
+
+  <g transform="translate(250 125)">
+    <rect class="box" width="125" height="114" rx="14"/>
+    <text class="t" x="62.5" y="35" text-anchor="middle" font-size="17" font-weight="700">Research</text>
+    <text class="t muted" x="62.5" y="61" text-anchor="middle" font-size="13">evidence + unknowns</text>
+    <rect x="18" y="78" width="89" height="23" rx="11.5" fill="#ecfeff"/>
+    <text class="t muted" x="62.5" y="94" text-anchor="middle" font-size="12">evidential</text>
+  </g>
+
+  <g transform="translate(455 125)">
+    <rect class="box" width="125" height="114" rx="14"/>
+    <text class="t" x="62.5" y="35" text-anchor="middle" font-size="17" font-weight="700">Specify</text>
+    <text class="t muted" x="62.5" y="61" text-anchor="middle" font-size="13">crystallise intent</text>
+    <rect x="12" y="78" width="101" height="23" rx="11.5" fill="#eef2ff"/>
+    <text class="t muted" x="62.5" y="94" text-anchor="middle" font-size="12">representational</text>
+  </g>
+
+  <g transform="translate(660 125)">
+    <rect class="box" width="125" height="114" rx="14"/>
+    <text class="t" x="62.5" y="35" text-anchor="middle" font-size="17" font-weight="700">Implement</text>
+    <text class="t muted" x="62.5" y="61" text-anchor="middle" font-size="13">build artefacts</text>
+    <rect x="8" y="78" width="109" height="23" rx="11.5" fill="#eff6ff"/>
+    <text class="t muted" x="62.5" y="94" text-anchor="middle" font-size="12">bounded discretion</text>
+  </g>
+
+  <g transform="translate(865 125)">
+    <rect class="box" width="125" height="114" rx="14"/>
+    <text class="t" x="62.5" y="35" text-anchor="middle" font-size="17" font-weight="700">Review</text>
+    <text class="t muted" x="62.5" y="61" text-anchor="middle" font-size="13">try to prove wrong</text>
+    <rect x="15" y="78" width="95" height="23" rx="11.5" fill="#fff7ed"/>
+    <text class="t muted" x="62.5" y="94" text-anchor="middle" font-size="12">adversarial</text>
+  </g>
+
+  <g transform="translate(1070 125)">
+    <rect class="box" width="125" height="114" rx="14"/>
+    <text class="t" x="62.5" y="35" text-anchor="middle" font-size="17" font-weight="700">Qualify</text>
+    <text class="t muted" x="62.5" y="61" text-anchor="middle" font-size="13">establish evidence</text>
+    <rect x="18" y="78" width="89" height="23" rx="11.5" fill="#f0fdf4"/>
+    <text class="t muted" x="62.5" y="94" text-anchor="middle" font-size="12">evidential</text>
+  </g>
+
+  <rect x="185" y="320" width="910" height="142" rx="16" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <text class="t" x="640" y="352" text-anchor="middle" font-size="18" font-weight="700">Human decision boundary</text>
+  <text class="t muted" x="640" y="381" text-anchor="middle" font-size="14">Agents may contribute ideas and local reasoning, but semantic changes are deliberately accepted into the system model.</text>
+
+  <circle cx="350" cy="421" r="7" fill="#2563eb"/>
+  <text class="t" x="369" y="426" font-size="14">accept or reject new constraints and design options</text>
+
+  <circle cx="350" cy="449" r="7" fill="#2563eb"/>
+  <text class="t" x="369" y="454" font-size="14">approve changes to invariants, trust boundaries, architecture and product semantics</text>
+
+  <path d="M1132 250 C1132 288, 1020 290, 1010 320" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow)"/>
+  <path d="M640 320 C640 280, 640 270, 722 250" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow)"/>
+
+  <text class="t muted" x="640" y="516" text-anchor="middle" font-size="14">Work can move backwards whenever research, review or qualification changes what is known.</text>
+</svg>
