@@ -3,13 +3,24 @@
 > **Status:** exploratory future application of the methodology.  
 > This is not a required part of model-led agentic engineering and is not an accepted platform design.
 
+This platform would be an **implementation of Model-led agentic engineering**, not what Model-led itself becomes.
+
+Model-led remains a portable engineering practice that can run on existing GitHub/GitLab workflows, spec-driven tools, autonomous agents or manual implementation. The platform is a deliberately opinionated product interpretation of that practice.
+
+Detailed exploration:
+
+- [Semantic primitives](future-git-platform-primitives.md) — Intent, Decisions, Challenges, Decision Reviews, Evidence, Agent Workspaces and semantic conflict.
+- [Human experience](future-git-platform-experience.md) — repository navigation, Areas, Challenges instead of Issues, Decision Review UX, code drill-downs, planning, notifications and releases.
+
 Model-led agentic engineering can be practised on top of today's Git and pull-request tooling.
 
 However, the methodology suggests a different collaboration model may eventually be more natural for software produced heavily by agents.
 
 The central idea is simple:
 
-> **Treat decisions as first-class repository objects and treat code as an implementation of those decisions.**
+> **Treat intent and decisions as first-class collaboration objects and treat code as an implementation of those decisions.**
+
+In this product interpretation, meaningful semantic implementation should have a Decision basis. Work may begin from an unresolved **Challenge**, but an agent must not silently establish new behaviour in code when no human Decision governs it.
 
 A future Git platform built around this idea would not remove source control, diffs, branches or human review. It would change what the collaboration interface considers most important.
 
@@ -329,8 +340,10 @@ A first implementation could therefore be a Git-compatible platform rather than 
 
 Potential new primitives:
 
+- Intent as the mutable human objective for a change;
+- Challenges instead of much of the traditional Issue model;
 - Decision Reviews instead of code-first Pull Requests;
-- first-class decision objects;
+- first-class Decision objects;
 - active-decision resolution;
 - semantic conflict detection;
 - decision-aware agent context;
