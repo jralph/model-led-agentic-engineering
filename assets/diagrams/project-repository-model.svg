@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Project and repository model</title>
+  <desc id="desc">A Project provides one semantic model and review surface over a Model Repository and one or more Implementation Repositories. Decision Reviews and Agent Workspaces operate across repository boundaries while humans collaborate at Project level.</desc>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#64748b"/></marker>
+    <style>.t{font-family:Inter,"Segoe UI",Arial,sans-serif;fill:#0f172a}.m{fill:#475569}.b{fill:#fff;stroke:#cbd5e1;stroke-width:2}.l{fill:none;stroke:#64748b;stroke-width:2;marker-end:url(#a)}</style>
+  </defs>
+
+  <rect width="1280" height="760" rx="20" fill="#f8fafc"/>
+  <text class="t" x="640" y="48" text-anchor="middle" font-size="27" font-weight="700">Project is the semantic unit; repositories are implementation units</text>
+  <text class="t m" x="640" y="78" text-anchor="middle" font-size="15">One model and review surface can span one or many physical Git repositories.</text>
+
+  <rect x="105" y="120" width="1070" height="160" rx="20" fill="#eef2ff" stroke="#6366f1" stroke-width="2.5"/>
+  <text class="t" x="640" y="155" text-anchor="middle" font-size="21" font-weight="700">Project</text>
+  <text class="t m" x="640" y="183" text-anchor="middle" font-size="14">Intent · Decisions · Challenges · Areas · Decision Reviews · Evidence · Project States</text>
+
+  <rect x="160" y="210" width="270" height="50" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text class="t" x="295" y="241" text-anchor="middle" font-size="16" font-weight="700">Model Repository</text>
+
+  <rect x="510" y="210" width="260" height="50" rx="12" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+  <text class="t" x="640" y="241" text-anchor="middle" font-size="16" font-weight="700">Decision Review</text>
+
+  <rect x="850" y="210" width="270" height="50" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="t" x="985" y="241" text-anchor="middle" font-size="16" font-weight="700">Project State / Acceptance</text>
+
+  <path class="l" d="M295 280V345"/>
+  <path class="l" d="M640 280V345"/>
+  <path class="l" d="M985 280V345"/>
+
+  <rect x="90" y="355" width="260" height="155" rx="16" class="b"/>
+  <text class="t" x="220" y="392" text-anchor="middle" font-size="18" font-weight="700">Model Repository</text>
+  <text class="t m" x="220" y="421" text-anchor="middle" font-size="13">.decisions/</text>
+  <text class="t m" x="220" y="444" text-anchor="middle" font-size="13">architecture / context</text>
+  <text class="t m" x="220" y="467" text-anchor="middle" font-size="13">project mapping / agent guidance</text>
+  <text class="t m" x="220" y="491" text-anchor="middle" font-size="12">little or no product implementation</text>
+
+  <rect x="400" y="355" width="480" height="155" rx="16" fill="#fff" stroke="#94a3b8" stroke-width="2.5"/>
+  <text class="t" x="640" y="390" text-anchor="middle" font-size="18" font-weight="700">Agent Workspace / Candidate</text>
+  <text class="t m" x="640" y="419" text-anchor="middle" font-size="13">one semantic task across required repositories</text>
+  <text class="t m" x="640" y="446" text-anchor="middle" font-size="13">external or platform-hosted harness</text>
+  <text class="t m" x="640" y="473" text-anchor="middle" font-size="13">exact baseline and head revisions tracked</text>
+
+  <rect x="930" y="355" width="260" height="155" rx="16" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="t" x="1060" y="392" text-anchor="middle" font-size="18" font-weight="700">Acceptance Transaction</text>
+  <text class="t m" x="1060" y="421" text-anchor="middle" font-size="13">model revision</text>
+  <text class="t m" x="1060" y="444" text-anchor="middle" font-size="13">implementation revisions</text>
+  <text class="t m" x="1060" y="467" text-anchor="middle" font-size="13">evidence + residual risk</text>
+  <text class="t m" x="1060" y="490" text-anchor="middle" font-size="12">accepted together semantically</text>
+
+  <path class="l" d="M520 510V570"/>
+  <path class="l" d="M640 510V570"/>
+  <path class="l" d="M760 510V570"/>
+
+  <rect x="185" y="580" width="205" height="100" rx="14" class="b"/>
+  <text class="t" x="287.5" y="615" text-anchor="middle" font-size="17" font-weight="700">API repo</text>
+  <text class="t m" x="287.5" y="644" text-anchor="middle" font-size="13">ordinary Git</text>
+
+  <rect x="435" y="580" width="205" height="100" rx="14" class="b"/>
+  <text class="t" x="537.5" y="615" text-anchor="middle" font-size="17" font-weight="700">Web repo</text>
+  <text class="t m" x="537.5" y="644" text-anchor="middle" font-size="13">ordinary Git</text>
+
+  <rect x="685" y="580" width="205" height="100" rx="14" class="b"/>
+  <text class="t" x="787.5" y="615" text-anchor="middle" font-size="17" font-weight="700">Infrastructure repo</text>
+  <text class="t m" x="787.5" y="644" text-anchor="middle" font-size="13">ordinary Git</text>
+
+  <rect x="935" y="580" width="160" height="100" rx="14" class="b"/>
+  <text class="t" x="1015" y="615" text-anchor="middle" font-size="17" font-weight="700">…N repos</text>
+  <text class="t m" x="1015" y="644" text-anchor="middle" font-size="13">as needed</text>
+
+  <text class="t m" x="640" y="724" text-anchor="middle" font-size="13">Semantic monorepo coherence without requiring a physical monorepo.</text>
+</svg>
