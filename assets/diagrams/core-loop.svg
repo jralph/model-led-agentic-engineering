@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Model-led agentic engineering loop</title>
+  <desc id="desc">A loop from problem framing through a human-owned semantic model, explicit intent, agent implementation, review and qualification, with evidence feeding back into the model.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+    <style>
+      .t { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .muted { fill: #475569; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .accent { fill: #eff6ff; stroke: #2563eb; stroke-width: 2.5; }
+      .evidence { fill: #f0fdf4; stroke: #16a34a; stroke-width: 2.5; }
+      .line { fill: none; stroke: #475569; stroke-width: 2.2; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #64748b; stroke-width: 2; stroke-dasharray: 7 7; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="560" rx="20" fill="#f8fafc"/>
+  <text class="t" x="600" y="54" text-anchor="middle" font-size="28" font-weight="700">Model-led agentic engineering</text>
+  <text class="t muted" x="600" y="84" text-anchor="middle" font-size="16">The human owns coherence; agents help explore, express, implement, challenge and verify it.</text>
+
+  <rect class="box" x="45" y="210" width="150" height="92" rx="14"/>
+  <text class="t" x="120" y="247" text-anchor="middle" font-size="18" font-weight="700">Problem</text>
+  <text class="t muted" x="120" y="274" text-anchor="middle" font-size="14">outcome + constraints</text>
+
+  <rect class="accent" x="245" y="175" width="270" height="162" rx="16"/>
+  <text class="t" x="380" y="216" text-anchor="middle" font-size="19" font-weight="700">Human-owned semantic model</text>
+  <text class="t muted" x="380" y="248" text-anchor="middle" font-size="14">architecture · algorithms · state</text>
+  <text class="t muted" x="380" y="272" text-anchor="middle" font-size="14">invariants · boundaries · trade-offs</text>
+  <text class="t muted" x="380" y="296" text-anchor="middle" font-size="14">failure · performance · non-goals</text>
+
+  <rect class="box" x="565" y="210" width="170" height="92" rx="14"/>
+  <text class="t" x="650" y="247" text-anchor="middle" font-size="18" font-weight="700">Explicit intent</text>
+  <text class="t muted" x="650" y="274" text-anchor="middle" font-size="14">briefs + contracts</text>
+
+  <rect class="box" x="785" y="210" width="175" height="92" rx="14"/>
+  <text class="t" x="872.5" y="247" text-anchor="middle" font-size="18" font-weight="700">Implementation</text>
+  <text class="t muted" x="872.5" y="274" text-anchor="middle" font-size="14">agent-executed artefacts</text>
+
+  <rect class="evidence" x="1010" y="190" width="145" height="132" rx="14"/>
+  <text class="t" x="1082.5" y="229" text-anchor="middle" font-size="18" font-weight="700">Review</text>
+  <text class="t" x="1082.5" y="254" text-anchor="middle" font-size="18" font-weight="700">+ qualify</text>
+  <text class="t muted" x="1082.5" y="285" text-anchor="middle" font-size="14">evidence, not confidence</text>
+
+  <path class="line" d="M195 256 H235"/>
+  <path class="line" d="M515 256 H555"/>
+  <path class="line" d="M735 256 H775"/>
+  <path class="line" d="M960 256 H1000"/>
+
+  <rect x="250" y="395" width="260" height="82" rx="14" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+  <text class="t" x="380" y="429" text-anchor="middle" font-size="17" font-weight="700">Explore + research</text>
+  <text class="t muted" x="380" y="455" text-anchor="middle" font-size="14">challenge, investigate, propose</text>
+  <path class="dash" d="M380 395 V347"/>
+
+  <path class="line" d="M1083 180 C1083 112, 660 112, 465 168"/>
+  <text class="t muted" x="775" y="126" text-anchor="middle" font-size="14">observed evidence and new information update the model</text>
+
+  <text class="t muted" x="600" y="526" text-anchor="middle" font-size="14">Implementation is a projection of the model, not the primary source of engineering authorship.</text>
+</svg>
