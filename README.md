@@ -4,6 +4,15 @@ A practical methodology for engineering with AI where the human owns the system 
 
 > **The implementation can be delegated. The engineering judgement cannot.**
 
+## Core contract
+
+> **Model-led defines what engineering knowledge and authority need to exist. It does not prescribe how tools should execute against them.**
+>
+> **Humans own intent, judgement and decisions.**  
+> **Agents explore, research, implement, challenge and verify.**  
+> **Semantic implementation must not outrun its Decision basis.**  
+> **Evidence determines what can actually be claimed.**
+
 This repository starts as a description of how I work. The intention is to make that process explicit enough that other engineers can adopt, test and improve it, then eventually determine whether it can mature into something closer to a repeatable engineering standard.
 
 It is deliberately not a claim that I invented agentic engineering, spec-driven development, or any other existing discipline. It is an attempt to document a working pattern I arrived at independently and now use heavily.
@@ -152,6 +161,7 @@ Start here:
 14. [Anti-patterns](docs/anti-patterns.md)
 15. [Abstract examples](docs/examples.md)
 16. [Maturity model](docs/maturity.md)
+17. [Adopting Model-led in a repository](docs/adoption.md)
 
 Practical templates:
 
@@ -163,6 +173,20 @@ Practical templates:
 - [Session measurement](templates/session-measurement.md)
 
 Experimental measurement work lives in [experiments/](experiments/).
+
+## Set up Model-led in another repository
+
+A capable repository agent can bootstrap the portable Model-led conventions into a new or existing repository.
+
+A user can give the agent this repository and ask:
+
+> **Set up Model-led in this repository using https://github.com/jralph/model-led-agentic-engineering**
+
+The source [AGENTS.md](AGENTS.md) contains bootstrap instructions. The minimum setup is intentionally small: a canonical `.decisions/` library plus Model-led authority guidance merged into the target repository's existing `AGENTS.md`.
+
+For an existing repository, the explicit adoption request will normally become the first proposed Decision: adopt Model-led as the repository's engineering governance method. For a new project created as Model-led from inception, no adoption Decision is necessary.
+
+See [Adopting Model-led](docs/adoption.md).
 
 ## Future applications
 
