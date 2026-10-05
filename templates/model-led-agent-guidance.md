@@ -25,7 +25,7 @@ Accepted Decisions live in `.decisions/`.
 When working with Decision records:
 
 1. Never modify, rename or delete an accepted Decision record.
-2. Change accepted authority by creating a new human-authored Decision that lists the earlier Decision in `supersedes`.
+2. Change accepted authority by creating a new Decision that lists the earlier Decision in `supersedes`; the new Decision becomes authoritative only through human acceptance.
 3. A proposed Decision may be agent- or human-originated and may be edited before human acceptance.
 4. Do not treat a commit, branch, merge, agent-authored metadata or existing code as proof of human acceptance unless the project's workflow explicitly guarantees that relationship.
 5. Do not create an authoritative Decision merely because existing code appears to imply one.
