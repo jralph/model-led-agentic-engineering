@@ -11,16 +11,19 @@ The proposed answer is to make **intent and decisions primary**, and move source
 
 ## Core objects
 
-The platform revolves around six first-class concepts:
+The platform revolves around seven first-class concepts:
 
-1. **Intent** — what a human is trying to achieve.
-2. **Decision** — durable human-authoritative judgement.
-3. **Challenge** — a question, contradiction, bug, risk or observation that may require the model to change.
-4. **Decision Review** — the acceptance boundary for intent, decisions, implementation and evidence.
-5. **Evidence** — what has actually been demonstrated about an implementation.
-6. **Agent Workspace** — an isolated execution context operating within explicit authority.
+1. **Project** — the human-facing semantic unit above one Model Repository and one or more Implementation Repositories.
+2. **Intent** — what a human is trying to achieve.
+3. **Decision** — durable human-authoritative judgement.
+4. **Challenge** — a question, contradiction, bug, risk, missing Decision or observation that may require attention.
+5. **Decision Review** — the Project-level acceptance boundary for intent, Decisions, implementation and evidence.
+6. **Evidence** — what has actually been demonstrated about an implementation.
+7. **Agent Workspace** — an isolated execution context operating within explicit authority across whichever repositories a task requires.
 
 Source code remains critical, but becomes an **implementation artefact** attached to this semantic model rather than the primary collaboration object.
+
+The detailed [Project and repository model](future-git-platform-project-repositories.md) treats a Project as a semantic monorepo over one or more physical Git repositories.
 
 ![Decision-native platform object model](../assets/diagrams/platform-object-model.svg)
 
@@ -106,6 +109,12 @@ Challenges may target:
 ### A Decision
 
 > DEC-89 assumes indefinite retention, but a new requirement appears to require deletion after 30 days.
+
+### A missing Decision
+
+> Retry behaviour exists in implementation, but no human Decision defines duplicate-delivery semantics.
+
+This questions an absence of authority rather than an existing Decision.
 
 ### Implementation
 
@@ -259,6 +268,8 @@ from:
 ## Agent Workspace
 
 An Agent Workspace is an isolated execution context associated with a Challenge or Decision Review.
+
+It belongs to the Project and may span several Implementation Repositories. The platform may host it itself or an external harness may create and attach its result.
 
 It can contain:
 
