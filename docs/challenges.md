@@ -177,9 +177,9 @@ No new Decision is necessary.
 
 ### The model needs to change
 
-A human proposes a new or superseding Decision, normally through a Decision Review.
+An agent or human may propose a new or superseding Decision.
 
-Implementation then proceeds against the changed Decision basis.
+Candidate implementation may be explored against that proposal, but human acceptance is required before the changed semantics become authoritative or releasable. Once accepted, the new Decision becomes part of the Decision basis.
 
 ### No Decision exists for a semantic behaviour that must be chosen
 
@@ -334,7 +334,7 @@ For example:
 - weak evidence may only need requalification;
 - an incorrect Challenge may close with no change.
 
-Where the model changes, the Decision Review becomes the human acceptance boundary.
+Where the model changes, a Decision Review can provide the human acceptance boundary if that is the project's chosen workflow. The methodology itself requires human acceptance, not a specific review mechanism.
 
 ## Bugs fit naturally
 
@@ -350,7 +350,7 @@ The fix restores conformance.
 
 The bug report exposes a gap in the model.
 
-The human must decide what behaviour is correct before or alongside implementation.
+An agent or human may propose the correct behaviour, but a human must accept the semantic Decision before that behaviour becomes authoritative or releasable.
 
 This is more precise than assuming every bug report already contains the right solution.
 
