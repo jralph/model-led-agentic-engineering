@@ -68,11 +68,18 @@ At this point the repository may be suitable for public release.
 
 This is **not** part of the current methodology requirement.
 
-A future implementation may explore whether the decision library can become a first-class collaboration primitive rather than remaining only a repository convention.
+A future implementation may explore whether Model-led concepts can become first-class collaboration primitives rather than remaining only repository conventions. The platform would implement the methodology; it would not redefine or replace it.
+
+A central hypothesis is that **Project** should replace **Repository** as the primary human collaboration unit, creating semantic-monorepo coherence over one Model Repository and 1..N physical Implementation Repositories.
 
 Potential experiments:
 
-- render active and proposed decisions as first-class repository objects;
+- make Project the top-level semantic collaboration object above repositories;
+- test a dedicated Model Repository plus 1..N normal Implementation Repositories;
+- render active and proposed Decisions as first-class Project objects;
+- test semantic Areas as a human navigation model above repositories, folders and files;
+- allow external harnesses to pick up a Decision Review and attach multi-repository candidate revisions;
+- prototype immutable Project States and recoverable cross-repository acceptance transactions;
 - replace or augment Pull Requests with Decision Reviews;
 - compare several agent implementations against the same proposed decisions;
 - detect likely semantic conflicts where Git has no textual conflict;
