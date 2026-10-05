@@ -8,8 +8,8 @@ A practical methodology for engineering with AI where the human owns the system 
 
 > **Model-led defines what engineering knowledge and authority need to exist. It does not prescribe how tools should execute against them.**
 >
-> **Humans own intent, judgement and decisions.**  
-> **Agents explore, research, implement, challenge and verify.**  
+> **Humans own intent, judgement and decision authority.**  
+> **Agents explore, research, propose, implement, challenge and verify.**  
 > **Semantic implementation must not outrun its Decision basis.**  
 > **Evidence determines what can actually be claimed.**
 
@@ -89,9 +89,13 @@ See [Agent modes and authority](docs/modes.md).
 
 The human-owned model should not exist only in somebody's head or in old AI conversations.
 
-Projects can keep an append-only `.decisions/` library of accepted human decisions. Records use YAML front matter so they remain readable by people and queryable by tooling. AI may help discuss and write a decision record, but it must not create an accepted decision on its own.
+Projects can keep an append-only `.decisions/` library of authoritative semantic Decisions. Records use YAML front matter so they remain readable by people and queryable by tooling.
 
-Decisions travel with implementation in pull requests. Merging accepts the decision, implementation and available evidence together; accepted decision records then become immutable and can only be superseded by later decisions.
+Agents may reason about, originate, recommend and draft proposed semantic Decisions. A semantic Decision becomes authoritative only through **human acceptance**.
+
+The acceptance mechanism is implementation-specific. A pull-request merge after human review is one common mechanism, but explicit human acceptance may happen through another workflow or before an agent records the Decision. Git state alone is not proof of authority.
+
+Once accepted, a Decision record becomes immutable and can only be changed through a later superseding Decision.
 
 This also changes review priority: humans can focus more attention on decisions, semantics and accepted risk, while agents perform exhaustive implementation-conformance review. Human code inspection remains available wherever risk or judgement warrants it.
 
@@ -111,7 +115,7 @@ Not every problem is already understood well enough to become a Decision.
 
 A **Challenge** records something about the current Decisions, implementation, evidence or observed behaviour that may be wrong, incomplete or worth reconsidering. Challenges may be created by humans or agents because raising a question does not alter the system model.
 
-A Challenge can remain unresolved while evidence is gathered. It may end in no change, an implementation correction under an existing Decision, stronger evidence, or a new human-authored Decision.
+A Challenge can remain unresolved while evidence is gathered. It may end in no change, an implementation correction under an existing Decision, stronger evidence, or a new human-accepted Decision.
 
 This gives agents a safe way to surface bugs, contradictions and unknowns without silently becoming decision makers.
 
