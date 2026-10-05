@@ -168,7 +168,7 @@ Experimental measurement work lives in [experiments/](experiments/).
 
 The methodology does not require new source-control tooling, but it suggests some collaboration primitives that may be better suited to agent-heavy engineering.
 
-One exploratory direction is a **decision-native Git platform** that implements Model-led in a more opinionated way. **Project** becomes the human collaboration unit above a Model Repository and one or more ordinary Git Implementation Repositories, providing semantic-monorepo coherence without forcing a physical monorepo. Intent, Decisions and Challenges become the primary human-facing objects, while a traditional Pull Request becomes a Project-level **Decision Review** spanning whichever implementation repositories are required.
+One exploratory direction is a **decision-native Git platform** that implements Model-led in a more opinionated way. **Project** becomes the human collaboration unit above a Model Repository and one or more ordinary Git Implementation Repositories, providing semantic-monorepo coherence without forcing a physical monorepo. The platform introduces **Task** as its work-item container for Intent- or Challenge-driven potential work, while a traditional Pull Request becomes a Project-level **Decision Review** spanning whichever implementation repositories are required. Task is a platform choice, not a Model-led methodology primitive.
 
 See [Potential future Git platform](docs/future-git-platform.md).
 
