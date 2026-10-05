@@ -9,8 +9,9 @@ Model-led remains a portable engineering practice that can run on existing GitHu
 
 Detailed exploration:
 
+- [Project and repository model](future-git-platform-project-repositories.md) — Project as the semantic unit, Model Repository, 1..N Implementation Repositories, external harnesses, Project States and cross-repository acceptance.
 - [Semantic primitives](future-git-platform-primitives.md) — Intent, Decisions, Challenges, Decision Reviews, Evidence, Agent Workspaces and semantic conflict.
-- [Human experience](future-git-platform-experience.md) — repository navigation, Areas, Challenges instead of Issues, Decision Review UX, code drill-downs, planning, notifications and releases.
+- [Human experience](future-git-platform-experience.md) — Project navigation, Areas, Challenges instead of Issues, Decision Review UX, code drill-downs, planning, notifications and releases.
 
 Model-led agentic engineering can be practised on top of today's Git and pull-request tooling.
 
@@ -23,6 +24,8 @@ The central idea is simple:
 In this product interpretation, meaningful semantic implementation should have a Decision basis. Work may begin from an unresolved **Challenge**, but an agent must not silently establish new behaviour in code when no human Decision governs it.
 
 A future Git platform built around this idea would not remove source control, diffs, branches or human review. It would change what the collaboration interface considers most important.
+
+It would also separate **Project** from **Repository**. Humans collaborate on a Project-level semantic model, while agents operate across whichever one or more Git repositories are needed to realise it. This provides monorepo-like semantic coherence without requiring a physical monorepo.
 
 ## Why consider a different collaboration primitive?
 
@@ -233,9 +236,9 @@ evidence conflict   claimed acceptance is not supported by supplied evidence
 
 Not every conflict can be detected automatically. The platform's job is to expose likely semantic disagreement early enough for a human to decide.
 
-## Multi-agent workspaces
+## Project-level multi-agent workspaces
 
-A decision-native platform becomes more interesting when several agents can work against the same proposed model concurrently.
+A Decision Review belongs to the Project rather than to one repository. Several agents can therefore work against the same proposed model concurrently across one or more Implementation Repositories.
 
 A Decision Review could create isolated agent workspaces from one baseline.
 
@@ -317,7 +320,11 @@ Is the remaining risk acceptable?
 
 This keeps human authority while allowing machines to handle far more exhaustive implementation inspection than humans can reasonably perform line by line.
 
-## What stays from Git?
+## Project above Git
+
+The platform treats Git repositories as implementation primitives underneath a Project-level semantic model.
+
+A Project can have one Model Repository and one or more Implementation Repositories. A Decision Review can span several of them as one human-visible change.
 
 This proposal does not imply replacing the useful foundations of Git.
 
@@ -340,6 +347,10 @@ A first implementation could therefore be a Git-compatible platform rather than 
 
 Potential new primitives:
 
+- Project as the semantic collaboration boundary above repositories;
+- a Model Repository for portable Decisions/context and 1..N ordinary Implementation Repositories;
+- Project States that pin exact model and implementation revisions;
+- Project-level acceptance transactions for multi-repository Decision Reviews;
 - Intent as the mutable human objective for a change;
 - Challenges instead of much of the traditional Issue model;
 - Decision Reviews instead of code-first Pull Requests;
@@ -373,18 +384,20 @@ A useful vertical slice does not need to rebuild GitHub.
 
 It could demonstrate:
 
-1. create/import a Git repository;
-2. parse and display `.decisions/` as first-class objects;
-3. open a Decision Review with proposed decisions;
-4. fork several isolated agent workspaces;
-5. let agents implement concurrently;
-6. automatically load relevant active decisions for review;
-7. generate implementation-conformance findings;
-8. display qualification evidence separately;
-9. let a human edit a proposed decision;
-10. re-run agent implementation/review against the changed decision;
-11. merge the selected implementation and decisions together;
-12. make the accepted decisions immutable.
+1. create/import a Project with a Model Repository and one or more Implementation Repositories;
+2. parse and display `.decisions/` as first-class Project objects;
+3. open a Project-level Decision Review with proposed Decisions;
+4. identify the Implementation Repositories affected by its Areas/Decision basis;
+5. fork several isolated agent workspaces across those repositories;
+6. let agents implement concurrently, including through external harnesses;
+7. attach exact multi-repository candidate revisions back to the Decision Review;
+8. automatically load relevant active Decisions for review;
+9. generate implementation-conformance findings;
+10. display qualification evidence separately;
+11. let a human edit a proposed Decision;
+12. re-run agent implementation/review against the changed Decision;
+13. accept the selected candidate through one Project-level acceptance transaction;
+14. record the resulting Project State and make accepted Decisions immutable.
 
 That is enough to test whether the collaboration model is useful.
 
