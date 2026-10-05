@@ -6,6 +6,8 @@ It does not require a separate model or a separate agent process. The same model
 
 Separating modes reduces a common failure case: an agent moves from "here is an option" to "I implemented that option" without a deliberate decision in between.
 
+![Agent modes and authority](../assets/diagrams/modes-authority.svg)
+
 ## Explore
 
 **Purpose:** expand the problem space.
