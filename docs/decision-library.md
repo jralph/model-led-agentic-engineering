@@ -2,7 +2,7 @@
 
 A model-led project needs a durable place to preserve the decisions that matter after the original conversation has disappeared.
 
-The `.decisions/` directory is an append-only, machine-readable library of **accepted human decisions**.
+The `.decisions/` directory is an append-only, machine-readable library of **human-accepted semantic Decisions**.
 
 It is deliberately narrower than general documentation.
 
