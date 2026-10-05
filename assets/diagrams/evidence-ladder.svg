@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence ladder</title>
+  <desc id="desc">Seven evidence classes from static checks to end-to-end user-path evidence, with increasing proximity to the full production surface.</desc>
+  <defs>
+    <style>
+      .t { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .muted { fill: #475569; }
+      .step { stroke: #ffffff; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="600" rx="20" fill="#f8fafc"/>
+  <text class="t" x="600" y="50" text-anchor="middle" font-size="27" font-weight="700">Evidence should match the claim</text>
+  <text class="t muted" x="600" y="80" text-anchor="middle" font-size="16">Higher means closer to the full production surface, not universally "better".</text>
+
+  <polygon class="step" points="90,480 240,480 240,425 90,425" fill="#e2e8f0"/>
+  <text class="t" x="165" y="450" text-anchor="middle" font-size="17" font-weight="700">E0 · Static</text>
+  <text class="t muted" x="165" y="472" text-anchor="middle" font-size="12">build · types · schema</text>
+
+  <polygon class="step" points="240,480 390,480 390,375 240,375" fill="#dbeafe"/>
+  <text class="t" x="315" y="413" text-anchor="middle" font-size="17" font-weight="700">E1</text>
+  <text class="t" x="315" y="435" text-anchor="middle" font-size="14">Deterministic</text>
+  <text class="t muted" x="315" y="457" text-anchor="middle" font-size="12">unit · property · fixture</text>
+
+  <polygon class="step" points="390,480 540,480 540,325 390,325" fill="#bfdbfe"/>
+  <text class="t" x="465" y="371" text-anchor="middle" font-size="17" font-weight="700">E2 · Integration</text>
+  <text class="t muted" x="465" y="394" text-anchor="middle" font-size="12">real components together</text>
+
+  <polygon class="step" points="540,480 690,480 690,275 540,275" fill="#bae6fd"/>
+  <text class="t" x="615" y="326" text-anchor="middle" font-size="17" font-weight="700">E3</text>
+  <text class="t" x="615" y="348" text-anchor="middle" font-size="14">Production seam</text>
+  <text class="t muted" x="615" y="370" text-anchor="middle" font-size="12">real shipping function/path</text>
+
+  <polygon class="step" points="690,480 840,480 840,225 690,225" fill="#a7f3d0"/>
+  <text class="t" x="765" y="281" text-anchor="middle" font-size="17" font-weight="700">E4</text>
+  <text class="t" x="765" y="303" text-anchor="middle" font-size="14">Live dependency</text>
+  <text class="t muted" x="765" y="325" text-anchor="middle" font-size="12">real provider/infrastructure</text>
+
+  <polygon class="step" points="840,480 990,480 990,175 840,175" fill="#86efac"/>
+  <text class="t" x="915" y="236" text-anchor="middle" font-size="17" font-weight="700">E5</text>
+  <text class="t" x="915" y="258" text-anchor="middle" font-size="14">Deployed path</text>
+  <text class="t muted" x="915" y="280" text-anchor="middle" font-size="12">actual deployed runtime</text>
+
+  <polygon class="step" points="990,480 1140,480 1140,125 990,125" fill="#4ade80"/>
+  <text class="t" x="1065" y="191" text-anchor="middle" font-size="17" font-weight="700">E6</text>
+  <text class="t" x="1065" y="213" text-anchor="middle" font-size="14">End-to-end</text>
+  <text class="t" x="1065" y="233" text-anchor="middle" font-size="14">user path</text>
+  <text class="t muted" x="1065" y="257" text-anchor="middle" font-size="12">observable real outcome</text>
+
+  <path d="M100 530 H1110" stroke="#475569" stroke-width="2"/>
+  <path d="M1098 522 L1115 530 L1098 538" fill="none" stroke="#475569" stroke-width="2"/>
+  <text class="t muted" x="600" y="560" text-anchor="middle" font-size="14">increasing proximity to the complete production/user surface</text>
+</svg>
