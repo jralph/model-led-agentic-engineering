@@ -25,7 +25,7 @@ Model-led adoption should require only the portable Decision library and reposit
 
 Bootstrap must preserve existing repository-specific instructions and must not infer historical Decisions from implementation.
 
-When a human explicitly asks to adopt Model-led in an established repository, that request is normally sufficient human authority to draft an initial process Decision recording the adoption of Model-led. The adoption Decision becomes accepted only when the bootstrap change is accepted.
+When a human explicitly asks to adopt Model-led in an established repository, that request is normally the human acceptance event for the semantic Decision to adopt Model-led. Bootstrap records that already-made Decision while preserving whatever review/publication workflow the repository uses to place accepted Decisions into durable history.
 
 A new project created as Model-led from inception does not require a ceremonial adoption Decision.
 
@@ -48,5 +48,5 @@ A new project has no previous governance history to explain, so an adoption Deci
 - existing project guidance is merged rather than replaced;
 - established repositories will normally begin their Decision history with an explicit Model-led adoption Decision;
 - new Model-led projects may begin with an empty Decision library;
-- no other historical Decisions are created without explicit human judgement;
+- agents may propose additional Decisions, but no additional semantic Decision becomes authoritative without explicit human acceptance;
 - the bootstrap remains independent of coding agent, IDE, ticket system and implementation workflow.
