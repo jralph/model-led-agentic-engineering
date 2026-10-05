@@ -3,7 +3,7 @@ id: DEC-YYYYMMDD-HHMMSS-short-slug
 title: <concise decision title>
 type: invariant
 decided_at: YYYY-MM-DDTHH:MM:SS+00:00
-author: <human decision owner>
+author: <record/proposal origin>
 scope:
   areas: []
   paths: []
