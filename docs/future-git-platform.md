@@ -24,7 +24,9 @@ The central idea is simple:
 
 In this product interpretation, potential work is represented as a **Task** whose primary driver is an **Intent** or **Challenge**. Task is a platform concept, not a Model-led methodology primitive.
 
-A Task enters the Model-led loop and may end after exploration or research with no change. If implementation remains useful, meaningful semantic implementation must have a sufficient Decision basis. An agent must not silently establish new behaviour when no human Decision governs it.
+A Task enters the Model-led loop and may end after exploration or research with no change. If meaningful semantic implementation remains useful, the resulting change must identify a sufficient **accepted Decision basis**. That basis may consist entirely of existing Decisions; work does not imply a new Decision.
+
+If the existing basis is insufficient, an agent or human may propose a new Decision and build candidate implementation against it. Human acceptance is required before semantics that depend on that proposal become authoritative or releasable.
 
 A future Git platform built around this idea would not remove source control, diffs, branches or human review. It would change what the collaboration interface considers most important.
 
@@ -41,7 +43,7 @@ Agentic engineering changes the throughput balance:
 - changes can become much larger without consuming equivalent human authoring time;
 - human reading and judgement throughput has not increased at the same rate.
 
-A pull request containing several thousand generated lines may represent only a handful of meaningful engineering decisions.
+A pull request containing several thousand generated lines may represent implementation of only a handful of governing Decisions, and may introduce no new Decision at all.
 
 The old review surface remains useful, but it may no longer be the best **primary** review surface.
 
@@ -58,22 +60,29 @@ Model-led engineering suggests moving the centre of collaboration towards:
 
 A future platform could replace or augment the traditional Pull Request with a **Decision Review**.
 
-A Decision Review contains three first-class layers:
+A Decision Review binds four things that are easy to collapse in a traditional pull request:
 
-### Decisions
+### Origin
 
-What semantic changes to the system model are being proposed, and which have received human acceptance?
+Which Task, Intent or Challenge explains **why this work exists**?
 
-Examples:
+The origin does not itself authorise semantic implementation.
 
-- a new invariant;
-- a changed architectural boundary;
-- an accepted performance target;
-- a security constraint;
-- a product behaviour;
-- a decision that supersedes an earlier one.
+### Decision basis
 
-A review may also contain **no new decisions** when the work is purely implementation-level.
+Which accepted Decisions govern **what the resulting implementation is allowed to mean**?
+
+A meaningful semantic implementation review should identify at least one governing accepted Decision, unless the review is itself introducing the Decision needed to establish that authority.
+
+A review may therefore introduce **zero new Decisions** when existing Decisions already provide the complete basis.
+
+### Proposed Decisions
+
+Which additional semantic Decisions, if any, are being proposed for human acceptance?
+
+These may guide candidate implementation and qualification before acceptance, but remain non-authoritative until accepted.
+
+The remaining review layers are:
 
 ### Implementation
 
@@ -113,11 +122,16 @@ A Decision Review could open with something like:
 ```text
 DR-42  Introduce speculative low-latency resolution
 
-Proposed decisions
-  3 new
-  1 supersession
+Origin
+  TASK-31 (Intent)
 
-Relevant active decisions
+Decision basis
+  DEC-18, DEC-31, DEC-92
+
+Proposed Decisions
+  DEC-P104, DEC-P105, DEC-P106
+
+Relevant active Decisions
   14 loaded
   0 unresolved conflicts
 
