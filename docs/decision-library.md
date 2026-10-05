@@ -2,7 +2,7 @@
 
 A model-led project needs a durable place to preserve the decisions that matter after the original conversation has disappeared.
 
-The `.decisions/` directory is an append-only, machine-readable library of **accepted human decisions**.
+The `.decisions/` directory is an append-only, machine-readable library of **human-accepted semantic Decisions**.
 
 It is deliberately narrower than general documentation.
 
@@ -10,24 +10,32 @@ Code tells us what the system currently does. Tests tell us which behaviour is m
 
 ## The core rule
 
-> **Agents may draft decision records. Agents must not originate accepted decisions.**
+> **Agents may reason about, originate, recommend and draft proposed semantic Decisions. A semantic Decision becomes authoritative only through human acceptance.**
 
-A decision can be discussed with AI, challenged by AI, researched by AI and written into a record by AI.
+The authority boundary is not who first generated the idea or typed the record.
 
-The authority must still come from a human.
+An agent can propose a better architectural, behavioural or security Decision than the human originally considered. That proposal remains non-authoritative until a human accepts the semantic choice.
 
-"Human-authored" therefore means **human-originated and human-accepted**, not necessarily human-typed.
+Human acceptance may happen:
 
-An agent must not infer that any of these constitute an accepted decision:
+- before the record is written, through an explicit human Decision/instruction;
+- during review of an agent-proposed Decision;
+- through another explicit acceptance workflow.
 
-- its own recommendation;
-- an implementation detail it introduced;
+Agents may also make ordinary local implementation decisions inside delegated authority without requiring separate human approval for every choice.
+
+None of these alone prove human acceptance:
+
+- an agent recommendation;
+- an implementation detail introduced by an agent;
 - existing code;
 - an old document;
 - an unanswered suggestion;
-- a discussion that did not reach an explicit conclusion.
+- a commit authored by an agent;
+- presence on a particular branch;
+- metadata claiming approval.
 
-If the decision is not clear, the agent should surface the ambiguity.
+If semantic authority remains unclear, the agent should surface the ambiguity.
 
 ## Why an immutable library?
 
@@ -39,35 +47,41 @@ Normal documentation is often edited in place. That preserves the current explan
 
 Decision records work more like database migrations:
 
-- a proposed decision can change while it is still in a branch or pull request;
-- merging accepts it;
+- a proposed Decision can change before human acceptance;
+- the project's acceptance mechanism records when the Decision becomes authoritative;
 - after acceptance, its record is immutable;
-- a later decision can supersede it;
+- a later Decision can supersede it;
 - the original record remains part of history.
 
 This lets humans and agents reconstruct not only **what is currently authoritative**, but **how the system arrived there**.
 
-## Pull requests are the acceptance boundary
+## Human acceptance is the authority boundary
 
-A pull request can carry three related things together:
+A semantic Decision becomes authoritative when a human accepts it.
 
-1. **decisions** — what the system is being asked to believe or preserve;
-2. **implementation** — how those decisions are expressed in software;
+Model-led does not prescribe the mechanism that represents this event.
+
+A pull request is one useful implementation because it can carry three related things together:
+
+1. **Decisions** — what the system is being asked to believe or preserve;
+2. **implementation** — how those Decisions are expressed in software;
 3. **evidence** — why the implementation is considered acceptable.
 
-When the pull request is accepted and merged, its new decision records are accepted with it.
+In a repository whose policy guarantees human approval for Decision changes, merging that pull request can represent the human acceptance event.
 
-This gives the records useful provenance through Git:
+That is a workflow property, not a semantic property of Git itself.
 
-- the implementation that accompanied the decision;
+A direct-to-main workflow can also be valid when the human has already explicitly made or accepted the Decision before an agent records it.
+
+Useful provenance includes:
+
+- how/when human acceptance occurred;
+- the implementation that accompanied the Decision;
 - discussion and review around it;
-- the human who proposed/accepted it;
 - the evidence available at the time;
 - later changes that supersede it.
 
-For team repositories, `.decisions/**` should normally require human review through repository policy or CODEOWNERS.
-
-For individual work, an explicit human decision followed by merging the change is sufficient.
+For team repositories, `.decisions/**` should normally require an explicit human acceptance control such as CODEOWNERS/required review or an equivalent platform mechanism.
 
 ## Decision records
 
@@ -113,7 +127,7 @@ execution semantics would trade latency for incorrect actions.
 - weakening this boundary requires a new decision.
 ```
 
-The prose can be AI-drafted. The decision cannot be AI-originated.
+The prose and even the proposed semantic choice may be AI-originated. The Decision becomes authoritative only through human acceptance.
 
 ## Required metadata
 
@@ -122,8 +136,8 @@ The initial schema requires:
 - `id` — stable unique identifier;
 - `title` — concise human-readable decision;
 - `type` — the kind of decision;
-- `decided_at` — offset-aware date/time;
-- `author` — the human source of authority;
+- `decided_at` — offset-aware date/time associated with recording/formulating the Decision;
+- `author` — provenance for who originated/authored the record or proposal; it does **not** confer or prove human acceptance;
 - `supersedes` — earlier decisions replaced by this one, or an empty list.
 
 Optional structured fields include:
@@ -215,10 +229,10 @@ An invariant with broad system impact may intentionally omit paths or use a broa
 
 ## Active decisions
 
-A decision is active when:
+A Decision is active when:
 
-- it exists on the accepted branch; and
-- no accepted decision supersedes it.
+- it has received human acceptance and entered the project's authoritative Decision set; and
+- no later human-accepted Decision supersedes it.
 
 A tool should derive this rather than mutate records.
 
@@ -238,7 +252,7 @@ The exact tooling is not part of the current methodology.
 
 ## Immutability rules
 
-Once a decision has reached the accepted branch:
+Once a Decision has received human acceptance and entered the authoritative Decision set:
 
 - do not modify it;
 - do not delete it;
@@ -256,7 +270,7 @@ modified .decisions file  rejected
 deleted .decisions file   rejected
 ```
 
-This applies to accepted records, not drafts that are still being refined inside the same unmerged pull request.
+This applies to accepted records, not proposals that are still being refined before human acceptance.
 
 ## Decisions are not a replacement for everything else
 

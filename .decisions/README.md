@@ -1,18 +1,18 @@
 # .decisions
 
-This directory is the project's append-only library of accepted human decisions.
+This directory is the project's append-only library of human-accepted semantic Decisions.
 
 Read [Decision library](../docs/decision-library.md) for the methodology.
 
 ## Rules
 
-1. **Decisions are human-authored.** AI may discuss, challenge and draft a record, but may not originate an accepted decision.
-2. **A decision is proposed while it exists only in an unmerged branch or pull request.**
-3. **Merging accepts the decision.**
-4. **Accepted decision files are immutable.** Do not edit, rename or delete them.
-5. **Changed decisions are superseded by new records.**
-6. **No mutable status field is used.** Active/superseded state is derived from the graph.
-7. **Keep decisions small enough to supersede cleanly.**
+1. **Agents may propose semantic Decisions.** They may reason about, originate, recommend and draft proposals.
+2. **Human acceptance creates authority.** A semantic Decision is not authoritative until a human accepts it.
+3. **Acceptance mechanism is workflow-specific.** Pull-request merge after human review is common, but Git state alone is not proof of acceptance.
+4. **Accepted Decision files are immutable.** Do not edit, rename or delete them.
+5. **Changed authority is superseded by new human-accepted Decisions.**
+6. **No mutable status field is used.** Active/superseded state is derived from the accepted graph.
+7. **Keep Decisions small enough to supersede cleanly.**
 
 ## Format
 
@@ -30,7 +30,7 @@ Offset timestamps are allowed in metadata even when filenames are normalised to 
 
 ## Accepted history
 
-A validator should treat changes relative to the accepted branch as:
+Where the repository uses an accepted branch as the durable representation of human acceptance, a validator should treat changes to already-accepted Decision files as:
 
 ```text
 add      allowed
@@ -39,10 +39,10 @@ delete   reject
 rename   reject
 ```
 
-Draft records can be edited freely before their pull request is merged.
+Proposed records can be edited freely before human acceptance.
 
 ## Current authority
 
-A decision is active if no accepted decision lists its ID in `supersedes`.
+A Decision is active if it has been human-accepted and no later human-accepted Decision lists its ID in `supersedes`.
 
 Tooling should derive current authority rather than modifying historical records.

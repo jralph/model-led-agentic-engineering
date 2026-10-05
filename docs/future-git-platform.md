@@ -62,7 +62,7 @@ A Decision Review contains three first-class layers:
 
 ### Decisions
 
-What human-authored changes to the system model are being proposed?
+What semantic changes to the system model are being proposed, and which have received human acceptance?
 
 Examples:
 
@@ -158,7 +158,7 @@ A reviewer concludes that 500 ms is unnecessarily strict and changes the propose
 
 > Primary user-facing operations should complete within 750 ms without reducing accepted correctness.
 
-Because the decision remains mutable until merge, the platform can then:
+Because the Decision remains mutable until human acceptance, the platform can then:
 
 1. record the changed proposed intent;
 2. identify implementation affected by that decision;
@@ -366,7 +366,7 @@ Potential new primitives:
 - evidence attached to a review;
 - concurrent agent workspaces;
 - decision-change propagation;
-- human approval attached to semantic decisions rather than only a merge button.
+- explicit human acceptance attached to semantic Decisions rather than inferred solely from a merge button.
 
 ## Relationship to existing pull requests
 

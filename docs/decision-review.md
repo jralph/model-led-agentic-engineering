@@ -4,9 +4,11 @@ Agent-generated implementation changes the economics of review.
 
 Producing and mechanically inspecting code can be delegated increasingly well. Human judgement remains scarce.
 
-Model-led agentic engineering therefore treats the pull request as more than a code diff.
+Model-led agentic engineering therefore treats the **review/acceptance surface** as more than a code diff.
 
-A substantial pull request can contain:
+A pull request is one common implementation, but the methodology does not require Git or pull requests.
+
+A substantial review can contain:
 
 - **Intent** — the human-owned outcome being pursued;
 - **decisions** — what humans are proposing the system should believe or preserve;
@@ -82,15 +84,15 @@ Agents are well suited to exhaustive conformance work:
 
 A reviewer should not silently change the implementation to make its own preferred decision true.
 
-If code cannot conform without changing the semantic model, that is a human decision point.
+If code cannot conform without changing the semantic model, an agent may propose a semantic Decision, but human acceptance is required before that Decision becomes authoritative.
 
 ## Review is a feedback loop
 
 Decision-first review is not a one-way approval gate.
 
-Proposed decisions are still mutable while the pull request is open. A reviewer may decide that the proposed behaviour, threshold, boundary or trade-off is wrong even when the implementation matches it perfectly.
+Proposed Decisions are still mutable until human acceptance. A reviewer may decide that the proposed behaviour, threshold, boundary or trade-off is wrong even when the implementation matches it perfectly.
 
-When a human changes a proposed decision:
+When a human accepts or changes a proposed Decision:
 
 1. the updated decision becomes the new proposed authority;
 2. agents re-evaluate the implementation against it;
@@ -102,7 +104,7 @@ This is one of the main benefits of making decisions explicit. The reviewer chan
 
 This allows a human to say, for example, "the threshold should be 750 ms rather than 500 ms" or "this path must remain read-only", then have the implementation and evidence re-evaluated against that change rather than manually directing every affected line.
 
-## A possible PR review surface
+## A possible review surface
 
 A tool could eventually present a change approximately like this:
 
@@ -135,27 +137,37 @@ Human review
 
 This is not a required format. It illustrates where review attention can move.
 
-## Merge means acceptance
+## Human acceptance makes a Decision authoritative
 
-For a project using the decision library, merging a pull request containing a new decision record means the repository accepts that decision.
+Decision-first review is one mechanism for obtaining human acceptance, not the semantic definition of acceptance itself.
 
-After merge:
+A project may use pull requests, a dedicated review system, direct human instruction or another explicit workflow.
 
-- the decision becomes immutable;
+The important invariant is:
+
+> **A proposed semantic Decision is not authoritative until a human accepts it.**
+
+Where pull requests are used as the acceptance mechanism, merging a reviewed Decision change can make that acceptance durable.
+
+Where a human explicitly makes the Decision before an agent records it, a second ceremonial approval is not required unless repository policy requires one.
+
+After human acceptance:
+
+- the Decision becomes immutable;
 - implementation is expected to conform to it;
 - future agents can retrieve it as authoritative context;
-- changing it requires another human-authored decision.
+- changing its authority requires another human-accepted superseding Decision.
 
-A project should therefore make changes to `.decisions/**` conspicuous in review.
+A project should make changes to `.decisions/**` conspicuous and ensure its chosen acceptance mechanism cannot be satisfied solely by the agent proposing the Decision.
 
-Recommended team controls include:
+Recommended team controls can include:
 
 - CODEOWNERS for `.decisions/**`;
 - required human approval;
-- prevention of bot-only approval for decision changes;
+- prevention of bot-only approval for Decision changes;
 - append-only validation.
 
-The exact repository controls vary by platform.
+The exact mechanism varies by workflow and platform.
 
 ## Human code review remains risk-based
 

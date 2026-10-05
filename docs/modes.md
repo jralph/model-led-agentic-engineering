@@ -59,9 +59,11 @@ Typical work:
 
 **Authority:** representational.
 
-Specify mode may draft a decision record only after the underlying decision has been made by a human. It must not convert its own recommendation, an implementation choice or an unresolved discussion into an accepted decision.
+Specify mode may represent a human-made Decision or draft an agent-originated proposed semantic Decision.
 
-Missing decisions should be surfaced rather than invented to make a document look complete.
+It must not treat its own proposal, an implementation choice or an unresolved discussion as authoritative without human acceptance.
+
+Missing Decision authority should be surfaced rather than silently filled in to make a document look complete.
 
 **Output:** intent brief, plan, decision record, acceptance criteria.
 
@@ -133,7 +135,7 @@ The useful checkpoints are where the semantic model might change.
 
 Typical decision points:
 
-- accepting a new decision record into the repository;
+- accepting a proposed semantic Decision as authoritative;
 - choosing an architecture after exploration;
 - accepting a newly discovered constraint;
 - changing an invariant;

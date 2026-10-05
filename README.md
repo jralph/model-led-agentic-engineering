@@ -4,6 +4,15 @@ A practical methodology for engineering with AI where the human owns the system 
 
 > **The implementation can be delegated. The engineering judgement cannot.**
 
+## Core contract
+
+> **Model-led defines what engineering knowledge and authority need to exist. It does not prescribe how tools should execute against them.**
+>
+> **Humans own intent, judgement and decision authority.**  
+> **Agents explore, research, propose, implement, challenge and verify.**  
+> **Semantic implementation must not outrun its Decision basis.**  
+> **Evidence determines what can actually be claimed.**
+
 This repository starts as a description of how I work. The intention is to make that process explicit enough that other engineers can adopt, test and improve it, then eventually determine whether it can mature into something closer to a repeatable engineering standard.
 
 It is deliberately not a claim that I invented agentic engineering, spec-driven development, or any other existing discipline. It is an attempt to document a working pattern I arrived at independently and now use heavily.
@@ -80,9 +89,13 @@ See [Agent modes and authority](docs/modes.md).
 
 The human-owned model should not exist only in somebody's head or in old AI conversations.
 
-Projects can keep an append-only `.decisions/` library of accepted human decisions. Records use YAML front matter so they remain readable by people and queryable by tooling. AI may help discuss and write a decision record, but it must not create an accepted decision on its own.
+Projects can keep an append-only `.decisions/` library of authoritative semantic Decisions. Records use YAML front matter so they remain readable by people and queryable by tooling.
 
-Decisions travel with implementation in pull requests. Merging accepts the decision, implementation and available evidence together; accepted decision records then become immutable and can only be superseded by later decisions.
+Agents may reason about, originate, recommend and draft proposed semantic Decisions. A semantic Decision becomes authoritative only through **human acceptance**.
+
+The acceptance mechanism is implementation-specific. A pull-request merge after human review is one common mechanism, but explicit human acceptance may happen through another workflow or before an agent records the Decision. Git state alone is not proof of authority.
+
+Once accepted, a Decision record becomes immutable and can only be changed through a later superseding Decision.
 
 This also changes review priority: humans can focus more attention on decisions, semantics and accepted risk, while agents perform exhaustive implementation-conformance review. Human code inspection remains available wherever risk or judgement warrants it.
 
@@ -102,7 +115,7 @@ Not every problem is already understood well enough to become a Decision.
 
 A **Challenge** records something about the current Decisions, implementation, evidence or observed behaviour that may be wrong, incomplete or worth reconsidering. Challenges may be created by humans or agents because raising a question does not alter the system model.
 
-A Challenge can remain unresolved while evidence is gathered. It may end in no change, an implementation correction under an existing Decision, stronger evidence, or a new human-authored Decision.
+A Challenge can remain unresolved while evidence is gathered. It may end in no change, an implementation correction under an existing Decision, stronger evidence, or a new human-accepted Decision.
 
 This gives agents a safe way to surface bugs, contradictions and unknowns without silently becoming decision makers.
 
@@ -152,6 +165,7 @@ Start here:
 14. [Anti-patterns](docs/anti-patterns.md)
 15. [Abstract examples](docs/examples.md)
 16. [Maturity model](docs/maturity.md)
+17. [Adopting Model-led in a repository](docs/adoption.md)
 
 Practical templates:
 
@@ -163,6 +177,20 @@ Practical templates:
 - [Session measurement](templates/session-measurement.md)
 
 Experimental measurement work lives in [experiments/](experiments/).
+
+## Set up Model-led in another repository
+
+A capable repository agent can bootstrap the portable Model-led conventions into a new or existing repository.
+
+A user can give the agent this repository and ask:
+
+> **Set up Model-led in this repository using https://github.com/jralph/model-led-agentic-engineering**
+
+The source [AGENTS.md](AGENTS.md) contains bootstrap instructions. The minimum setup is intentionally small: a canonical `.decisions/` library plus Model-led authority guidance merged into the target repository's existing `AGENTS.md`.
+
+For an existing repository, the explicit adoption request will normally be the first recorded Decision: adopt Model-led as the repository's engineering governance method. The human request itself supplies the semantic acceptance; the repository's normal review/publication workflow still applies. For a new project created as Model-led from inception, no adoption Decision is necessary.
+
+See [Adopting Model-led](docs/adoption.md).
 
 ## Future applications
 

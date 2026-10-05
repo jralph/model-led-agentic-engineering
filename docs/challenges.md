@@ -63,7 +63,7 @@ Example:
 
 > Retry behaviour exists in code, but there is no active Decision defining whether duplicate delivery is acceptable.
 
-The Challenge questions the **absence of authority**, not an existing Decision. It can remain open while the behaviour is investigated. If a semantic choice is required, a human-authored Decision fills the gap.
+The Challenge questions the **absence of authority**, not an existing Decision. It can remain open while the behaviour is investigated. If a semantic choice is required, an agent or human may propose the Decision, but human acceptance is required before it fills the authority gap.
 
 ### Implementation
 
@@ -185,11 +185,11 @@ Implementation then proceeds against the changed Decision basis.
 
 Stop before silently establishing that behaviour in code.
 
-A human Decision is required.
+A human-accepted Decision is required.
 
 This preserves the core authority boundary:
 
-> **Agents may discover that a Decision is needed. They may not fill the gap by silently making one.**
+> **Agents may discover and propose a Decision that is needed. They may not make that semantic choice authoritative without human acceptance.**
 
 ## Challenge lifecycle
 
@@ -213,7 +213,7 @@ Fix the implementation against the existing Decision basis.
 
 The Challenge demonstrates that the model itself needs to change.
 
-A human creates or accepts a new Decision, potentially superseding an earlier one.
+An agent or human may propose a new Decision, potentially superseding an earlier one. It becomes authoritative only when a human accepts it.
 
 ### Evidence correction
 

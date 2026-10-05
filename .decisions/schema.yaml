@@ -31,9 +31,11 @@ properties:
   decided_at:
     type: string
     format: date-time
+    description: "Timestamp associated with recording/formulating the Decision. Human acceptance is a separate workflow event and is not proven by this field."
   author:
     type: string
     minLength: 1
+    description: "Provenance for who originated/authored the Decision record or proposal. This field does not prove human acceptance or confer semantic authority."
   scope:
     type: object
     additionalProperties: false
