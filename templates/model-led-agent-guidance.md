@@ -30,6 +30,7 @@ When working with Decision records:
 4. Do not treat a commit, branch, merge, agent-authored metadata or existing code as proof of human acceptance unless the project's workflow explicitly guarantees that relationship.
 5. Do not create an authoritative Decision merely because existing code appears to imply one.
 6. If required semantic authority is missing, propose a Decision and/or surface a Challenge, then obtain human acceptance before making that semantic choice binding on the system.
+7. Treat `author`, `accepted_by` and timestamp fields as optional provenance only. They do not independently prove acceptance; prefer repository/review history when it already provides reliable provenance.
 
 ### Working behaviour
 
