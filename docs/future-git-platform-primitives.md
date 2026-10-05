@@ -86,11 +86,15 @@ The platform should understand the repository's `.decisions/` history as a nativ
 
 Every meaningful semantic implementation change should have a **Decision basis**.
 
-That basis may consist of:
+The authoritative Decision basis is the set of **accepted Decisions** that governs the change.
 
-- existing active Decisions the change is implementing, restoring or extending;
-- proposed Decisions in the current Decision Review;
-- both.
+A Decision Review may also contain proposed Decisions under evaluation. Those proposals can guide candidate implementation, conformance analysis and qualification, but they do not join the authoritative Decision basis until human acceptance.
+
+This means work may be:
+
+- implementation/restoration entirely under existing accepted Decisions;
+- candidate implementation under existing Decisions plus one or more proposed Decisions;
+- implementation after newly proposed Decisions receive human acceptance.
 
 This avoids decision inflation.
 
@@ -102,11 +106,11 @@ Example:
 > A route incorrectly trusts a UI check.  
 > The fix cites DEC-142 and introduces no new Decision.
 
-The platform can make **unbound implementation** conspicuous:
+The platform can make **unbound semantic implementation** conspicuous:
 
-> This change alters behaviour but is not linked to a governing Decision.
+> This change alters semantic behaviour but has no governing accepted Decision basis.
 
-That is a request for human judgement, not an invitation for an agent to invent authority.
+That may mean the correct Decision already exists but has not been linked, or that new semantic authority is genuinely missing. An agent may propose the missing Decision, but cannot make it authoritative without human acceptance.
 
 ## Challenge
 
@@ -212,13 +216,17 @@ It replaces the assumption that the primary object under review is a diff.
 
 A Decision Review contains:
 
-### Intent
+### Origin
 
-The human outcome being pursued.
+The Task, Intent and/or Challenge that explains why the work exists.
 
 ### Decision basis
 
-The active and proposed Decisions governing the change.
+The accepted Decisions governing the semantic implementation.
+
+### Proposed Decisions
+
+Any additional semantic Decisions under evaluation. These remain non-authoritative until human acceptance.
 
 ### Challenges
 
@@ -240,9 +248,9 @@ What qualification supports acceptance.
 
 What remains uncertain or deliberately accepted.
 
-A Decision Review can contain **zero new Decisions**.
+A Decision Review can contain **zero proposed/new Decisions**.
 
-That is normal when implementation is being corrected to conform to already accepted intent.
+That is normal when existing accepted Decisions already provide a sufficient basis, including implementation corrections, refactors or improvements that preserve established semantics.
 
 ## Evidence
 
