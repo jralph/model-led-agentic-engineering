@@ -52,7 +52,7 @@ The repository's normal workflow may still require review/merge before the recor
 
 This Decision establishes the governance boundary **from adoption onward**. It does not claim that historical implementation choices were already Model-led Decisions.
 
-If the human identity required by the Decision metadata is unclear, ask rather than inventing it.
+Decision provenance fields such as `author` and `accepted_by` are optional. Do not invent identity metadata merely to populate front matter; rely on the repository/review history when it already provides suitable provenance.
 
 ## Do not seed other Decisions from code
 
@@ -84,7 +84,7 @@ The target repository's `.decisions/` should preserve the semantics defined by [
 - accepted records are immutable;
 - changes happen through superseding Decisions;
 - active state is derived from the supersession graph;
-- AI may draft Decision prose but may not originate accepted authority.
+- agents may originate proposed semantic Decisions, but human acceptance is what makes them authoritative.
 
 The bootstrap agent should copy the current [decision schema](../.decisions/schema.yaml) into the target repository.
 
