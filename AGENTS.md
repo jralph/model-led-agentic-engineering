@@ -32,7 +32,10 @@ Preserve these ideas unless the owner explicitly changes them:
 15. Meaningful semantic implementation requires a sufficient Decision basis. Intent or Challenge alone does not authorise new system semantics.
 16. The methodology does not prescribe a Task object, .intents/ or .challenges/ storage convention. Those are implementation/workflow choices.
 17. Decision provenance metadata is optional. `author`, `accepted_by` and timestamps may be recorded when useful, but they do not independently prove authority; prefer repository/review history when it already provides reliable provenance.
-18. The methodology is currently a personal working method, not a validated standard.
+18. Rules and Rulesets are reusable normative material, not Project authority by themselves. A Project gains authority from them only through a human-accepted Decision adopting an exact local snapshot.
+19. Adopted Ruleset snapshots are copied into the Project and immutable once referenced by an accepted Decision. Never let mutable upstream content, symlinks, floating references or remote fetches silently alter Project authority.
+20. Ruleset updates are additive: materialise a new snapshot, retain the old snapshot, and accept a new/superseding Project Decision.
+21. The methodology is currently a personal working method, not a validated standard.
 
 ## Writing rules
 
@@ -67,6 +70,9 @@ Read and use:
 - `templates/model-led-agent-guidance.md`;
 - `templates/decisions-readme.md`;
 - `templates/adoption-decision.md`;
+- `docs/rulesets.md`;
+- `templates/ruleset-adoption-decision.md`;
+- `templates/rulesets-readme.md`;
 - `.decisions/schema.yaml`.
 
 Then:
@@ -76,12 +82,13 @@ Then:
 3. **Create the canonical Decision library** at `.decisions/` if it does not exist:
    - `.decisions/README.md` from `templates/decisions-readme.md`;
    - `.decisions/schema.yaml` from the current schema.
-4. **Do not create `.intents/`, `.challenges/`, `.model/` or a generic Task system** unless the target repository's chosen workflow explicitly calls for them.
+4. **Do not create `.intents/`, `.challenges/`, `.model/` or a generic Task system** unless the target repository's chosen workflow explicitly calls for them. Create `.rulesets/` only when the Project is actually adopting or evaluating reusable Rulesets.
 5. **Do not infer historical Decisions from code.** Existing source, tests and architecture may reveal behaviour or missing authority, but they are not proof of human Decisions.
 6. **Existing repository adoption:** when the user explicitly asks to retrofit Model-led into an established repository, that request is normally itself the human acceptance of the semantic choice to adopt Model-led. Use `templates/adoption-decision.md` to record that already-made Decision. If the repository uses reviewed pull requests as its acceptance mechanism, the bootstrap change can preserve that workflow boundary; if the user has explicitly authorised direct changes, do not invent a second ceremonial approval. Provenance fields such as `author` and `accepted_by` are optional; do not invent identity metadata merely to fill them. Do not backfill any other Decisions without explicit human judgement.
 7. **New project adoption:** when the project is being created as Model-led from inception, do not create a ceremonial adoption Decision. Begin with an empty Decision library and record Decisions only as real semantic choices arise.
 8. **Validate conservatively.** Run appropriate existing checks for the files changed and report any ambiguity or incompatibility rather than overwriting it.
-9. **Explain the resulting boundary:** Intent and Challenge are storage-agnostic; accepted Decisions live in `.decisions/`; meaningful semantic implementation must have a sufficient Decision basis.
+9. **Ruleset adoption:** if the user asks to scaffold/adopt a Ruleset, resolve an exact upstream revision/version/digest, copy it into a new local `.rulesets/<name>/<snapshot>/` snapshot, preserve any older snapshots, and use `templates/ruleset-adoption-decision.md` to record the Project Decision that adopts it. Never symlink or follow mutable upstream content as authority.
+10. **Explain the resulting boundary:** Intent and Challenge are storage-agnostic; accepted Decisions live in `.decisions/`; reusable Rulesets are optional local snapshots under `.rulesets/`; meaningful semantic implementation must have a sufficient Decision basis.
 
 A bootstrap should leave the target repository ready to use Model-led without coupling it to this repository, a specific agent harness or a specific project-management tool.
 
