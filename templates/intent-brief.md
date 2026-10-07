@@ -28,6 +28,10 @@ Which **accepted Decisions** already govern this work?
 
 - 
 
+Which adopted Ruleset snapshots are brought into scope by those Decisions?
+
+- 
+
 If none are known, say so explicitly rather than inferring authority from current implementation.
 
 ## Proposed Decisions
