@@ -288,6 +288,28 @@ deleted .decisions file   rejected
 
 This applies to accepted records, not proposals that are still being refined before human acceptance.
 
+## Decisions can adopt reusable Rulesets
+
+A Project Decision may adopt an exact local snapshot of a reusable Ruleset.
+
+Rulesets are distinct from Decisions:
+
+- a Ruleset is reusable normative material that may evolve upstream;
+- a Ruleset snapshot is an exact local copy;
+- the Project Decision is what gives that snapshot semantic authority.
+
+For example:
+
+> Adopt the local `company-security/abc123` Ruleset snapshot for production services.
+
+The adopted Rules derive their Project authority from that Decision.
+
+The snapshot should be complete and local. Do not make the Decision depend on a mutable upstream branch, symlink, `latest` reference or remote fetch.
+
+If the Project later adopts `company-security/xyz789`, add that new snapshot alongside `abc123` and accept a new Decision that supersedes or updates the earlier adoption. Keep the old snapshot because historical Decision authority must remain reconstructable.
+
+See [Rules and Rulesets](rulesets.md).
+
 ## Decisions are not a replacement for everything else
 
 Do not put every implementation detail into the library.
