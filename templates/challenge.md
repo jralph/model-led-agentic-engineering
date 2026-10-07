@@ -34,6 +34,14 @@ If the Challenge may exist because no adequate authoritative Decision basis exis
 
 - 
 
+### Adopted Rules / Rulesets
+
+Does this Challenge concern a specific Rule or adopted Ruleset snapshot?
+
+Identify both the Rule and the Project Decision that gives it authority where possible.
+
+- 
+
 ### Proposed Decisions
 
 Are any non-authoritative proposed Decisions relevant to the investigation?
