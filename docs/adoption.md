@@ -166,6 +166,26 @@ Begin from human Intent, explore/research, and record Decisions when durable sem
 
 This keeps the methodology lightweight rather than turning startup scaffolding into a heavyweight specification exercise.
 
+## Scaffolding with Rulesets
+
+A new or existing Project may adopt reusable Rulesets for security, reliability, data governance, organisational standards or other shared constraints.
+
+Ruleset adoption is substantive semantic authority, so it is different from the ceremonial question of whether a brand-new Project needs a Decision merely to say it uses Model-led.
+
+When scaffolding with a Ruleset:
+
+1. resolve an exact upstream revision/version/digest;
+2. copy the complete Ruleset into a local `.rulesets/<name>/<snapshot>/` snapshot;
+3. record enough provenance to identify the source;
+4. create/accept a Project Decision adopting that local snapshot and defining its scope;
+5. leave upstream content disconnected from Project authority after the copy.
+
+Do not symlink to the upstream Ruleset or use a floating reference such as `main` or `latest`.
+
+When updating later, import the new snapshot alongside the old one and accept a new/superseding Project Decision. Never rewrite a previously adopted snapshot.
+
+See [Rules and Rulesets](rulesets.md) and [Ruleset adoption Decision template](../templates/ruleset-adoption-decision.md).
+
 ## Updating an existing Model-led setup
 
 When asked to update Model-led from a newer methodology source:
