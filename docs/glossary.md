@@ -90,6 +90,24 @@ Proposed Decisions may guide candidate implementation, review and qualification 
 A Challenge may reveal that no adequate Decision basis exists. An agent may propose the missing Decision but must not make it authoritative without human acceptance.
 
 
+## Rule
+
+A reusable normative statement intended to constrain Projects that adopt it.
+
+A Rule is not Project authority by itself. It gains authority for a Project through a human-accepted Decision adopting the local Ruleset snapshot that contains it.
+
+## Ruleset
+
+A named, distributable collection of Rules.
+
+An upstream Ruleset may evolve over time. Projects never depend on its mutable state for authority.
+
+## Ruleset snapshot
+
+An exact, self-contained local copy of one Ruleset revision/version/digest.
+
+Once referenced by an accepted Project Decision, the snapshot is immutable historical material. Updating a Ruleset adds a new snapshot rather than modifying the old one.
+
 ## Intent
 
 A human-owned, mutable statement of an outcome being pursued.
