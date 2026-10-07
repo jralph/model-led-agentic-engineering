@@ -189,6 +189,7 @@ Practical templates:
 - [Engineering intent brief](templates/intent-brief.md)
 - [Decision record](templates/decision-record.md)
 - [Ruleset adoption Decision](templates/ruleset-adoption-decision.md)
+- [Ruleset directory README](templates/rulesets-readme.md)
 - [Challenge](templates/challenge.md)
 - [Adversarial review brief](templates/adversarial-review.md)
 - [Qualification plan](templates/qualification-plan.md)
