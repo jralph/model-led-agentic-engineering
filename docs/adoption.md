@@ -175,10 +175,11 @@ Ruleset adoption is substantive semantic authority, so it is different from the 
 When scaffolding with a Ruleset:
 
 1. resolve an exact upstream revision/version/digest;
-2. copy the complete Ruleset into a local `.rulesets/<name>/<snapshot>/` snapshot;
-3. record enough provenance to identify the source;
-4. create/accept a Project Decision adopting that local snapshot and defining its scope;
-5. leave upstream content disconnected from Project authority after the copy.
+2. create `.rulesets/README.md` from the portable template if this is the Project's first Ruleset;
+3. copy the complete Ruleset into a local `.rulesets/<name>/<snapshot>/` snapshot;
+4. record enough provenance to identify the source;
+5. create/accept a Project Decision adopting that local snapshot and defining its scope;
+6. leave upstream content disconnected from Project authority after the copy.
 
 Do not symlink to the upstream Ruleset or use a floating reference such as `main` or `latest`.
 
