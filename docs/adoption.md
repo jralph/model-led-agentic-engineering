@@ -135,7 +135,7 @@ A project may represent them through:
 - a platform-native object;
 - another workflow chosen by the implementor.
 
-Only `.decisions/` has a prescribed repository representation in the current methodology.
+`.decisions/` has the canonical representation for accepted Decisions. Projects that use reusable Rulesets should also materialise exact local snapshots under the optional `.rulesets/` convention.
 
 ## Existing repository adoption
 
