@@ -28,7 +28,7 @@ Preserve these ideas unless the owner explicitly changes them:
 11. Model-led agentic engineering governs above the implementation workflow. Do not rewrite it as a mandatory spec-driven, task-driven or tool-specific process.
 12. Decision-first review is a core practice: humans prioritise decisions and accepted risk; agents can perform exhaustive conformance review; direct human code review remains risk-based.
 13. Intent is human-owned, mutable and pre-decisional. Agents may help refine or research it but must not silently change the human objective and treat the change as authoritative.
-14. Challenges are pre-decisional questions and may be raised by humans or agents. They may question existing Decisions or expose missing Decision authority without changing the model.
+14. Challenges are pre-decisional questions and may be raised by humans or agents. They may question existing Decisions, adopted Rules/Rulesets, or missing Decision authority without changing the model.
 15. Meaningful semantic implementation requires a sufficient Decision basis. Intent or Challenge alone does not authorise new system semantics.
 16. The methodology does not prescribe a Task object, .intents/ or .challenges/ storage convention. Those are implementation/workflow choices.
 17. Decision provenance metadata is optional. `author`, `accepted_by` and timestamps may be recorded when useful, but they do not independently prove authority; prefer repository/review history when it already provides reliable provenance.
