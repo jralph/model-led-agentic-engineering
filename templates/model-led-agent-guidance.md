@@ -40,8 +40,9 @@ This Project may use reusable Rulesets.
 - Authority comes from a human-accepted Project Decision adopting an exact local Ruleset snapshot.
 - When a governing Decision adopts a Ruleset snapshot, load the Rules in that snapshot as part of the authoritative context.
 - Never use a symlink, floating branch, `latest` reference or remote fetch as the authoritative Ruleset representation.
-- Once adopted, do not modify or delete the local snapshot.
-- To update, materialise a new sibling snapshot, keep the old one, and accept a new/superseding Decision.
+- Once a local snapshot is materialised under a snapshot identity, do not modify it in place.
+- Once adopted, retain it while historical Decisions depend on it.
+- To update, materialise a new sibling snapshot and accept a new/superseding Decision when authority should move to it.
 - Keep local exceptions in Project Decisions rather than editing imported Rule files.
 
 ### Working behaviour
