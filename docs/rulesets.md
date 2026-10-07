@@ -231,7 +231,7 @@ For repositories that use Rulesets, the recommended portable location is:
       ...
 ```
 
-The snapshot ID should identify the exact imported revision/version/digest.
+The snapshot ID should identify the exact imported revision/version/digest. For a Git-backed upstream Ruleset, use or record the exact commit SHA rather than a branch name.
 
 Once a snapshot is referenced by an accepted Decision:
 
