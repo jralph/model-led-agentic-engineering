@@ -246,7 +246,7 @@ platform-reliability
 
 Choosing an update would create a change that:
 
-1. copies the newer snapshot into the Project alongside the old one;
+1. copies the newer snapshot into the Project alongside the old one and locks that snapshot identity;
 2. compares changed/added/removed Rules;
 3. detects conflicts with active Project Decisions;
 4. evaluates implementation impact;
