@@ -124,9 +124,9 @@ An upstream Ruleset catalogue can expose:
 - product-family constraints;
 - other reusable normative guidance.
 
-When a Project adopts one, the platform materialises an exact local snapshot into the Project model and records the Project Decision that adopts it.
+When a Project evaluates or adopts one, the platform materialises an exact local snapshot into the Project model. That snapshot becomes immutable by identity immediately. A Project Decision is what gives it authority.
 
-The platform must preserve both old and new local snapshots across upgrades.
+The platform must preserve both old and new local snapshots across upgrades, and must retain any snapshot referenced by historical accepted Decisions.
 
 For example:
 
