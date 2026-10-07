@@ -112,6 +112,34 @@ The platform can make **unbound semantic implementation** conspicuous:
 
 That may mean the correct Decision already exists but has not been linked, or that new semantic authority is genuinely missing. An agent may propose the missing Decision, but cannot make it authoritative without human acceptance.
 
+## Ruleset snapshots
+
+The platform can support reusable organisational or ecosystem Rulesets without making Project authority remotely mutable.
+
+An upstream Ruleset catalogue can expose:
+
+- security baselines;
+- reliability standards;
+- data-governance Rules;
+- product-family constraints;
+- other reusable normative guidance.
+
+When a Project adopts one, the platform materialises an exact local snapshot into the Project model and records the Project Decision that adopts it.
+
+The platform must preserve both old and new local snapshots across upgrades.
+
+For example:
+
+```text
+company-security
+  abc123   adopted by DEC-41
+  xyz789   adopted later by DEC-88
+```
+
+The newer snapshot does not mutate `abc123`. DEC-88 may supersede DEC-41, while both snapshots remain available for historical reconstruction.
+
+The upstream catalogue is distribution infrastructure, not Project authority.
+
 ## Challenge
 
 Challenge is one Model-led semantic form that a platform Task can carry.
