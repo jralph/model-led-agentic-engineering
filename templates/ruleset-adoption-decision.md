@@ -25,7 +25,7 @@ for:
 
 <project scope>
 
-The local snapshot is the authoritative adopted material. Its upstream source/revision is provenance recorded with the snapshot.
+The local snapshot is the immutable material adopted by this Decision. The Decision is what gives its Rules Project authority. Its upstream source/revision is provenance recorded with the snapshot.
 
 ## Why
 
