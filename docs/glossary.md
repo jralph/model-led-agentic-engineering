@@ -77,7 +77,7 @@ Model-led agentic engineering does not prescribe one implementation workflow.
 
 ## Challenge
 
-A semantic primitive that questions the current Decision set, the absence of a Decision where human authority appears necessary, implementation, evidence, observed behaviour or an engineering opportunity without changing the authoritative semantic model.
+A semantic primitive that questions the current Decision set, an adopted Rule/Ruleset, the absence of a Decision where human authority appears necessary, implementation, evidence, observed behaviour or an engineering opportunity without changing the authoritative semantic model.
 
 A Challenge is not defined by a particular file, folder or storage format. Challenges may be raised by humans or agents and may remain unresolved while evidence is gathered.
 
