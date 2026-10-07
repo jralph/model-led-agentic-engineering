@@ -87,7 +87,7 @@ Then:
 6. **Existing repository adoption:** when the user explicitly asks to retrofit Model-led into an established repository, that request is normally itself the human acceptance of the semantic choice to adopt Model-led. Use `templates/adoption-decision.md` to record that already-made Decision. If the repository uses reviewed pull requests as its acceptance mechanism, the bootstrap change can preserve that workflow boundary; if the user has explicitly authorised direct changes, do not invent a second ceremonial approval. Provenance fields such as `author` and `accepted_by` are optional; do not invent identity metadata merely to fill them. Do not backfill any other Decisions without explicit human judgement.
 7. **New project adoption:** when the project is being created as Model-led from inception, do not create a ceremonial adoption Decision. Begin with an empty Decision library and record Decisions only as real semantic choices arise.
 8. **Validate conservatively.** Run appropriate existing checks for the files changed and report any ambiguity or incompatibility rather than overwriting it.
-9. **Ruleset adoption:** if the user asks to scaffold/adopt a Ruleset, resolve an exact upstream revision/version/digest, copy it into a new local `.rulesets/<name>/<snapshot>/` snapshot, preserve any older snapshots, and use `templates/ruleset-adoption-decision.md` to record the Project Decision that adopts it. Never symlink or follow mutable upstream content as authority.
+9. **Ruleset adoption:** if the user asks to scaffold/adopt a Ruleset, resolve an exact upstream revision/version/digest, create `.rulesets/README.md` from `templates/rulesets-readme.md` when needed, copy the Ruleset into a new local `.rulesets/<name>/<snapshot>/` snapshot, preserve any older snapshots, and use `templates/ruleset-adoption-decision.md` to record the Project Decision that adopts it. Never symlink or follow mutable upstream content as authority.
 10. **Explain the resulting boundary:** Intent and Challenge are storage-agnostic; accepted Decisions live in `.decisions/`; reusable Rulesets are optional local snapshots under `.rulesets/`; meaningful semantic implementation must have a sufficient Decision basis.
 
 A bootstrap should leave the target repository ready to use Model-led without coupling it to this repository, a specific agent harness or a specific project-management tool.
@@ -96,7 +96,8 @@ A bootstrap should leave the target repository ready to use Model-led without co
 
 - `README.md`: short explanation and navigation.
 - `docs/`: current methodology.
-- `.decisions/`: immutable accepted human decision history; additions only after acceptance.
+- `.decisions/`: immutable human-accepted Decision history; additions only after acceptance.
+- `.rulesets/`: optional immutable local Ruleset snapshots referenced by accepted Decisions.
 - `templates/`: practical artefacts engineers can copy.
 - `ROADMAP.md`: proposed evolution and research, not current truth.
 
