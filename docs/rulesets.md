@@ -58,7 +58,9 @@ project
 
 The upstream revision is provenance.
 
-The local snapshot is the durable material the Project actually adopted.
+The local snapshot is the durable material the Project may evaluate or adopt.
+
+Once materialised under a snapshot identity, it is immutable. If different content is needed, materialise a new snapshot with a different identity.
 
 Do not use a symlink, floating branch, `latest` reference or remote fetch as the authoritative representation.
 
@@ -91,9 +93,9 @@ The exact metadata format is implementation-specific. The important requirement 
 
 ## Updates are additive
 
-An adopted snapshot is historical Project material.
+A local snapshot is immutable Project material from the moment it is materialised.
 
-Do not update it in place.
+Do not update a snapshot in place, whether or not it has already been adopted.
 
 Suppose the Project currently contains:
 
@@ -208,7 +210,7 @@ An implementation agent can start with:
 
 plus:
 
-> Decision basis: adopt security snapshot X, reliability snapshot Y, data snapshot Z.
+> Decision basis: DEC-SEC-01, DEC-REL-01, DEC-DATA-01, each adopting the relevant local Ruleset snapshot.
 
 This lets implementation be generated inside known non-negotiables from the beginning.
 
@@ -233,11 +235,12 @@ For repositories that use Rulesets, the recommended portable location is:
 
 The snapshot ID should identify the exact imported revision/version/digest. For a Git-backed upstream Ruleset, use or record the exact commit SHA rather than a branch name.
 
-Once a snapshot is referenced by an accepted Decision:
+For every materialised snapshot:
 
-- do not modify it;
-- do not delete it while historical Decisions depend on it;
+- do not modify it in place;
 - do not replace it with a symlink or remote reference;
-- add a new sibling snapshot for updates.
+- add a new sibling snapshot for different content or updates.
+
+Once a snapshot is referenced by an accepted Decision, also do not delete it while historical Decisions depend on it.
 
 This repository layout is a portable convention, not a requirement that the upstream Ruleset itself use Git.
