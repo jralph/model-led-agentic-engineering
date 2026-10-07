@@ -81,7 +81,9 @@ See [Challenges](challenges.md).
 
 Identify the accepted Decisions that already govern the work.
 
-If they are sufficient, no new Decision is required.
+If any of those Decisions adopt local Ruleset snapshots, load the adopted Rules as part of the authoritative context.
+
+If the accepted Decision basis is sufficient, no new Decision is required.
 
 If the work requires a semantic choice that is not already authorised, an agent or human may propose a Decision. Human acceptance is required before that semantic choice becomes authoritative or releasable behaviour. Candidate implementation may be explored against the proposal before acceptance.
 
@@ -101,7 +103,9 @@ That is already enough to constrain a large amount of implementation.
 
 Not every choice needs a permanent record.
 
-When forgetting a decision would make future engineers or agents likely to weaken a boundary, repeat a rejected design, change important behaviour or misunderstand an accepted trade-off, add a record to the project's `.decisions/` library.
+When forgetting a Decision would make future engineers or agents likely to weaken a boundary, repeat a rejected design, change important behaviour or misunderstand an accepted trade-off, add a record to the project's `.decisions/` library.
+
+When the reusable constraint already exists in an external Ruleset, prefer a Project Decision adopting an exact local snapshot over duplicating each Rule as a separate Project Decision.
 
 An agent may originate or draft the proposed Decision record. The semantic Decision becomes authoritative only through human acceptance.
 
