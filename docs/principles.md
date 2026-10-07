@@ -137,7 +137,19 @@ Externalise the parts another engineer or future agent would need to safely cont
 
 Do not attempt to document every thought.
 
-## 14. The human should be able to explain the system
+## 14. Reusable Rulesets are adopted as immutable snapshots
+
+Reusable standards should not need to be rewritten as independent Decisions in every Project.
+
+Rules and Rulesets may be maintained and distributed outside a Project, but they do not become Project authority merely by existing.
+
+A Project adopts an exact local Ruleset snapshot through a human-accepted Decision.
+
+The local snapshot is copied into the Project and remains immutable once adopted. Upstream changes never silently alter Project authority.
+
+Updating means adding a new snapshot and accepting a new Decision; historical snapshots remain available.
+
+## 15. The human should be able to explain the system
 
 A useful ownership test is whether the engineer can explain the logic and behaviour of the system without hiding behind the generated source.
 
