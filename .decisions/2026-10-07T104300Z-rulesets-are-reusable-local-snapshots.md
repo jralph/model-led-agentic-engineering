@@ -21,7 +21,7 @@ A Project adopts Rules through a human-accepted Project Decision that references
 
 Adoption must materialise/copy the complete snapshot into the Project. Project authority must not depend on a mutable upstream location, symlink, floating reference or remote fetch.
 
-Once a local Ruleset snapshot is referenced by an accepted Decision, that snapshot is immutable Project history.
+Once a Ruleset snapshot is materialised into a Project under a snapshot identity, that local snapshot is immutable. Human acceptance determines whether it becomes authoritative; it does not determine whether the snapshot may mutate.
 
 Updating a Ruleset is additive:
 
@@ -48,6 +48,8 @@ Local immutable snapshots preserve exact historical authority while still allowi
 - a Project may be scaffolded with reusable Ruleset snapshots;
 - substantive Ruleset adoption is recorded as a Project Decision, including for new Projects where appropriate;
 - Projects using Rulesets should keep local snapshots in a portable repository representation such as `.rulesets/<name>/<snapshot>/`;
+- a materialised snapshot is immutable by identity even before adoption;
+- snapshots referenced by historical accepted Decisions must also be retained, not merely left unmodified;
 - agents must resolve adopted Rules alongside the Decision basis;
 - local exceptions are expressed as Project Decisions rather than edits to imported Rules;
 - upstream updates may be discovered or proposed but never silently change Project authority;
