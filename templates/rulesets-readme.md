@@ -15,7 +15,7 @@ Recommended layout:
       ...
 ```
 
-`snapshot-id` should identify an exact upstream revision/version/digest.
+`snapshot-id` should identify an exact upstream revision/version/digest. For Git-backed sources, use or record the exact commit SHA rather than a branch name.
 
 ## Rules
 
