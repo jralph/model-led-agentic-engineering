@@ -75,8 +75,9 @@ The human is not prohibited from reviewing code. Code inspection remains appropr
 Agents are well suited to exhaustive conformance work:
 
 - compare the implementation with proposed decisions;
-- load relevant active decisions from `.decisions/`;
-- identify violations or ambiguity;
+- load relevant active Decisions from `.decisions/`;
+- resolve and load any local Ruleset snapshots adopted by those Decisions;
+- identify Decision/Rule violations or ambiguity;
 - inspect changed paths for bugs and edge cases;
 - assess tests against stated behaviours;
 - check for unintended scope expansion;
