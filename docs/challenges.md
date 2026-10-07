@@ -55,6 +55,28 @@ Example:
 
 The Challenge questions the Decision. The Decision remains authoritative until a human accepts a superseding Decision.
 
+### An adopted Rule
+
+A Rule in a locally adopted Ruleset may appear wrong, obsolete, conflicting or inappropriate for the Project.
+
+Example:
+
+> SEC-012 in `company-security/abc123` requires a network restriction that conflicts with a newly understood operational requirement.
+
+The Challenge should identify both the Rule and the Project Decision that adopted its Ruleset snapshot.
+
+The Rule remains authoritative for the Project while that adoption Decision remains active.
+
+Resolution may involve:
+
+- showing that the Rule still applies and making no change;
+- changing implementation to restore conformance;
+- accepting an explicit Project exception through a new Decision;
+- adopting a newer Ruleset snapshot through a new Decision;
+- raising a corresponding Challenge/change upstream.
+
+Do not edit the adopted local Rule file to make the Challenge disappear.
+
 ### A missing Decision
 
 The current model may not contain any Decision governing behaviour that now needs an explicit human choice.
