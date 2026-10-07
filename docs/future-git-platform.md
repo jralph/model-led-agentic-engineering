@@ -225,6 +225,36 @@ For a decision:
 - evidence available at acceptance;
 - later decisions that supersede it.
 
+## Reusable Rulesets
+
+A Project-first platform could also make reusable Rulesets easy to distribute without weakening Project history.
+
+An organisation could publish a mutable Ruleset catalogue, while each Project adoption materialises a complete local snapshot.
+
+A Project view might show:
+
+```text
+Rulesets
+
+company-security
+  abc123  adopted by DEC-41
+  xyz789  available update
+
+platform-reliability
+  9f2c10  adopted by DEC-63
+```
+
+Choosing an update would create a change that:
+
+1. copies the newer snapshot into the Project alongside the old one and locks that snapshot identity;
+2. compares changed/added/removed Rules;
+3. detects conflicts with active Project Decisions;
+4. evaluates implementation impact;
+5. proposes the Project Decision adopting the new snapshot;
+6. leaves the current authoritative snapshot unchanged until human acceptance.
+
+The platform should never model a Project as following `latest` from an external Ruleset source.
+
 ## Semantic conflicts
 
 Traditional Git detects textual conflicts.

@@ -32,6 +32,19 @@ When working with Decision records:
 6. If required semantic authority is missing, propose a Decision and/or surface a Challenge, then obtain human acceptance before making that semantic choice binding on the system.
 7. Treat `author`, `accepted_by` and timestamp fields as optional provenance only. They do not independently prove acceptance; prefer repository/review history when it already provides reliable provenance.
 
+### Rulesets
+
+This Project may use reusable Rulesets.
+
+- A Rule or upstream Ruleset is not authoritative merely because it exists.
+- Authority comes from a human-accepted Project Decision adopting an exact local Ruleset snapshot.
+- When a governing Decision adopts a Ruleset snapshot, load the Rules in that snapshot as part of the authoritative context.
+- Never use a symlink, floating branch, `latest` reference or remote fetch as the authoritative Ruleset representation.
+- Once a local snapshot is materialised under a snapshot identity, do not modify it in place.
+- Once adopted, retain it while historical Decisions depend on it.
+- To update, materialise a new sibling snapshot and accept a new/superseding Decision when authority should move to it.
+- Keep local exceptions in Project Decisions rather than editing imported Rule files.
+
 ### Working behaviour
 
 Before making a meaningful semantic change:

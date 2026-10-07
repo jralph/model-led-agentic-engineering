@@ -33,7 +33,12 @@ Goals:
   - generate compact decision context for agents;
   - summarise proposed decision changes in pull requests;
   - check implementation conformance against active and proposed decisions;
-  - rerun conformance and qualification when a proposed decision changes.
+  - rerun conformance and qualification when a proposed decision changes;
+  - prototype Ruleset tooling around real reuse:
+    - materialise exact upstream Ruleset revisions as local snapshots;
+    - resolve adopted Rules through the Project Decision basis;
+    - compare Ruleset snapshots during upgrades;
+    - preserve historical snapshots after superseding adoption Decisions.
 
 The important question is not "how many tokens did the agent use?" It is "how faithfully and efficiently did engineering intent become a correct outcome?"
 

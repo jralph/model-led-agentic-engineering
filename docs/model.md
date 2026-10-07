@@ -89,6 +89,7 @@ The external model may be spread across:
 - intent briefs;
 - architecture notes;
 - decision records;
+- locally adopted Ruleset snapshots;
 - tests;
 - schemas;
 - agent instructions;

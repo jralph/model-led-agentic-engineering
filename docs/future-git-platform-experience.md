@@ -33,6 +33,7 @@ A possible top-level navigation:
 Overview
 Model
   Decisions
+  Rulesets
   Areas
   History
 Tasks
@@ -122,6 +123,25 @@ Each Decision can show:
 - Decision Reviews;
 - evidence;
 - supersession chain.
+
+### Rulesets
+
+Projects using reusable standards can show their locally materialised Ruleset snapshots separately from Decisions.
+
+Example:
+
+```text
+company-security
+  abc123   adopted by DEC-41   active
+  xyz789   available upstream
+
+platform-reliability
+  9f2c10   adopted by DEC-63   active
+```
+
+An update flow should compare snapshots and open a normal human-governed change rather than silently tracking upstream.
+
+The human reviews what changed in the Rules and any conflicts/implementation impact, then decides whether to adopt the new local snapshot.
 
 ### Areas
 

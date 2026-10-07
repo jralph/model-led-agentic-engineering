@@ -103,6 +103,20 @@ This also changes review priority: humans can focus more attention on decisions,
 
 See [Decision library](docs/decision-library.md) and [Decision-first review](docs/decision-review.md).
 
+## Reusable Rulesets
+
+Not every important constraint needs to be reinvented separately in every Project.
+
+A **Rule** is a reusable normative statement. A **Ruleset** is a distributable collection of Rules.
+
+Rules do not become Project authority merely because they exist upstream. A Project adopts an exact **local Ruleset snapshot** through a human-accepted Decision.
+
+Adoption copies the Ruleset revision into the Project. The local snapshot is then preserved as immutable historical material. Upstream changes do not affect the Project automatically.
+
+Updating a Ruleset means copying a newer snapshot alongside the old one and accepting a new Decision that adopts the new snapshot. The previous snapshot remains so historical Decisions can still be reconstructed exactly.
+
+See [Rules and Rulesets](docs/rulesets.md).
+
 ## Intent and Challenges before decisions
 
 Not all work begins with a Decision.
@@ -168,11 +182,14 @@ Start here:
 15. [Abstract examples](docs/examples.md)
 16. [Maturity model](docs/maturity.md)
 17. [Adopting Model-led in a repository](docs/adoption.md)
+18. [Rules and Rulesets](docs/rulesets.md)
 
 Practical templates:
 
 - [Engineering intent brief](templates/intent-brief.md)
 - [Decision record](templates/decision-record.md)
+- [Ruleset adoption Decision](templates/ruleset-adoption-decision.md)
+- [Ruleset directory README](templates/rulesets-readme.md)
 - [Challenge](templates/challenge.md)
 - [Adversarial review brief](templates/adversarial-review.md)
 - [Qualification plan](templates/qualification-plan.md)

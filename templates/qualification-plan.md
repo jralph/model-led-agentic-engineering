@@ -24,6 +24,8 @@ Optional where obvious.
 
 Which accepted Decisions define or constrain the claim?
 
+Which adopted Ruleset snapshots are resolved from that Decision basis?
+
 Which proposed Decisions, if any, is this candidate being evaluated against?
 
 Do not treat proposed Decisions as authoritative.
