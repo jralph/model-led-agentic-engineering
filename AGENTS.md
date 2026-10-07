@@ -33,8 +33,8 @@ Preserve these ideas unless the owner explicitly changes them:
 16. The methodology does not prescribe a Task object, .intents/ or .challenges/ storage convention. Those are implementation/workflow choices.
 17. Decision provenance metadata is optional. `author`, `accepted_by` and timestamps may be recorded when useful, but they do not independently prove authority; prefer repository/review history when it already provides reliable provenance.
 18. Rules and Rulesets are reusable normative material, not Project authority by themselves. A Project gains authority from them only through a human-accepted Decision adopting an exact local snapshot.
-19. Adopted Ruleset snapshots are copied into the Project and immutable once referenced by an accepted Decision. Never let mutable upstream content, symlinks, floating references or remote fetches silently alter Project authority.
-20. Ruleset updates are additive: materialise a new snapshot, retain the old snapshot, and accept a new/superseding Project Decision.
+19. Ruleset snapshots are copied into the Project and immutable from the moment they are materialised under a snapshot identity. Never let mutable upstream content, symlinks, floating references or remote fetches silently alter snapshot content or Project authority.
+20. Ruleset updates are additive: materialise a new snapshot, retain old snapshots required by history, and accept a new/superseding Project Decision when Project authority should move to the new snapshot.
 21. The methodology is currently a personal working method, not a validated standard.
 
 ## Writing rules
