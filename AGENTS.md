@@ -1,6 +1,11 @@
 # Repository guidance for agents
 
-This repository documents a human-owned engineering methodology. AI assistance is expected, including for drafting and restructuring the documentation itself, but the methodology must not be allowed to drift simply because an agent found a more fashionable way to describe it.
+This repository contains two related but distinct things:
+
+1. the **Model-led methodology**: semantic reasoning, authority, review and Evidence;
+2. the **reference framework**: one concrete repository-based implementation of that methodology.
+
+Do not allow framework mechanics to leak back into methodology claims.
 
 ## Core contract
 
@@ -11,42 +16,61 @@ This repository documents a human-owned engineering methodology. AI assistance i
 > **Semantic implementation must not outrun its Decision basis.**  
 > **Evidence determines what can actually be claimed.**
 
-## Core intent
+## Methodology invariants
 
 Preserve these ideas unless the owner explicitly changes them:
 
-1. The human engineer owns the coherent semantic model, technical direction and accountability for the system.
+1. The human engineer owns the coherent semantic Model, technical direction and accountability.
 2. Agents may contribute research, ideas, local reasoning, implementation and critique.
 3. Implementation may be delegated without delegating understanding.
-4. Agent work should happen in explicit modes with bounded authority.
-5. Claims about correctness, safety, performance or productivity require evidence appropriate to the claim.
+4. Agent work should happen in explicit modes with bounded authority where useful.
+5. Claims about correctness, safety, performance or productivity require appropriate Evidence.
 6. Source code is one representation of engineering intent, not the only measure of engineering authorship.
-7. Language and framework constraints still matter. "Language-independent model" does not mean implementation details are irrelevant.
-8. Agents may reason about, originate, recommend and draft proposed semantic Decisions. A semantic Decision becomes authoritative only through explicit human acceptance.
-9. Human acceptance is the semantic authority boundary. Pull-request merge is one common representation of acceptance, not the methodology definition. Git state or agent write access alone is not proof of authority.
-10. Accepted files under `.decisions/` are append-only history. Never edit, rename or delete an accepted record; supersede it with a newly human-accepted Decision.
-11. Model-led agentic engineering governs above the implementation workflow. Do not rewrite it as a mandatory spec-driven, task-driven or tool-specific process.
-12. Decision-first review is a core practice: humans prioritise decisions and accepted risk; agents can perform exhaustive conformance review; direct human code review remains risk-based.
-13. Intent is human-owned, mutable and pre-decisional. Agents may help refine or research it but must not silently change the human objective and treat the change as authoritative.
-14. Challenges are pre-decisional questions and may be raised by humans or agents. They may question existing Decisions, adopted Rules/Rulesets, or missing Decision authority without changing the model.
-15. Meaningful semantic implementation requires a sufficient Decision basis. Intent or Challenge alone does not authorise new system semantics.
-16. The methodology does not prescribe a Task object, .intents/ or .challenges/ storage convention. Those are implementation/workflow choices.
-17. Decision provenance metadata is optional. `author`, `accepted_by` and timestamps may be recorded when useful, but they do not independently prove authority; prefer repository/review history when it already provides reliable provenance.
-18. Rules and Rulesets are reusable normative material, not Project authority by themselves. A Project gains authority from them only through a human-accepted Decision adopting an exact local snapshot.
-19. Ruleset snapshots are copied into the Project and immutable from the moment they are materialised under a snapshot identity. Never let mutable upstream content, symlinks, floating references or remote fetches silently alter snapshot content or Project authority.
-20. Ruleset updates are additive: materialise a new snapshot, retain old snapshots required by history, and accept a new/superseding Project Decision when Project authority should move to the new snapshot.
-21. The methodology is currently a personal working method, not a validated standard.
+7. Language/framework constraints still matter. "Language-independent Model" does not make implementation details irrelevant.
+8. Intent is human-owned, mutable and pre-decisional.
+9. Challenges are unresolved questions and may be raised by humans or agents without changing authority.
+10. Agents may originate proposed semantic Decisions. Human acceptance is what makes a semantic Decision authoritative.
+11. The accepted Decision basis, not Intent or Challenge alone, governs meaningful semantic implementation.
+12. Existing accepted Decisions may be sufficient for work. Work does not require a new Decision merely because work occurred.
+13. A new Decision is needed only when existing semantic authority is insufficient.
+14. Once accepted, a Decision constrains later work and may be described as a rule to follow. **Rule is not a separate methodology primitive.**
+15. Accepted Decision history must remain reconstructable; changed authority is represented through later Decisions rather than silent rewriting.
+16. Decision-first review prioritises semantic Decisions, trade-offs and accepted risk while agents can perform exhaustive implementation-conformance review.
+17. Model-led governs above implementation workflow and storage choices.
+18. The methodology does **not** prescribe `.decisions/`, `.rulesets/`, YAML, Git, pull requests, `AGENTS.md`, Task objects or another repository convention.
+19. The methodology is currently a personal working method, not a validated standard.
+
+See [docs/methodology.md](docs/methodology.md) and [docs/decisions.md](docs/decisions.md).
+
+## Reference framework invariants
+
+This repository also maintains the bundled reference framework.
+
+These are framework rules, not methodology requirements:
+
+1. Project Decision records use the `.decisions/` repository convention.
+2. Accepted Decision records in this repository are append-only. Never edit, rename or delete one; supersede changed authority with a new Decision.
+3. Decision front matter follows the framework schema. Provenance fields such as `author`, `accepted_by` and timestamps are optional and do not prove authority.
+4. The framework may use Git/review history as provenance and enforcement, but Git state is not semantic authority by itself.
+5. Framework templates are conveniences, not new Model-led primitives.
+6. A framework **Ruleset** is a versioned/distributable grouping of ordinary accepted Decision records.
+7. There is no separate Rule record type, Rule schema or Rule semantic lifecycle. A Rule is simply an accepted Decision being reused as a constraint.
+8. Ruleset revisions may be materialised under the optional `.rulesets/` convention.
+9. Materialised Ruleset revisions are self-contained snapshots. Never use symlinks, floating refs or mutable remote content as live authority.
+10. Ruleset updates are additive: add a new revision, retain historical revisions, and change Project authority through ordinary Decisions.
+11. Another Model-led implementation may replace every framework mechanic above.
+
+See [docs/framework.md](docs/framework.md), [docs/decision-library.md](docs/decision-library.md) and [docs/rulesets.md](docs/rulesets.md).
 
 ## Writing rules
 
 - Use British English.
 - Prefer plain engineering language over AI-industry marketing language.
 - Do not describe the approach as "10x", "revolutionary", "the future of software engineering", or similar.
-- Do not imply that humans are no longer needed to understand code.
+- Do not imply that humans no longer need to understand their systems.
 - Do not imply that an agent can verify its own work merely by saying it reviewed it.
 - Do not turn every concept into a framework, acronym or score.
-- Distinguish observed practice, proposed practice and future research.
-- Examples should be generic and should not depend on knowledge of any private or branded product.
+- Distinguish methodology, reference-framework convention, exploratory platform design and observed evidence.
 - Keep the handbook readable before making it academically complete.
 
 ## Evidence rules
@@ -56,49 +80,82 @@ When documenting measurements:
 - record what was actually measured;
 - preserve failed and inconclusive results;
 - state the evidence boundary;
-- do not promote fixture evidence into live-system evidence;
+- do not promote fixture Evidence into live-system Evidence;
 - do not treat a finite zero-failure sample as proof of universal correctness;
 - do not collapse several metrics into a composite productivity score without empirical justification.
 
-## Bootstrapping Model-led into another repository
+## Maintaining methodology documents
 
-If a user points an agent at this methodology repository and asks to **set up Model-led** in a new or existing target repository, treat that as an adoption/bootstrap request.
+Methodology documents should explain concepts and reasoning without requiring framework mechanics.
+
+Avoid methodology claims such as:
+
+- "Decisions live in `.decisions/`";
+- "Rulesets are a Model-led primitive";
+- "human acceptance happens through pull-request merge";
+- "Intent belongs in a particular file";
+- "a Project must use YAML".
+
+It is fine to mention the bundled reference framework as an example, provided the implementation boundary is explicit.
+
+## Maintaining framework documents
+
+Framework documents may prescribe concrete conventions such as:
+
+- `.decisions/`;
+- schema/front matter;
+- repository bootstrap;
+- `AGENTS.md`;
+- `.rulesets/`;
+- Git-oriented validation.
+
+Make clear that these are replaceable implementation choices.
+
+## Bootstrapping the reference framework into another repository
+
+If a user points an agent at this repository and asks to **set up Model-led**, treat that as a request to install the bundled reference framework unless they specify another implementation.
 
 Read and use:
 
+- `docs/framework.md`;
 - `docs/adoption.md`;
+- `docs/decision-library.md`;
 - `templates/model-led-agent-guidance.md`;
 - `templates/decisions-readme.md`;
-- `templates/adoption-decision.md`;
-- `docs/rulesets.md`;
-- `templates/ruleset-adoption-decision.md`;
-- `templates/rulesets-readme.md`;
 - `.decisions/schema.yaml`.
 
 Then:
 
-1. **Inspect the target repository first.** Read its existing root/subtree agent instructions, documentation and structure. Do not assume a blank repository.
-2. **Preserve existing guidance.** If the target has `AGENTS.md`, merge the reusable Model-led guidance into it. Do not replace repository-specific build, test, language, security, architecture or release instructions.
-3. **Create the canonical Decision library** at `.decisions/` if it does not exist:
+1. **Inspect the target repository first.** Read existing root/subtree agent instructions, documentation and structure.
+2. **Preserve existing guidance.** Merge reusable framework guidance into existing `AGENTS.md`; do not replace repository-specific build, test, language, security, architecture or release instructions.
+3. **Create the framework Decision library** only if needed:
    - `.decisions/README.md` from `templates/decisions-readme.md`;
    - `.decisions/schema.yaml` from the current schema.
-4. **Do not create `.intents/`, `.challenges/`, `.model/` or a generic Task system** unless the target repository's chosen workflow explicitly calls for them. Create `.rulesets/` only when the Project is actually adopting or evaluating reusable Rulesets.
-5. **Do not infer historical Decisions from code.** Existing source, tests and architecture may reveal behaviour or missing authority, but they are not proof of human Decisions.
-6. **Existing repository adoption:** when the user explicitly asks to retrofit Model-led into an established repository, that request is normally itself the human acceptance of the semantic choice to adopt Model-led. Use `templates/adoption-decision.md` to record that already-made Decision. If the repository uses reviewed pull requests as its acceptance mechanism, the bootstrap change can preserve that workflow boundary; if the user has explicitly authorised direct changes, do not invent a second ceremonial approval. Provenance fields such as `author` and `accepted_by` are optional; do not invent identity metadata merely to fill them. Do not backfill any other Decisions without explicit human judgement.
-7. **New project adoption:** when the project is being created as Model-led from inception, do not create a ceremonial adoption Decision. Begin with an empty Decision library and record Decisions only as real semantic choices arise.
-8. **Validate conservatively.** Run appropriate existing checks for the files changed and report any ambiguity or incompatibility rather than overwriting it.
-9. **Ruleset adoption:** if the user asks to scaffold/adopt a Ruleset, resolve an exact upstream revision/version/digest, create `.rulesets/README.md` from `templates/rulesets-readme.md` when needed, copy the Ruleset into a new local `.rulesets/<name>/<snapshot>/` snapshot, preserve any older snapshots, and use `templates/ruleset-adoption-decision.md` to record the Project Decision that adopts it. Never symlink or follow mutable upstream content as authority.
-10. **Explain the resulting boundary:** Intent and Challenge are storage-agnostic; accepted Decisions live in `.decisions/`; reusable Rulesets are optional local snapshots under `.rulesets/`; meaningful semantic implementation must have a sufficient Decision basis.
+4. **Do not invent storage for methodology concepts.** Do not create `.intents/`, `.challenges/`, `.model/` or a generic Task system merely because those concepts exist.
+5. **Do not infer historical Decisions from code.** Existing implementation may reveal behaviour or missing authority, but it is not proof of accepted Decisions.
+6. **Do not create a ceremonial framework-adoption Decision by default.** Record one only if the human actually wants the governance/storage transition preserved as a semantic Decision.
+7. **New Projects may start with an empty Decision library.** Add Decisions when real semantic choices arise.
+8. **Validate conservatively.** Report ambiguity or incompatibility rather than overwriting it.
 
-A bootstrap should leave the target repository ready to use Model-led without coupling it to this repository, a specific agent harness or a specific project-management tool.
+### Ruleset bootstrap
+
+If the user asks to materialise/adopt a Ruleset:
+
+1. read `docs/rulesets.md`;
+2. resolve an exact upstream Ruleset revision/version/digest;
+3. copy the complete bundle of ordinary Decision records into a new local framework snapshot;
+4. preserve older snapshots;
+5. use an ordinary Project Decision to adopt/update that snapshot when it should constrain the Project;
+6. never invent a separate Rule record type or rewrite imported Decisions as a different schema.
 
 ## Repository shape
 
-- `README.md`: short explanation and navigation.
-- `docs/`: current methodology.
-- `.decisions/`: immutable human-accepted Decision history; additions only after acceptance.
-- `.rulesets/`: optional immutable local Ruleset snapshots referenced by accepted Decisions.
-- `templates/`: practical artefacts engineers can copy.
-- `ROADMAP.md`: proposed evolution and research, not current truth.
+- `README.md`: top-level methodology/framework split and navigation.
+- `docs/methodology.md`: methodology boundary.
+- `docs/framework.md`: reference-framework boundary.
+- `docs/`: methodology handbook plus clearly labelled framework/exploration documents.
+- `.decisions/`: this repository's use of the reference framework to preserve accepted Decision history.
+- `templates/`: reference-framework artefacts.
+- `ROADMAP.md`: proposed evolution and research.
 
-If implementation experience disproves part of the handbook, update the handbook. Do not preserve a claim because it was previously written down.
+If implementation experience disproves part of the handbook, update the handbook. Do not preserve a claim merely because it was previously written.

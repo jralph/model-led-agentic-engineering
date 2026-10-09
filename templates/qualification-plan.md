@@ -24,7 +24,7 @@ Optional where obvious.
 
 Which accepted Decisions define or constrain the claim?
 
-Which adopted Ruleset snapshots are resolved from that Decision basis?
+If the reference framework is in use, which accepted Decisions in this basis were supplied through adopted Ruleset revisions?
 
 Which proposed Decisions, if any, is this candidate being evaluated against?
 

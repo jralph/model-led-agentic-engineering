@@ -1,30 +1,15 @@
-# Adopting Model-led in a repository
+# Reference framework: repository adoption
 
-Model-led is intended to be portable.
+> **Layer:** reference framework  
+> This document explains how to install the bundled repository conventions. Using the Model-led methodology itself does not require these files.
 
-A new or existing repository should be able to adopt the methodology without adopting a particular coding agent, IDE, ticket system, specification workflow or source-control platform.
+The methodology is storage- and tool-independent.
 
-The minimum repository-level setup is deliberately small:
+The reference framework provides a portable way to represent Model-led concepts in an ordinary repository.
 
-- an `.decisions/` library for accepted human Decisions;
-- agent guidance that preserves the Model-led authority boundaries;
-- the project's existing code, tests, documentation and workflows.
+## Minimum framework setup
 
-Intent and Challenge are first-class Model-led concepts, but the methodology does not prescribe `.intents/`, `.challenges/` or a generic Task object.
-
-## Agent-assisted bootstrap
-
-A user should be able to tell a capable repository agent something equivalent to:
-
-> Set up Model-led agentic engineering in this repository using https://github.com/jralph/model-led-agentic-engineering. Follow the bootstrap instructions in that repository's AGENTS.md and preserve the existing repository guidance.
-
-The source methodology repository's [AGENTS.md](../AGENTS.md) contains the canonical bootstrap procedure.
-
-The agent should inspect the target repository before making changes and adapt the setup rather than blindly replacing existing files.
-
-## Minimum result
-
-A bootstrapped repository should contain:
+A minimal installation normally contains:
 
 ```text
 .decisions/
@@ -34,168 +19,123 @@ A bootstrapped repository should contain:
 AGENTS.md
 ```
 
-If the target repository already has an `AGENTS.md`, Model-led guidance should be merged into it rather than replacing unrelated instructions.
+This is a framework convention.
 
-If the target already has a compatible decision library, the agent should preserve it and report any incompatibilities rather than destructively recreating it.
+It is **not** a claim that Model-led requires these paths.
 
-## Existing repositories usually start with an adoption Decision
+If a repository already has compatible guidance or Decision storage, preserve it rather than recreating it destructively.
 
-For an established repository, adopting Model-led changes how future semantic authority is handled.
+## Agent-assisted bootstrap
 
-When a human explicitly asks to set up or adopt Model-led in that repository, that instruction is normally the **human acceptance event for the semantic choice itself**:
+A user can tell a capable repository agent:
 
-> Adopt Model-led agentic engineering as this repository's engineering governance method.
+> Set up the Model-led reference framework in this repository using https://github.com/jralph/model-led-agentic-engineering. Preserve the existing repository guidance.
 
-Use [the adoption Decision template](../templates/adoption-decision.md) to record that Decision.
+The source [AGENTS.md](../AGENTS.md) contains the framework bootstrap procedure.
 
-The repository's normal workflow may still require review/merge before the record reaches its accepted history. That workflow requirement should be preserved, but it is not a second semantic Decision unless the project chooses to make it one.
+The agent should inspect the target before making changes.
 
-This Decision establishes the governance boundary **from adoption onward**. It does not claim that historical implementation choices were already Model-led Decisions.
+## Preserve existing repository guidance
 
-Decision provenance fields such as `author` and `accepted_by` are optional. Do not invent identity metadata merely to populate front matter; rely on the repository/review history when it already provides suitable provenance.
+If the target already has `AGENTS.md`, merge framework guidance into it.
 
-## Do not seed other Decisions from code
-
-Bootstrap establishes the **mechanism** for recording Decisions.
-
-It must not manufacture historical authority.
-
-An agent must not inspect an existing repository, infer that architectural or behavioural choices "must have been decisions", and then write those guesses into `.decisions/` as accepted records.
-
-Existing implementation can be used to:
-
-- reconstruct current behaviour;
-- identify likely assumptions;
-- find missing Decision authority;
-- raise or report Challenges;
-- ask humans which existing choices should become explicit Decisions.
-
-Only explicit human acceptance can make a semantic Decision authoritative.
-
-Agents may propose other Decisions during bootstrap if useful, but bootstrap should not make them authoritative without human acceptance and should not manufacture historical Decision authority from code.
-
-A newly created Project using Model-led from inception may therefore begin with **zero Decision records**. That is valid.
-
-## Canonical Decision library
-
-The target repository's `.decisions/` should preserve the semantics defined by [Decision library](decision-library.md):
-
-- records are Markdown with YAML front matter;
-- accepted records are immutable;
-- changes happen through superseding Decisions;
-- active state is derived from the supersession graph;
-- agents may originate proposed semantic Decisions, but human acceptance is what makes them authoritative.
-
-The bootstrap agent should copy the current [decision schema](../.decisions/schema.yaml) into the target repository.
-
-Use the portable [Decision library README template](../templates/decisions-readme.md) for the target `.decisions/README.md`.
-
-## Canonical agent guidance
-
-The reusable target-repository guidance is in [Model-led agent guidance](../templates/model-led-agent-guidance.md).
-
-A bootstrap agent should merge those rules into the target root `AGENTS.md`.
-
-Do not copy this methodology repository's entire root `AGENTS.md` into a target project. It contains instructions specific to maintaining the methodology itself.
-
-## Preserve repository-specific instructions
-
-Model-led sits above the implementation workflow.
-
-Bootstrap must therefore preserve instructions such as:
+Do not replace:
 
 - build/test commands;
 - formatting rules;
 - language conventions;
-- architecture-specific constraints;
+- architecture constraints;
 - release processes;
 - security requirements;
-- repository-specific agent policies.
+- repository-specific policies.
 
-Model-led adds semantic authority and review rules; it does not replace useful local engineering guidance.
+The framework adds a way to preserve semantic authority. It does not replace existing implementation knowledge.
 
-## No mandatory Intent or Challenge storage
+## Do not manufacture historical Decisions
 
-Do not create these merely because Model-led has the concepts:
+Installing the framework does not make current code historical Decision authority.
 
-```text
-.intents/
-.challenges/
-.model/
-```
+An agent may use existing implementation to:
 
-Intent and Challenge are storage-agnostic.
+- reconstruct behaviour;
+- identify likely assumptions;
+- discover missing authority;
+- raise Challenges;
+- ask humans which choices should be made explicit.
 
-A project may represent them through:
+It must not backfill guessed Decisions as accepted history.
 
-- its existing issue tracker;
-- planning documents;
-- chat/conversation;
+## Framework adoption does not require a ceremonial Decision
+
+A Project can use the Model-led methodology without this framework.
+
+Likewise, installing these repository mechanics does not inherently require a Decision saying "use the framework".
+
+If an established team considers the governance/storage change itself materially important, it may record an ordinary process Decision.
+
+The framework includes an [adoption Decision template](../templates/adoption-decision.md) for that case, but bootstrap should not create one merely to satisfy the framework.
+
+## New Projects
+
+A new Project may start with an empty Decision library.
+
+Do not invent a speculative Decision set before real semantic choices arise.
+
+If the Project scaffolds from reusable Rulesets, those are substantive constraints and can be adopted through ordinary Decisions as appropriate.
+
+## Intent and Challenge storage
+
+The framework does not require `.intents/`, `.challenges/` or `.model/`.
+
+Intent and Challenge are methodology concepts whose representation is implementation-specific.
+
+They may live in:
+
+- tickets;
+- planning systems;
+- conversations;
 - briefs;
-- a platform-native object;
-- another workflow chosen by the implementor.
+- platform-native objects;
+- Markdown;
+- another workflow.
 
-`.decisions/` has the canonical representation for accepted Decisions. Projects that use reusable Rulesets should also materialise exact local snapshots under the optional `.rulesets/` convention.
+## Ruleset support
 
-## Existing repository adoption
+Rulesets are optional framework packaging for reusable accepted Decision records.
 
-For an established codebase, bootstrap should normally:
-
-1. inspect existing repository and agent guidance;
-2. add the Decision library mechanics;
-3. merge Model-led agent rules;
-4. record the Model-led adoption Decision from the user's explicit adoption instruction;
-5. preserve the repository's normal publication/review mechanism for getting that accepted Decision record into durable history;
-6. run existing validation appropriate to documentation/configuration changes;
-7. report that the repository is ready for Model-led work;
-8. optionally identify areas where Decision authority appears absent; agents may propose Decisions, but must not make them authoritative without human acceptance.
-
-The repository does not need to be remodelled before useful work can begin.
-
-Model-led can grow incrementally as real Intents, Challenges and Decisions arise.
-
-## New project adoption
-
-For a new project, the same minimum repository mechanics apply, but an adoption Decision is unnecessary.
-
-The project is Model-led from inception; there is no earlier governance model whose transition needs provenance.
-
-Do not invent a ceremonial adoption Decision or a large speculative Decision set before the project has encountered real choices.
-
-Begin from human Intent, explore/research, and record Decisions when durable semantic authority is actually established.
-
-This keeps the methodology lightweight rather than turning startup scaffolding into a heavyweight specification exercise.
-
-## Scaffolding with Rulesets
-
-A new or existing Project may adopt reusable Rulesets for security, reliability, data governance, organisational standards or other shared constraints.
-
-Ruleset adoption is substantive semantic authority, so it is different from the ceremonial question of whether a brand-new Project needs a Decision merely to say it uses Model-led.
-
-When scaffolding with a Ruleset:
+If the user asks to materialise a Ruleset:
 
 1. resolve an exact upstream revision/version/digest;
-2. create `.rulesets/README.md` from the portable template if this is the Project's first Ruleset;
-3. copy the complete Ruleset into a local `.rulesets/<name>/<snapshot>/` snapshot;
-4. record enough provenance to identify the source;
-5. create/accept a Project Decision adopting that local snapshot and defining its scope;
-6. leave upstream content disconnected from Project authority after the copy.
+2. create the framework Ruleset structure when needed;
+3. copy the complete Decision-record bundle into a new local revision;
+4. preserve source provenance;
+5. keep older revisions;
+6. use an ordinary Decision to adopt/update the revision when it should become Project authority.
 
-Do not symlink to the upstream Ruleset or use a floating reference such as `main` or `latest`.
+Never use a mutable upstream location as live Project authority.
 
-When updating later, import the new snapshot alongside the old one and accept a new/superseding Project Decision. Never rewrite a previously adopted snapshot.
+See [Reference framework Rulesets](rulesets.md).
 
-See [Rules and Rulesets](rulesets.md) and [Ruleset adoption Decision template](../templates/ruleset-adoption-decision.md).
+## Updating the framework
 
-## Updating an existing Model-led setup
+When updating a repository from a newer version of this reference framework:
 
-When asked to update Model-led from a newer methodology source:
-
-- inspect the target's existing Model-led guidance;
-- update reusable rules and schema carefully;
-- never rewrite accepted Decision records;
+- inspect current local conventions;
+- update schemas/templates/guidance carefully;
+- never rewrite accepted Decision history;
 - preserve target-specific additions;
-- surface material methodology changes to the human;
-- agents may propose new semantic rules, but do not make them authoritative without human acceptance.
+- surface semantic methodology changes separately from framework mechanics.
 
-Bootstrap and upgrades should remain conservative.
+A framework upgrade should not silently create new semantic authority.
+
+## Portability goal
+
+The framework is successful if a Project can later migrate its Model-led state to another implementation without changing the meaning of its:
+
+- Intent;
+- Challenges;
+- Decisions;
+- Decision basis;
+- Evidence.
+
+The repository layout is replaceable. The semantic model is not.

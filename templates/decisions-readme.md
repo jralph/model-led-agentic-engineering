@@ -1,10 +1,10 @@
 # .decisions
 
-This directory is the append-only library of human-accepted semantic Decisions for this repository.
+This directory uses the **Model-led reference framework** to represent human-accepted semantic Decisions.
 
-The repository uses [Model-led agentic engineering](https://github.com/jralph/model-led-agentic-engineering).
+The Model-led methodology does not require this path or format; this is the portable repository convention supplied by [model-led-agentic-engineering](https://github.com/jralph/model-led-agentic-engineering).
 
-## Rules
+## Library conventions
 
 1. **Agents may propose semantic Decisions.** AI may research, challenge, originate, recommend and draft proposals.
 2. **Human acceptance creates semantic authority.** A proposed Decision is not authoritative until a human accepts it.

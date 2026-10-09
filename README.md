@@ -1,6 +1,6 @@
 # Model-led agentic engineering
 
-A practical methodology for engineering with AI where the human owns the system model and technical intent, while agents help explore, formalise, implement, challenge and verify it.
+A practical methodology for engineering with AI where humans retain semantic intent, judgement and decision authority while agents explore, research, propose, implement, challenge and verify.
 
 > **The implementation can be delegated. The engineering judgement cannot.**
 
@@ -13,13 +13,37 @@ A practical methodology for engineering with AI where the human owns the system 
 > **Semantic implementation must not outrun its Decision basis.**  
 > **Evidence determines what can actually be claimed.**
 
-This repository starts as a description of how I work. The intention is to make that process explicit enough that other engineers can adopt, test and improve it, then eventually determine whether it can mature into something closer to a repeatable engineering standard.
+This repository now deliberately contains **two layers**:
 
-It is deliberately not a claim that I invented agentic engineering, spec-driven development, or any other existing discipline. It is an attempt to document a working pattern I arrived at independently and now use heavily.
+1. the **Model-led methodology**: the reasoning, authority and review model;
+2. a **reference framework**: one concrete repository-based way to apply that methodology.
 
-## The short version
+Keeping those layers separate is important. The methodology should survive if every file convention in this repository is replaced.
 
-I tend to hold a language-independent model of a system in my head before I care about its implementation language.
+---
+
+## Methodology
+
+The methodology is the portable part.
+
+It defines concepts such as:
+
+- the human-owned semantic **Model**;
+- human-owned **Intent**;
+- unresolved **Challenges**;
+- proposed and accepted **Decisions**;
+- the accepted **Decision basis** governing implementation;
+- bounded agent authority;
+- decision-first review;
+- Evidence and qualification.
+
+It does **not** require Git, pull requests, YAML, `.decisions/`, `.rulesets/`, `AGENTS.md`, a Task object, a specific coding agent, or a particular implementation workflow.
+
+See [Model-led methodology](docs/methodology.md).
+
+### The short version
+
+I tend to hold a language-independent semantic model of a system before I care about its implementation language.
 
 That model includes things such as:
 
@@ -36,202 +60,242 @@ That model includes things such as:
 
 AI changes how quickly that model can become working software.
 
-Historically, implementation was a serial bottleneck. I could reason through a problem quickly, but turning the solution into code, tests, infrastructure and documentation still took substantial time. With capable agents, much of that translation can be delegated.
+Historically, implementation was a serial bottleneck. With capable agents, much of the translation from semantic intent into code, tests, infrastructure and documentation can be delegated.
 
 That does **not** mean delegating understanding.
 
-The workflow becomes a loop: the engineer maintains the system model, agents help turn that model into implementation and evidence, and what is learnt feeds back into the model.
+The engineer maintains the coherent model, agents contribute local intelligence and execution, and what is learnt feeds back into the model.
 
-![Model-led agentic engineering loop](assets/diagrams/core-loop.svg)
+### Intent, Challenge and Decision
 
-AI can contribute ideas, research, local reasoning and implementation choices. The human remains responsible for the coherence of the system and for deciding what is accepted.
+These concepts answer different questions.
 
-## Why "model-led"?
+> **Intent:** what outcome are we trying to achieve?
 
-The model is the durable understanding of the system, not a particular diagram or document.
+> **Challenge:** what deserves to be questioned or investigated?
 
-It is closer to a modern, continuously evolving UML in your head than to a formal UML artefact. The important part is that it is semantic rather than language-specific.
+> **Decision:** what semantic choice has received human authority?
 
-If the same system were reimplemented in another language, most of the model would survive. The engineer would need to understand the new language's constraints and idioms, but not rediscover what the system is supposed to do.
+> **Decision basis:** which already-accepted Decisions constrain the resulting implementation?
 
-See [The model](docs/model.md).
+An Intent or Challenge can end after exploration or research with no implementation.
 
-## A practice, not an implementation workflow
+Implementation may also proceed entirely under existing accepted Decisions. **Work does not imply a new Decision.**
 
-Model-led agentic engineering does **not** prescribe how a feature must be implemented.
+A new Decision is needed only when the existing Decision basis cannot authorise the semantic change being pursued.
 
-A project can use spec-driven development, an autonomous coding agent, a lightweight intent brief, a conventional ticket, or manual implementation. Those are delivery mechanisms inside the practice.
+See [Decisions](docs/decisions.md), [Intents](docs/intents.md) and [Challenges](docs/challenges.md).
 
-Model-led governs a different layer: who owns the semantic model, where accepted decisions live, what authority agents have, how implementation is reviewed against human intent, and what evidence is required before accepting the result.
+### Decisions become rules for later work
 
-A specification can be useful, but it is only one projection of the model for a particular piece of work.
+A Decision is a semantic choice while it is being considered.
 
-See [Model-led vs other AI engineering approaches](docs/model-led-vs.md).
+After human acceptance, it becomes authoritative and constrains later work.
 
-## Why "mode-based" as well?
+In ordinary language, that accepted Decision is now a **rule to follow**.
 
-Agents are more useful when they are not treated as one undifferentiated intelligence.
+Model-led does not introduce a second semantic primitive called Rule. A Rule is simply an accepted Decision being used as an established constraint.
 
-I use different interaction modes for different kinds of work:
+That distinction matters because it keeps the methodology small:
 
-- **Explore** — expand the problem space and challenge assumptions.
-- **Research** — gather evidence and investigate unfamiliar areas.
-- **Specify** — turn accepted decisions into a durable engineering brief.
-- **Implement** — translate the agreed model into code and other artefacts.
-- **Review** — try to find incorrect assumptions, unsafe behaviour and model drift.
-- **Qualify** — gather evidence that the implementation actually satisfies the claims being made.
+```text
+work / investigation
+    ↓
+new semantic choice
+    ↓
+Decision
+    ↓
+human acceptance
+    ↓
+existing constraint / rule for future work
+```
 
-These modes have different authority. A research agent can discover facts but should not silently make product decisions. An implementation agent can make bounded local choices but should not casually redefine architecture. A reviewer should challenge the work, not quietly change the requirements.
+### Human acceptance, not typing, creates authority
 
-See [Agent modes and authority](docs/modes.md).
+Agents may reason about, originate, recommend and draft proposed semantic Decisions.
 
-## Durable decisions
+A semantic Decision becomes authoritative only through **human acceptance**.
 
-The human-owned model should not exist only in somebody's head or in old AI conversations.
+Acceptance is workflow-independent. It may happen before recording, during review, through team governance, or through another explicit mechanism.
 
-Projects can keep an append-only `.decisions/` library of authoritative semantic Decisions. Records use YAML front matter so they remain readable by people and queryable by tooling.
+The methodology does not define Git state, a merge button or a metadata field as authority.
 
-Agents may reason about, originate, recommend and draft proposed semantic Decisions. A semantic Decision becomes authoritative only through **human acceptance**.
+### Decision-first review
 
-The acceptance mechanism is implementation-specific. A pull-request merge after human review is one common mechanism, but explicit human acceptance may happen through another workflow or before an agent records the Decision. Git state alone is not proof of authority.
+As implementation throughput increases, human review should concentrate scarce judgement on:
 
-Once accepted, a Decision record becomes immutable and can only be changed through a later superseding Decision.
+- semantic Decisions;
+- trade-offs;
+- trust boundaries;
+- accepted risk;
+- whether the implementation still expresses the intended model.
 
-Decision front matter requires only the semantic core. Author/acceptor identities and timestamps are optional provenance; where the surrounding repository or review system already records that information reliably, its history is preferred over duplicating workflow state in YAML.
+Agents can perform exhaustive implementation-conformance review and qualification.
 
-This also changes review priority: humans can focus more attention on decisions, semantics and accepted risk, while agents perform exhaustive implementation-conformance review. Human code inspection remains available wherever risk or judgement warrants it.
+Direct human code inspection remains appropriate wherever risk, novelty or judgement warrants it.
 
-See [Decision library](docs/decision-library.md) and [Decision-first review](docs/decision-review.md).
+See [Decision-first review](docs/decision-review.md).
 
-## Reusable Rulesets
+### Evidence bounds claims
 
-Not every important constraint needs to be reinvented separately in every Project.
+A passing test does not prove every possible claim about an implementation.
 
-A **Rule** is a reusable normative statement. A **Ruleset** is a distributable collection of Rules.
+Model-led separates:
 
-Rules do not become Project authority merely because they exist upstream. A Project adopts an exact **local Ruleset snapshot** through a human-accepted Decision.
+- what we intend;
+- what we decided;
+- what was implemented;
+- what was actually demonstrated.
 
-Adoption copies the Ruleset revision into the Project. The local snapshot is then preserved as immutable historical material. Upstream changes do not affect the Project automatically.
+See [Verification and evidence](docs/verification.md).
 
-Updating a Ruleset means copying a newer snapshot alongside the old one and accepting a new Decision that adopts the new snapshot. The previous snapshot remains so historical Decisions can still be reconstructed exactly.
+---
 
-See [Rules and Rulesets](docs/rulesets.md).
+## Reference framework
 
-## Intent and Challenges before decisions
+The repository also contains an optional **reference framework** for applying Model-led in ordinary repositories today.
 
-Not all work begins with a Decision.
+It is an implementation of the methodology, not part of the methodology contract.
 
-An **Intent** is a human-owned outcome being pursued. It gives exploration and research direction, but it does not itself create durable semantic authority.
+See [Model-led reference framework](docs/framework.md).
 
-An Intent may end after exploration, proceed under an existing Decision basis, or expose a semantic choice that requires a new human Decision.
+### Decision library
 
-See [Intents](docs/intents.md).
+The reference framework stores Decision records under:
 
-Not every problem is already understood well enough to become a Decision.
+```text
+.decisions/
+```
 
-A **Challenge** records something about the current Decisions, implementation, evidence or observed behaviour that may be wrong, incomplete or worth reconsidering. Challenges may be created by humans or agents because raising a question does not alter the system model.
+and supplies:
 
-A Challenge can remain unresolved while evidence is gathered. It may end in no change, an implementation correction under an existing Decision, stronger evidence, or a new human-accepted Decision.
+- a Markdown/YAML Decision format;
+- a schema;
+- append-only history conventions;
+- Decision templates;
+- agent guidance;
+- Git/review-friendly provenance.
 
-This gives agents a safe way to surface bugs, contradictions and unknowns without silently becoming decision makers.
+Those are framework choices.
 
-See [Challenges](docs/challenges.md).
+Another Model-led implementation could use database records, platform-native objects or a completely different storage mechanism.
 
-## Why now?
+See [Reference framework Decision library](docs/decision-library.md).
 
-AI has increased implementation throughput much faster than human review throughput.
+### Rulesets
 
-A process built around humans manually reading every changed line becomes harder to sustain when agents can produce large, coherent changes in minutes. The answer is not to stop reviewing implementation; it is to move scarce human attention towards the semantic decisions that shape it, then use agents and qualification evidence to verify that the implementation conforms.
+Rulesets exist only at the framework layer.
 
-This pressure is starting to appear in wider tooling discussions too. Cloudflare's October 2026 challenge to build a Git platform for an agent-heavy world explicitly asks developers to rethink repositories, branches, pull requests, worktrees, code review and merge conflicts for large numbers of concurrent agents. That does not validate this methodology, but it is a useful signal that the collaboration primitives around software are becoming part of the problem.
+A Ruleset is:
 
-See [Model-led vs other AI engineering approaches](docs/model-led-vs.md#why-this-matters-now).
+> **a named, versioned grouping of ordinary accepted Decision records for reuse or distribution.**
 
-## What this is not
+There is no separate Rule file format or Rule semantic type.
 
-This is not:
+The same Decision record that represented an accepted choice can later be distributed in a Ruleset and reused as a rule.
 
-- "vibe coding";
-- prompting until something appears to work;
-- treating generated code as a black box;
-- assuming AI output is correct because it compiles;
-- measuring engineering ability by how many lines a human personally typed;
-- replacing engineering judgement with model confidence;
-- a requirement to use one specific model, IDE, harness or agent framework.
+The framework can materialise exact Ruleset revisions locally, for example:
 
-The goal is to increase the amount of **correct engineering intent that can become shipped software**, without reducing understanding or accountability.
+```text
+.rulesets/
+  company-security/
+    abc123/
+      <ordinary Decision records>
+    xyz789/
+      <ordinary Decision records>
+```
 
-## Handbook
+Old revisions remain available for historical reconstruction.
 
-Start here:
+A Project may use a normal human-accepted Decision to adopt or update a particular Ruleset revision.
 
-1. [Core principles](docs/principles.md)
-2. [The human-owned system model](docs/model.md)
-3. [Authorship, ownership and understanding](docs/authorship-and-ownership.md)
-4. [Agent modes and authority](docs/modes.md)
-5. [The working loop](docs/workflow.md)
-6. [Decision library](docs/decision-library.md)
-7. [Intents](docs/intents.md)
-8. [Challenges](docs/challenges.md)
-9. [Decision-first review](docs/decision-review.md)
-10. [Model-led vs other AI engineering approaches](docs/model-led-vs.md)
-11. [Externalising intent](docs/externalising-intent.md)
-12. [Verification and evidence](docs/verification.md)
-13. [Measuring effectiveness](docs/measurement.md)
-14. [Anti-patterns](docs/anti-patterns.md)
-15. [Abstract examples](docs/examples.md)
-16. [Maturity model](docs/maturity.md)
-17. [Adopting Model-led in a repository](docs/adoption.md)
-18. [Rules and Rulesets](docs/rulesets.md)
+See [Reference framework Rulesets](docs/rulesets.md).
 
-Practical templates:
+### Repository bootstrap
 
-- [Engineering intent brief](templates/intent-brief.md)
+A capable repository agent can install the reference framework into a new or existing repository.
+
+A user can say:
+
+> **Set up the Model-led reference framework in this repository using https://github.com/jralph/model-led-agentic-engineering**
+
+The framework bootstrap preserves existing repository-specific guidance and installs only the conventions needed for this implementation.
+
+See [Reference framework adoption](docs/adoption.md).
+
+---
+
+## Documentation
+
+### Methodology handbook
+
+1. [Methodology overview](docs/methodology.md)
+2. [Core principles](docs/principles.md)
+3. [The human-owned system model](docs/model.md)
+4. [Authorship, ownership and understanding](docs/authorship-and-ownership.md)
+5. [Agent modes and authority](docs/modes.md)
+6. [The working loop](docs/workflow.md)
+7. [Decisions](docs/decisions.md)
+8. [Intents](docs/intents.md)
+9. [Challenges](docs/challenges.md)
+10. [Decision-first review](docs/decision-review.md)
+11. [Model-led vs other AI engineering approaches](docs/model-led-vs.md)
+12. [Externalising intent](docs/externalising-intent.md)
+13. [Verification and evidence](docs/verification.md)
+14. [Measuring effectiveness](docs/measurement.md)
+15. [Anti-patterns](docs/anti-patterns.md)
+16. [Abstract examples](docs/examples.md)
+17. [Maturity model](docs/maturity.md)
+18. [Glossary](docs/glossary.md)
+
+### Reference framework
+
+1. [Framework overview](docs/framework.md)
+2. [Decision library](docs/decision-library.md)
+3. [Repository adoption / bootstrap](docs/adoption.md)
+4. [Rulesets](docs/rulesets.md)
+
+Framework templates:
+
+- [Engineering Intent brief](templates/intent-brief.md)
 - [Decision record](templates/decision-record.md)
-- [Ruleset adoption Decision](templates/ruleset-adoption-decision.md)
-- [Ruleset directory README](templates/rulesets-readme.md)
 - [Challenge](templates/challenge.md)
 - [Adversarial review brief](templates/adversarial-review.md)
 - [Qualification plan](templates/qualification-plan.md)
 - [Session measurement](templates/session-measurement.md)
+- [Ruleset adoption Decision](templates/ruleset-adoption-decision.md)
+- [Ruleset directory README](templates/rulesets-readme.md)
+- [Reusable agent guidance](templates/model-led-agent-guidance.md)
 
 Experimental measurement work lives in [experiments/](experiments/).
 
-## Set up Model-led in another repository
+---
 
-A capable repository agent can bootstrap the portable Model-led conventions into a new or existing repository.
+## Exploratory applications
 
-A user can give the agent this repository and ask:
+The methodology and reference framework are not the only possible implementation.
 
-> **Set up Model-led in this repository using https://github.com/jralph/model-led-agentic-engineering**
+One exploratory direction is a **Project-first, decision-native Git platform** designed around agent-heavy engineering.
 
-The source [AGENTS.md](AGENTS.md) contains bootstrap instructions. The minimum setup is intentionally small: a canonical `.decisions/` library plus Model-led authority guidance merged into the target repository's existing `AGENTS.md`.
-
-For an existing repository, the explicit adoption request will normally be the first recorded Decision: adopt Model-led as the repository's engineering governance method. The human request itself supplies the semantic acceptance; the repository's normal review/publication workflow still applies. For a new project created as Model-led from inception, no adoption Decision is necessary.
-
-See [Adopting Model-led](docs/adoption.md).
-
-## Future applications
-
-The methodology does not require new source-control tooling, but it suggests some collaboration primitives that may be better suited to agent-heavy engineering.
-
-One exploratory direction is a **decision-native Git platform** that implements Model-led in a more opinionated way. **Project** becomes the human collaboration unit above a Model Repository and one or more ordinary Git Implementation Repositories, providing semantic-monorepo coherence without forcing a physical monorepo. The platform introduces **Task** as its work-item container for Intent- or Challenge-driven potential work, while a traditional Pull Request becomes a Project-level **Decision Review** spanning whichever implementation repositories are required. Task is a platform choice, not a Model-led methodology primitive.
+That platform is another possible implementation of Model-led. It must not redefine the methodology merely because its UI introduces objects such as Project, Task, Decision Review or Area.
 
 See [Potential future Git platform](docs/future-git-platform.md).
 
+---
+
 ## Current status
 
-**v0.1: personal working methodology.**
+**v0.1: personal working methodology plus reference framework.**
 
-At this stage the repository describes a method that works for me. It is not yet a standard and the maturity model is intentionally provisional.
+The methodology describes a working engineering model that still needs broader testing.
 
-The next stage is to make the method measurable: capture real agentic engineering sessions, identify where intent is lost between modes, quantify semantic rework, and test whether the approach remains effective across different engineers and codebases.
+The reference framework is deliberately provisional. Its storage conventions and templates should evolve or be replaced when evidence shows a better implementation.
+
+The next stage is to measure real work: intent transfer, semantic corrections, human active time, qualification quality and delayed rework.
 
 See [ROADMAP.md](ROADMAP.md).
 
-## A useful test
-
-The simplest test of whether the human still owns the engineering is:
+## A useful ownership test
 
 > If the generated implementation disappeared and I had to explain the system to another capable engineer, could I explain what it does, why it behaves that way, its important constraints, and how I would recreate it?
 

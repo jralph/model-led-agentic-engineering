@@ -60,24 +60,23 @@ The number of physical repositories should not determine how fragmented the huma
 
 The Model Repository is the portable Git-backed source for durable human semantic authority.
 
-It may contain:
+It may contain a portable representation such as:
 
 ```text
-.decisions/
+decisions/
 architecture/
 context/
-AGENTS.md
-project.yaml
+agent-guidance
+project metadata
 ```
 
-The exact structure is exploratory except for the existing Model-led `.decisions/` semantics.
+The exact structure is exploratory. Model-led does not prescribe `.decisions/`, Git or another storage layout. A platform may import/export the bundled reference framework for compatibility.
 
 The Model Repository should contain little or no product implementation code.
 
 Its purpose is to preserve and distribute the model that implementation agents need:
 
 - accepted Decisions;
-- locally materialised Ruleset snapshots adopted by those Decisions;
 - architecture/context where useful;
 - project-level agent guidance;
 - mappings between semantic Areas and implementation repositories;
@@ -98,8 +97,7 @@ The broader term **Model Repository** is useful if the repository also carries:
 
 The platform should keep these semantics distinct:
 
-- Decisions are human-accepted Project authority and immutable after acceptance;
-- adopted Ruleset snapshots are immutable local material referenced by Decisions;
+- Decisions are human-accepted Project authority and preserve historical acceptance;
 - architecture/context describes current understanding and may evolve;
 - agent guidance describes how agents should operate now and may evolve.
 

@@ -188,7 +188,9 @@ Agents propagate that change through implementation.
 
 ## First-class decisions
 
-The platform would understand `.decisions/` rather than merely rendering the files as Markdown.
+The platform would understand semantic Decisions natively rather than treating them as files.
+
+When importing a repository that uses the bundled reference framework, it can parse `.decisions/` as one compatibility representation.
 
 Possible repository views:
 
@@ -225,35 +227,15 @@ For a decision:
 - evidence available at acceptance;
 - later decisions that supersede it.
 
-## Reusable Rulesets
+## Reusable Decision distribution
 
-A Project-first platform could also make reusable Rulesets easy to distribute without weakening Project history.
+The platform may support reusable organisational Decisions without making **Ruleset** a Model-led primitive.
 
-An organisation could publish a mutable Ruleset catalogue, while each Project adoption materialises a complete local snapshot.
+For compatibility, it can import reference-framework Rulesets as versioned bundles of ordinary accepted Decision records.
 
-A Project view might show:
+A platform-native implementation could instead use an organisational Decision catalogue, inheritance model or package system.
 
-```text
-Rulesets
-
-company-security
-  abc123  adopted by DEC-41
-  xyz789  available update
-
-platform-reliability
-  9f2c10  adopted by DEC-63
-```
-
-Choosing an update would create a change that:
-
-1. copies the newer snapshot into the Project alongside the old one and locks that snapshot identity;
-2. compares changed/added/removed Rules;
-3. detects conflicts with active Project Decisions;
-4. evaluates implementation impact;
-5. proposes the Project Decision adopting the new snapshot;
-6. leaves the current authoritative snapshot unchanged until human acceptance.
-
-The platform should never model a Project as following `latest` from an external Ruleset source.
+The semantic requirement is the same: Projects must know exactly which accepted Decisions govern them, and external updates must not silently change Project authority.
 
 ## Semantic conflicts
 
@@ -419,7 +401,7 @@ Decision Reviews do not need to reject the PR concept completely.
 A migration path could be:
 
 1. ordinary Git repository;
-2. `.decisions/` becomes first-class;
+2. semantic Decisions become first-class, importing `.decisions/` where the reference framework is present;
 3. Pull Request UI gains Decisions, Conformance and Evidence surfaces;
 4. the primary review object is renamed or reframed as a Decision Review;
 5. implementation diffs remain an attached view.
@@ -435,7 +417,7 @@ It could demonstrate:
 1. create/import a Project with a Model Repository and one or more Implementation Repositories;
 2. create a Task driven by an Intent or Challenge;
 3. explore/research the Task and allow it to close without implementation;
-4. parse and display `.decisions/` as first-class Project objects;
+4. parse/import existing Decision history (including reference-framework `.decisions/`) as first-class Project objects;
 5. open a Project-level Decision Review only when there is implementation, a proposed Decision or risk/evidence to accept;
 6. identify the Implementation Repositories affected by its Areas/Decision basis;
 7. fork several isolated agent workspaces across those repositories;
@@ -482,7 +464,7 @@ Questions that would need real implementation and user testing include:
 6. How should teams handle disagreement over a proposed decision?
 7. How should decision ownership work when several humans jointly own a subsystem?
 8. Can a decision change be propagated automatically without creating excessive implementation churn?
-9. How should repositories that do not adopt `.decisions/` interoperate?
+9. How should different Decision-storage/framework implementations interoperate?
 10. Which parts belong in Git history and which belong in platform metadata?
 
 Until those questions are tested, this remains a potential application of model-led agentic engineering rather than a prescribed future for source control.

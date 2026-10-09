@@ -1,44 +1,66 @@
 # Roadmap
 
-This repository is intentionally starting as a personal handbook rather than pretending to be a standard before the method has been tested properly.
+This repository contains two tracks that should evolve independently:
+
+- the **Model-led methodology**, which must stay focused on reasoning, authority, review and Evidence;
+- the **reference framework**, which is one concrete repository implementation and is expected to change more freely.
+
+Neither should be treated as a standard before it has been tested properly.
 
 ## Stage 1: describe the working method
 
 Status: **current**
 
-Goals:
+### Methodology goals
 
-- document the mental/system model that sits above source code;
+- document the mental/system Model that sits above source code;
+- define Intent, Challenge, Decision, Decision basis, authority, review and Evidence clearly;
 - define the agent modes I already use in practice;
-- document the hand-offs between exploration, specification, implementation and verification;
-- capture the distinction between implementation authorship and engineering authorship;
-- provide lightweight templates without slowing the workflow down.
+- document the hand-offs between exploration, implementation, review and qualification;
+- capture the distinction between implementation authorship and engineering ownership;
+- keep the methodology independent of repository layout and tooling.
 
-Success here means I can point at the repository and say, "this is approximately how I work", without needing a long verbal explanation.
+### Reference-framework goals
+
+- provide lightweight repository conventions and templates without slowing the workflow down;
+- test whether `.decisions/`, agent guidance and reusable Decision packaging are useful implementations of the methodology;
+- keep framework mechanics replaceable.
+
+Success here means I can explain both "this is approximately how I work" and "this is one practical way to apply it" without confusing the two.
 
 ## Stage 2: instrument real work
 
+### Methodology research
+
 Goals:
 
-- capture representative agentic engineering tasks from start to finish;
+- capture representative agentic engineering work from start to finish;
 - record human active time separately from agent wall time;
 - record clarification loops and semantic corrections;
-- distinguish implementation corrections from design/model corrections;
+- distinguish implementation corrections from Decision/model corrections;
 - record which mode found defects;
-- measure rework after the initial merge or release;
-- identify where the model was not transferred to an agent accurately;
-- prototype decision-library tooling around real work:
-  - validate append-only records and supersession graphs;
-  - resolve active decisions for a changed path or semantic area;
-  - generate compact decision context for agents;
-  - summarise proposed decision changes in pull requests;
-  - check implementation conformance against active and proposed decisions;
-  - rerun conformance and qualification when a proposed decision changes;
-  - prototype Ruleset tooling around real reuse:
-    - materialise exact upstream Ruleset revisions as local snapshots;
-    - resolve adopted Rules through the Project Decision basis;
-    - compare Ruleset snapshots during upgrades;
-    - preserve historical snapshots after superseding adoption Decisions.
+- measure rework after release;
+- identify where the Model was not transferred to an agent accurately;
+- test whether existing Decision bases reduce unnecessary new Decisions;
+- measure whether decision-first review and independent qualification improve outcomes.
+
+### Reference-framework experiments
+
+Use real work to test the bundled implementation:
+
+- validate append-only Decision records and supersession graphs;
+- resolve active Decisions for a changed path or semantic area;
+- generate compact Decision context for agents;
+- summarise proposed Decision changes in reviews;
+- check implementation conformance against accepted Decisions;
+- rerun conformance and qualification when a proposed Decision changes;
+- prototype reusable-Decision packaging through Rulesets:
+  - materialise exact Ruleset revisions as bundles of ordinary Decision records;
+  - resolve adopted bundled Decisions into Project context;
+  - compare Ruleset revisions during upgrades;
+  - preserve historical bundles after adoption Decisions are superseded.
+
+The framework experiments should be allowed to fail or change without redefining the methodology.
 
 The important question is not "how many tokens did the agent use?" It is "how faithfully and efficiently did engineering intent become a correct outcome?"
 

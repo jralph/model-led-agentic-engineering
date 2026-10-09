@@ -81,8 +81,6 @@ See [Challenges](challenges.md).
 
 Identify the accepted Decisions that already govern the work.
 
-If any of those Decisions adopt local Ruleset snapshots, load the adopted Rules as part of the authoritative context.
-
 If the accepted Decision basis is sufficient, no new Decision is required.
 
 If the work requires a semantic choice that is not already authorised, an agent or human may propose a Decision. Human acceptance is required before that semantic choice becomes authoritative or releasable behaviour. Candidate implementation may be explored against the proposal before acceptance.
@@ -99,21 +97,19 @@ The decision can be as simple as:
 
 That is already enough to constrain a large amount of implementation.
 
-## 6. Record durable decisions
+## 6. Preserve durable Decisions
 
-Not every choice needs a permanent record.
+Not every choice needs permanent Decision history.
 
-When forgetting a Decision would make future engineers or agents likely to weaken a boundary, repeat a rejected design, change important behaviour or misunderstand an accepted trade-off, add a record to the project's `.decisions/` library.
+When forgetting a Decision would make future engineers or agents likely to weaken a boundary, repeat a rejected design, change important behaviour or misunderstand an accepted trade-off, preserve that Decision durably.
 
-When the reusable constraint already exists in an external Ruleset, prefer a Project Decision adopting an exact local snapshot over duplicating each Rule as a separate Project Decision.
+An agent may originate or draft a proposed Decision. The semantic Decision becomes authoritative only through human acceptance.
 
-An agent may originate or draft the proposed Decision record. The semantic Decision becomes authoritative only through human acceptance.
+Proposed Decisions may be refined before acceptance. Once accepted, later changes in authority should be represented through new/superseding Decisions rather than silently rewriting what was previously accepted.
 
-Keep proposed Decisions with the implementation/review context where practical. They may be refined before acceptance. A pull-request merge can represent human acceptance when the repository workflow guarantees that relationship, but Model-led does not require Git or pull requests.
+The methodology does not prescribe how those Decisions are stored.
 
-Once accepted into the authoritative Decision set, the Decision record becomes immutable.
-
-See [Decision library](decision-library.md).
+See [Decisions](decisions.md).
 
 ## 7. Crystallise implementation context
 
@@ -121,7 +117,7 @@ For non-trivial work, turn enough of the active Intent or Challenge, accepted De
 
 This does not require a particular specification workflow. A full spec-driven process may be appropriate for some work; a short intent brief may be enough for other work.
 
-Use the [intent brief](../templates/intent-brief.md) as one lightweight starting point.
+The bundled reference framework provides an [Intent brief template](../templates/intent-brief.md) as one optional implementation.
 
 A useful brief usually captures:
 
@@ -165,7 +161,7 @@ Ask:
 
 A separate review context is useful because it is less invested in defending the implementation.
 
-For projects using a decision library, review should also load the relevant active and proposed decisions and check the implementation against them. Human review should prioritise whether the decisions and trade-offs themselves are acceptable; agent review can take primary responsibility for exhaustive conformance checking.
+Review should load the relevant accepted Decision basis and any proposed Decisions under evaluation, then check the implementation against them. Human review should prioritise whether the Decisions and trade-offs themselves are acceptable; agent review can take primary responsibility for exhaustive conformance checking.
 
 See [Decision-first review](decision-review.md).
 
