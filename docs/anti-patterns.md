@@ -82,22 +82,6 @@ An implementation cannot.
 
 Memory models, type systems, runtime behaviour, concurrency primitives and ecosystem constraints can change the best concrete design.
 
-## Floating Ruleset authority
-
-A Project Decision says it follows a Ruleset branch, `latest`, symlink or remote location whose contents can change independently.
-
-That allows upstream mutation to alter Project authority without human acceptance.
-
-Adopt an exact local snapshot instead.
-
-## Editing imported Rules locally
-
-A Project copies a Ruleset, then edits the imported Rule files to create local exceptions.
-
-That destroys the distinction between reusable source material and Project-specific authority and makes future upgrades ambiguous.
-
-Keep adopted snapshots faithful and immutable. Express exceptions or changed authority through Project Decisions.
-
 ## Human as rubber stamp
 
 The human approves everything the agent proposes because reviewing is slower than generating.
