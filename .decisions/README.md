@@ -8,7 +8,7 @@ The Model-led methodology itself does not require this directory or file format.
 
 Read [Decisions](../docs/decisions.md) for methodology semantics and [Reference framework: Decision library](../docs/decision-library.md) for this representation.
 
-## Rules
+## Library conventions
 
 1. **Agents may propose semantic Decisions.** They may reason about, originate, recommend and draft proposals.
 2. **Human acceptance creates authority.** A semantic Decision is not authoritative until a human accepts it.
