@@ -84,17 +84,18 @@ Durable artefacts should carry enough of it to:
 - explain non-obvious behaviour months later;
 - detect when implementation has drifted.
 
-The external model may be spread across:
+The external model may be spread across many projections, for example:
 
-- intent briefs;
-- architecture notes;
-- decision records;
-- locally adopted Ruleset snapshots;
+- Intent briefs;
+- architecture/context;
+- durable Decision history;
 - tests;
 - schemas;
-- agent instructions;
+- agent guidance;
 - runbooks;
 - code.
+
+The methodology does not require any particular storage layout or file format for these projections.
 
 No single artefact needs to contain everything.
 
