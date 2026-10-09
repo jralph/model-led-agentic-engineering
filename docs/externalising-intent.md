@@ -49,13 +49,13 @@ Record what has actually been proven and what remains assumed.
 
 ## Useful artefacts
 
-A repository can carry the external model through several small artefacts rather than one master specification.
+The external model can be carried through several small artefacts or system objects rather than one master specification.
 
-### Decision library
+### Durable Decision history
 
-An append-only `.decisions/` library preserves accepted human decisions, including invariants, architecture, boundaries and important trade-offs. Its structured metadata makes the records retrievable by tooling and agents without turning them into a mutable source of current-state documentation.
+Accepted Decisions should remain reconstructable, including invariants, architecture, boundaries and important trade-offs.
 
-See [Decision library](decision-library.md).
+The methodology does not prescribe the storage mechanism. The bundled [reference framework](framework.md) uses an append-only repository Decision library.
 
 ### Challenges
 
