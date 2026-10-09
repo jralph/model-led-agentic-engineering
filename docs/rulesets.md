@@ -47,6 +47,8 @@ Each item is still a Decision record.
 
 Calling it a Rule merely describes its role when another Project follows that already-made Decision.
 
+The framework does not require a second file format for Rules or a special Ruleset record format. A Ruleset can simply be a named collection of normal Decision records plus enough revision/provenance information to identify the exact collection being distributed.
+
 ## Upstream Rulesets may evolve
 
 A maintained Ruleset can gain new accepted Decisions or superseding Decisions over time.
@@ -164,6 +166,22 @@ The framework provides:
 - [Ruleset directory README template](../templates/rulesets-readme.md).
 
 These templates use ordinary Decision semantics and the same Decision record format.
+
+## Framework anti-patterns
+
+### Floating Ruleset authority
+
+Do not make Project authority depend on a mutable branch, `latest`, symlink or remote location whose contents can change independently.
+
+Materialise an exact revision before it is considered for adoption.
+
+### Editing imported Decisions locally
+
+Do not modify the Decision records inside a materialised Ruleset revision to create local exceptions.
+
+That makes the imported bundle diverge from its source and makes future updates ambiguous.
+
+Keep the imported revision faithful. Express Project-specific authority through ordinary Project Decisions.
 
 ## Relationship to the methodology
 
