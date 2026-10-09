@@ -77,7 +77,7 @@ Model-led agentic engineering does not prescribe one implementation workflow.
 
 ## Challenge
 
-A semantic primitive that questions the current Decision set, an adopted Rule/Ruleset, the absence of a Decision where human authority appears necessary, implementation, evidence, observed behaviour or an engineering opportunity without changing the authoritative semantic model.
+A semantic primitive that questions the current Decision set, the absence of a Decision where human authority appears necessary, implementation, evidence, observed behaviour or an engineering opportunity without changing the authoritative semantic model.
 
 A Challenge is not defined by a particular file, folder or storage format. Challenges may be raised by humans or agents and may remain unresolved while evidence is gathered.
 
@@ -89,24 +89,6 @@ Proposed Decisions may guide candidate implementation, review and qualification 
 
 A Challenge may reveal that no adequate Decision basis exists. An agent may propose the missing Decision but must not make it authoritative without human acceptance.
 
-
-## Rule
-
-A reusable normative statement intended to constrain Projects that adopt it.
-
-A Rule is not Project authority by itself. It gains authority for a Project through a human-accepted Decision adopting the local Ruleset snapshot that contains it.
-
-## Ruleset
-
-A named, distributable collection of Rules.
-
-An upstream Ruleset may evolve over time. Projects never depend on its mutable state for authority.
-
-## Ruleset snapshot
-
-An exact, self-contained local copy of one Ruleset revision/version/digest.
-
-Once referenced by an accepted Project Decision, the snapshot is immutable historical material. Updating a Ruleset adds a new snapshot rather than modifying the old one.
 
 ## Intent
 
