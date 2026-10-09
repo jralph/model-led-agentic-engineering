@@ -7,7 +7,7 @@ It does not require a particular sequence such as requirements → design → ta
 It is a **governing engineering practice** concerned with:
 
 - who owns the semantic model;
-- where accepted engineering decisions live;
+- how accepted engineering Decisions remain durable and retrievable;
 - what authority agents have;
 - how implementation is checked against human intent;
 - how claims are qualified;
@@ -87,19 +87,11 @@ See [Authorship, ownership and understanding](authorship-and-ownership.md).
 
 Architecture Decision Records preserve why significant architectural choices were made.
 
-The model-led decision library overlaps with ADRs but has different intended semantics.
+Model-led overlaps with ADR thinking but defines a broader semantic Decision concept: accepted Decisions may cover invariants, behaviour, security, interfaces, product, operations or process as well as architecture.
 
-A `.decisions/` library is:
+The methodology does not prescribe how those Decisions are stored.
 
-- broader than architecture alone;
-- explicitly machine-readable;
-- append-only after acceptance;
-- designed to be retrieved automatically for agent work;
-- able to contain invariants, behaviour, security, interfaces, product and process decisions;
-- tied to explicit human acceptance rather than a specific review tool;
-- able to contain agent-originated proposals while keeping semantic authority human-accepted.
-
-ADRs can coexist with the decision library. A project may choose to represent architecture decisions in both systems or use a decision record as its ADR equivalent.
+The bundled reference framework uses a machine-readable append-only Decision library and can therefore act as an ADR-like implementation for architecture Decisions. Other Model-led implementations may represent the same semantics differently.
 
 ## Steering and repository instructions
 
@@ -111,9 +103,9 @@ They are not the same thing as immutable accepted decisions.
 
 Steering usually describes **what an agent should know or how it should behave now**. It is expected to evolve in place.
 
-A decision library preserves **what humans decided and why**, including the historical path through superseded decisions.
+Durable Decision history preserves **what humans accepted and why**, including the path through superseded authority.
 
-Steering can be generated from or informed by active decisions.
+Steering can be generated from or informed by accepted Decisions.
 
 ## BMad and similar process methods
 
@@ -178,7 +170,7 @@ It is useful external evidence that the underlying problem is becoming real: **t
 
 Model-led engineering's answer is not a new Git host.
 
-Its answer is to move durable human authority into the repository itself, then make decisions and evidence first-class inputs to agent implementation and review.
+Its answer is to make human semantic authority durable and retrievable, then make Decisions and Evidence first-class inputs to agent implementation and review. The bundled reference framework happens to use repository files for this; the methodology does not require that representation.
 
 Sources:
 
