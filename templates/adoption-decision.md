@@ -18,11 +18,11 @@ supersedes: []
 #   - adoption
 ---
 
-> Use this Decision for an established project adopting Model-led. A new project created as Model-led from inception does not need a ceremonial adoption Decision.
+> Optional reference-framework template. Use this only when an established Project deliberately wants to record the governance change of adopting Model-led or this framework. Installing the framework does not require a ceremonial Decision.
 
 ## Decision
 
-This repository adopts Model-led agentic engineering as its engineering governance method.
+This Project adopts Model-led agentic engineering as its engineering governance method.
 
 Future meaningful semantic implementation must have a sufficient Decision basis. Intent remains human-owned; Challenges may be raised by humans or agents; agents may propose semantic Decisions; human acceptance makes those Decisions authoritative; and Evidence bounds what may be claimed.
 
@@ -34,7 +34,7 @@ This Decision does not attempt to reconstruct or legitimise historical architect
 
 ## Consequences
 
-- human-accepted semantic Decisions are recorded in `.decisions/`;
+- if the bundled reference framework is used, human-accepted Decision records are represented in `.decisions/`;
 - agents may propose missing semantic Decisions when the Decision basis is insufficient, but those proposals do not become authoritative without human acceptance;
 - existing repository-specific engineering practices remain in force unless separately changed;
 - historical implementation is not automatically converted into Decision history.
