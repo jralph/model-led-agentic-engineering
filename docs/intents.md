@@ -60,7 +60,7 @@ may become:
 
 The second statement expresses the actual outcome more directly and creates more implementation freedom.
 
-Intent therefore does not need the immutable append-only semantics of `.decisions/`.
+Intent therefore does not need the immutable historical semantics of an accepted Decision.
 
 ## Intent may end without a Decision
 
@@ -160,12 +160,10 @@ When implementation is delegated, the active Intent should travel with the relev
 
 Intent can remain useful provenance after work finishes, but it is not durable authority in the same sense as an accepted Decision.
 
-## No `.intents/` requirement
+## Intent representation is implementation-specific
 
 Intent is a first-class Model-led concept, not a required repository artefact.
 
-Model-led deliberately does not define a canonical `.intents/` directory.
+The methodology does not prescribe where Intent is stored or how it is represented.
 
-The methodology prescribes `.decisions/` because accepted Decisions need an immutable, portable representation of semantic authority.
-
-Intent does not need those same persistence semantics.
+A framework may use tickets, documents, conversations or platform-native objects. The bundled reference framework deliberately avoids inventing mandatory Intent storage.
