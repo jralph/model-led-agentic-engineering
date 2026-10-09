@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$title: "Model-led agentic engineering decision front matter"
+$title: "Model-led reference framework Decision front matter"
 type: object
 additionalProperties: false
 required:
