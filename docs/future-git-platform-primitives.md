@@ -80,7 +80,9 @@ A Decision may define:
 
 An agent may reason about, originate, recommend and draft a proposed semantic Decision. Human acceptance is what authorises it.
 
-The platform should understand the repository's `.decisions/` history as a native object model rather than treating it as ordinary Markdown.
+The platform should understand Model-led Decision history as a native object model.
+
+For repositories using the bundled reference framework, it can import `.decisions/`; that path is a compatibility format, not a methodology primitive.
 
 ## Decision basis
 
@@ -112,33 +114,22 @@ The platform can make **unbound semantic implementation** conspicuous:
 
 That may mean the correct Decision already exists but has not been linked, or that new semantic authority is genuinely missing. An agent may propose the missing Decision, but cannot make it authoritative without human acceptance.
 
-## Ruleset snapshots
+## Reference-framework Ruleset compatibility
 
-The platform can support reusable organisational or ecosystem Rulesets without making Project authority remotely mutable.
+Rulesets are not a Model-led semantic primitive. They are a packaging convention in the bundled reference framework for distributing ordinary accepted Decision records.
 
-An upstream Ruleset catalogue can expose:
+The platform may support that convention as an import/distribution feature.
 
-- security baselines;
-- reliability standards;
-- data-governance Rules;
-- product-family constraints;
-- other reusable normative guidance.
+For example, it can:
 
-When a Project evaluates or adopts one, the platform materialises an exact local snapshot into the Project model. That snapshot becomes immutable by identity immediately. A Project Decision is what gives it authority.
+- import a versioned Ruleset bundle from the reference framework;
+- expose the contained Decision records as ordinary Decisions;
+- preserve exact imported revisions for provenance/history;
+- help a Project review and accept an adoption/update Decision.
 
-The platform must preserve both old and new local snapshots across upgrades, and must retain any snapshot referenced by historical accepted Decisions.
+The platform should not create a separate semantic Rule object merely because the reference framework packages Decisions into Rulesets.
 
-For example:
-
-```text
-company-security
-  abc123   adopted by DEC-41
-  xyz789   adopted later by DEC-88
-```
-
-The newer snapshot does not mutate `abc123`. DEC-88 may supersede DEC-41, while both snapshots remain available for historical reconstruction.
-
-The upstream catalogue is distribution infrastructure, not Project authority.
+A future platform-native distribution mechanism could replace Rulesets entirely while preserving the same Decision semantics.
 
 ## Challenge
 
@@ -479,13 +470,9 @@ Repository policy may automate more execution, but an agent cannot satisfy the h
 
 The platform should not make Model-led dependent on itself.
 
-The minimum portable state remains ordinary repository data:
+The platform must support meaningful export of the semantic state it owns.
 
-- code;
-- tests;
-- `.decisions/`;
-- Git history;
-- optional agent/context files.
+For compatibility with the bundled reference framework, one export may use ordinary repository data such as Decision records, code, tests and agent/context files. Model-led itself does not require `.decisions/` or Git as the portable representation.
 
 Challenges, workspaces and rich review metadata may live in platform storage initially, but meaningful export should be possible.
 
