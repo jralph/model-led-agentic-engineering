@@ -74,10 +74,9 @@ The human is not prohibited from reviewing code. Code inspection remains appropr
 
 Agents are well suited to exhaustive conformance work:
 
-- compare the implementation with proposed decisions;
-- load relevant active Decisions from `.decisions/`;
-- resolve and load any local Ruleset snapshots adopted by those Decisions;
-- identify Decision/Rule violations or ambiguity;
+- compare the implementation with proposed Decisions;
+- load the relevant accepted Decision basis;
+- identify Decision violations, conflicts or ambiguity;
 - inspect changed paths for bugs and edge cases;
 - assess tests against stated behaviours;
 - check for unintended scope expansion;
@@ -161,16 +160,9 @@ After human acceptance:
 - future agents can retrieve it as authoritative context;
 - changing its authority requires another human-accepted superseding Decision.
 
-A project should make changes to `.decisions/**` conspicuous and ensure its chosen acceptance mechanism cannot be satisfied solely by the agent proposing the Decision.
+A project should make its chosen human-acceptance mechanism explicit and ensure it cannot be satisfied solely by the agent proposing the Decision.
 
-Recommended team controls can include:
-
-- CODEOWNERS for `.decisions/**`;
-- required human approval;
-- prevention of bot-only approval for Decision changes;
-- append-only validation.
-
-The exact mechanism varies by workflow and platform.
+The methodology does not prescribe repository controls, file locations or review tooling. The bundled reference framework documents one Git-oriented implementation in [Decision library](decision-library.md).
 
 ## Human code review remains risk-based
 
