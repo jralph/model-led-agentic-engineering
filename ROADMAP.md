@@ -1,6 +1,11 @@
 # Roadmap
 
-This repository is intentionally starting as a personal handbook rather than pretending to be a standard before the method has been tested properly.
+This repository contains two tracks that should evolve independently:
+
+- the **Model-led methodology**, which must stay focused on reasoning, authority, review and Evidence;
+- the **reference framework**, which is one concrete repository implementation and is expected to change more freely.
+
+Neither should be treated as a standard before it has been tested properly.
 
 ## Stage 1: describe the working method
 
