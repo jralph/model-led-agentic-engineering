@@ -11,7 +11,7 @@ Do not silently redefine Intent, Decisions or acceptance criteria.
 - active Intent:
 - originating / related Challenges:
 - accepted Decision basis:
-- adopted Ruleset snapshots resolved from that basis:
+- Ruleset-supplied accepted Decisions resolved by the framework, if any:
 - proposed Decisions under evaluation:
 - implementation / candidate under review:
 - qualification evidence:
@@ -22,8 +22,8 @@ Do not silently redefine Intent, Decisions or acceptance criteria.
 1. Does the candidate actually pursue the stated Intent?
 2. Does any semantic behaviour outrun the accepted Decision basis?
 3. Is the implementation relying on a proposed Decision as though it were already authoritative?
-4. Does the implementation conflict with any accepted Decision or adopted Rule?
-5. Are local exceptions being hidden by editing copied Rules rather than expressed as Project Decisions?
+4. Does the implementation conflict with any accepted Decision, including Decisions supplied through the reference framework's Rulesets?
+5. Are local exceptions being hidden by editing imported Decision records rather than expressed as Project Decisions?
 6. Is a semantic choice being hidden as an ordinary implementation detail?
 7. Which behaviour appears to have been inferred rather than authorised?
 8. Can any protected invariant be violated?
