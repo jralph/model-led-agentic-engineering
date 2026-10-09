@@ -34,11 +34,11 @@ If the Challenge may exist because no adequate authoritative Decision basis exis
 
 - 
 
-### Adopted Rules / Rulesets
+### Ruleset-supplied Decisions
 
-Does this Challenge concern a specific Rule or adopted Ruleset snapshot?
+If the reference framework is in use, does this Challenge concern an accepted Decision supplied through an adopted Ruleset revision?
 
-Identify both the Rule and the Project Decision that gives it authority where possible.
+Identify the Decision ID and the Project adoption Decision where useful.
 
 - 
 
