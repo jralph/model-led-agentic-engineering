@@ -1,6 +1,6 @@
 ## Model-led agentic engineering
 
-This repository uses Model-led agentic engineering.
+This repository uses the **Model-led reference framework**, one concrete repository implementation of the Model-led methodology.
 
 > **Model-led defines what engineering knowledge and authority need to exist. It does not prescribe how tools should execute against them.**
 >
@@ -18,9 +18,9 @@ This repository uses Model-led agentic engineering.
 - **Implementation** is how current authority is realised. Ordinary local implementation choices may be delegated.
 - **Evidence** bounds what may be claimed about correctness, safety, behaviour, performance or other outcomes.
 
-### Decision library
+### Framework Decision library
 
-Accepted Decisions live in `.decisions/`.
+In this framework, Decision records live in `.decisions/`. This is a repository convention, not a methodology requirement.
 
 When working with Decision records:
 
@@ -32,18 +32,20 @@ When working with Decision records:
 6. If required semantic authority is missing, propose a Decision and/or surface a Challenge, then obtain human acceptance before making that semantic choice binding on the system.
 7. Treat `author`, `accepted_by` and timestamp fields as optional provenance only. They do not independently prove acceptance; prefer repository/review history when it already provides reliable provenance.
 
-### Rulesets
+### Framework Rulesets
 
-This Project may use reusable Rulesets.
+This framework may use reusable Rulesets.
 
-- A Rule or upstream Ruleset is not authoritative merely because it exists.
-- Authority comes from a human-accepted Project Decision adopting an exact local Ruleset snapshot.
-- When a governing Decision adopts a Ruleset snapshot, load the Rules in that snapshot as part of the authoritative context.
-- Never use a symlink, floating branch, `latest` reference or remote fetch as the authoritative Ruleset representation.
-- Once a local snapshot is materialised under a snapshot identity, do not modify it in place.
-- Once adopted, retain it while historical Decisions depend on it.
-- To update, materialise a new sibling snapshot and accept a new/superseding Decision when authority should move to it.
-- Keep local exceptions in Project Decisions rather than editing imported Rule files.
+- A Ruleset is a versioned bundle of **ordinary accepted Decision records**.
+- Rule is not a separate semantic type or file format; it is shorthand for an accepted Decision being reused as a constraint.
+- A snapshot does not constrain this Project merely because it is present.
+- Project authority may adopt an exact local Ruleset revision through an ordinary human-accepted Decision.
+- When an adoption Decision is active, load the accepted Decision records from that snapshot into the effective Decision context.
+- Never use a symlink, floating branch, `latest` reference or remote fetch as live Project authority.
+- Do not modify a materialised snapshot in place.
+- Keep historical snapshots required to reconstruct earlier authority.
+- To update, materialise a new sibling snapshot and accept a normal Project Decision when authority should move to it.
+- Keep local exceptions in Project Decisions rather than editing imported Decision records.
 
 ### Working behaviour
 
