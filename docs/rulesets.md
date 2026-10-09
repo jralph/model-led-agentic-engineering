@@ -1,103 +1,109 @@
-# Rules and Rulesets
+# Reference framework: Rulesets
 
-Model-led Decisions are Project authority.
+> **Layer:** reference framework  
+> Rulesets are a packaging and distribution convention. They are not a separate Model-led semantic primitive.
 
-Some engineering constraints are useful across many Projects and should not need to be rediscovered or rewritten independently each time.
+The Model-led methodology has **Decisions**.
 
-Model-led therefore distinguishes reusable **Rules** and **Rulesets** from Project **Decisions**.
+Once a Decision has received human acceptance, it constrains future work. In ordinary language, that accepted Decision is a rule to follow.
 
-> **Rule:** a reusable normative statement intended to constrain Projects that adopt it.  
-> **Ruleset:** a named, distributable collection of Rules.  
-> **Ruleset snapshot:** an exact, self-contained local copy of one Ruleset revision/version.  
-> **Decision:** the Project's human-accepted semantic authority, including the choice to adopt a particular Ruleset snapshot.
+The reference framework uses **Ruleset** to group those already-accepted Decision records for reuse.
 
-A Rule is not automatically authoritative for a Project merely because it exists upstream.
+> **Rule:** an accepted Decision being reused as a constraint. Not a new record type.  
+> **Ruleset:** a named, versioned bundle of ordinary accepted Decision records.  
+> **Ruleset revision:** an exact snapshot of that bundle.
 
-## Why Rules are not Decisions
+There is no separate Rule schema, Rule file type or Rule lifecycle.
 
-A Decision is immutable Project history once accepted.
+## Why Rulesets exist
 
-A reusable Rule has a different lifecycle.
+Some accepted Decisions are useful across many Projects:
 
-An organisation may maintain a security Ruleset and improve it over time:
+- security invariants;
+- reliability requirements;
+- data-handling standards;
+- organisational constraints;
+- product-family Decisions;
+- engineering standards.
 
-- strengthen a security requirement;
-- clarify wording;
-- add a new Rule;
-- remove an obsolete Rule;
-- reorganise the upstream repository.
+Those Decisions should not need to be manually rewritten in every Project.
 
-Calling the mutable upstream material a Decision would weaken the meaning of immutable Decision history.
+A Ruleset packages them for distribution.
 
-Rules therefore remain reusable source material until a Project deliberately adopts a particular snapshot.
+## Ruleset contents are Decision records
 
-## Adoption materialises a local snapshot
-
-A Project must not depend on mutable upstream Ruleset content for semantic authority.
-
-Adoption copies the exact Ruleset revision into the Project.
+A Ruleset contains the same Decision records used elsewhere by the framework.
 
 Conceptually:
 
 ```text
-upstream ruleset
-  company-security @ abc123
-          |
-          | copy / materialise
-          v
-project
-  .rulesets/
-    company-security/
-      abc123/
-        ...
-          |
-          | human-accepted Decision
-          v
-  authoritative Project semantics
+company-security/
+  DEC-...-server-side-authorisation.md
+  DEC-...-secrets-never-enter-logs.md
+  DEC-...-approved-data-regions.md
 ```
 
-The upstream revision is provenance.
+Each item is still a Decision record.
 
-The local snapshot is the durable material the Project may evaluate or adopt.
+Calling it a Rule merely describes its role when another Project follows that already-made Decision.
 
-Once materialised under a snapshot identity, it is immutable. If different content is needed, materialise a new snapshot with a different identity.
+## Upstream Rulesets may evolve
 
-Do not use a symlink, floating branch, `latest` reference or remote fetch as the authoritative representation.
+A maintained Ruleset can gain new accepted Decisions or superseding Decisions over time.
 
-If the upstream Ruleset disappears or changes, the Project must still be able to reconstruct exactly what it accepted.
+For distribution, the framework identifies exact Ruleset revisions.
 
-## Project Decision adopts the snapshot
+A Project must not let a mutable upstream location silently change its authority.
 
-Rules gain Project authority through a human-accepted Decision.
+## Local materialisation
+
+The reference framework may copy exact Ruleset revisions into a Project:
+
+```text
+.rulesets/
+  company-security/
+    abc123/
+      <ordinary Decision records>
+    xyz789/
+      <ordinary Decision records>
+```
+
+`.rulesets/` is a framework convention, not a methodology requirement.
+
+The local snapshot is self-contained.
+
+Do not use:
+
+- symlinks to mutable upstream content;
+- floating branches;
+- `latest`;
+- remote fetches as the source of current authority.
+
+The upstream revision/commit/digest is provenance.
+
+The copied Decision records are the material that the Project can reconstruct later.
+
+## Materialisation is not adoption
+
+Copying a Ruleset revision into a Project makes it available for evaluation.
+
+It does not by itself change Project authority.
+
+A Project can use an ordinary human-accepted Decision to adopt a particular Ruleset revision and define its scope.
 
 For example:
 
-> Adopt the local `company-security` Ruleset snapshot `abc123` for all production application code.
+> Adopt the locally materialised `company-security@abc123` Ruleset revision for production services.
 
-That Decision becomes part of the Project's accepted Decision basis.
+That adoption Decision is a normal Decision. It does not use a special Ruleset Decision type.
 
-The Rules inside the adopted snapshot derive their Project authority from that adoption Decision.
+When active, the framework resolves the accepted Decision records in the adopted Ruleset revision into the Project's effective Decision context.
 
-The Decision should refer to the local snapshot identity/path rather than treating an external repository as the authoritative source.
+## Updating a Ruleset
 
-The snapshot itself can carry provenance such as:
+Ruleset updates are additive.
 
-```yaml
-name: company-security
-source:
-  location: https://example.invalid/company/security-rules
-  revision: abc123
-```
-
-The exact metadata format is implementation-specific. The important requirement is that the local copy is complete and identifies the source revision/version/digest strongly enough to distinguish it from later snapshots.
-
-## Updates are additive
-
-A local snapshot is immutable Project material from the moment it is materialised.
-
-Do not update a snapshot in place, whether or not it has already been adopted.
-
-Suppose the Project currently contains:
+If the Project has:
 
 ```text
 .rulesets/
@@ -105,19 +111,7 @@ Suppose the Project currently contains:
     abc123/
 ```
 
-A newer upstream revision `xyz789` becomes available.
-
-Updating means:
-
-1. copy the new Ruleset revision into a new local snapshot;
-2. keep the old `abc123` snapshot unchanged;
-3. inspect the Rule differences and implementation impact;
-4. resolve conflicts or required exceptions;
-5. accept a new Project Decision adopting `xyz789`;
-6. supersede the earlier adoption Decision where appropriate;
-7. update implementation and Evidence against the new authority.
-
-The Project then contains both:
+and evaluates a newer revision `xyz789`, the framework adds:
 
 ```text
 .rulesets/
@@ -126,121 +120,55 @@ The Project then contains both:
     xyz789/
 ```
 
-The old snapshot remains because historical Decisions still refer to it.
+The old revision remains.
 
-This is analogous to immutable Decision history: new authority is additive rather than a rewrite of the past.
+If the Project chooses to move to `xyz789`, it accepts an ordinary Decision adopting the new revision and superseding/updating the earlier adoption Decision where appropriate.
 
-## Upstream changes do nothing automatically
+This preserves historical reconstruction.
 
-A Ruleset source may continue to evolve after adoption.
+## Ruleset Decisions and Project Decisions
 
-That must not silently alter a Project.
+A Decision inside a reusable Ruleset represents semantic authority that was already established in the Ruleset's source/governance context.
 
-If upstream moves from `abc123` to `xyz789`:
+The Project does not need to invent the same Decision again.
 
-- existing Projects remain governed by their locally adopted snapshot;
-- new Projects may scaffold from `xyz789`;
-- existing Projects may choose to evaluate and adopt `xyz789`;
-- tooling may notify Projects that a newer snapshot exists;
-- tooling must not silently replace Project authority.
+Instead, its adoption Decision says that those existing accepted Decisions now constrain this Project in the adopted scope.
 
-This avoids turning organisational guidance into an implicit remote dependency.
+This keeps the roles clear:
 
-## Ruleset adoption and Decision basis
+- **new semantic choice** → investigate/work → new Decision;
+- **existing accepted choice** → can be followed as a rule;
+- **many reusable accepted choices** → can be packaged as a Ruleset.
 
-A meaningful semantic implementation still requires an accepted Decision basis.
+## Conflicts and exceptions
 
-A Ruleset does not replace that concept.
+A copied Ruleset revision should remain faithful to its source.
 
-Instead:
+Do not edit imported Decision records to encode Project-specific exceptions.
 
-```text
-DEC-42
-  Adopt company-security snapshot abc123
-       |
-       +-- SEC-001
-       +-- SEC-002
-       +-- SEC-003
-```
+If a Ruleset Decision conflicts with Project authority:
 
-`DEC-42` is the accepted Project Decision.
+- raise a Challenge;
+- decide whether the Project should accept an exception;
+- adopt a different Ruleset revision;
+- change/supersede Project authority as appropriate;
+- optionally challenge the upstream Ruleset.
 
-The Rules are authoritative in that Project because `DEC-42` adopted their exact local snapshot.
+Local semantic changes remain ordinary Decisions.
 
-When an agent reconstructs the Decision basis, it should also load the Rules from any Ruleset snapshots adopted by those Decisions.
+## Framework templates
 
-## Ruleset scope and exceptions
+The framework provides:
 
-A Project may not always adopt a Ruleset globally.
+- [Ruleset adoption Decision template](../templates/ruleset-adoption-decision.md);
+- [Ruleset directory README template](../templates/rulesets-readme.md).
 
-The adoption Decision may define scope, exclusions or other Project-specific conditions.
+These templates use ordinary Decision semantics and the same Decision record format.
 
-For example:
+## Relationship to the methodology
 
-> Adopt `company-security/abc123` for production services, excluding the isolated legacy migration tool described in DEC-91.
+Rulesets solve a **distribution** problem, not a reasoning problem.
 
-Do not edit the copied Rule files to encode a local exception.
+A different Model-led implementation could distribute accepted Decisions through an organisational policy service, database inheritance, package registry or another mechanism and never use the word Ruleset.
 
-Keep the snapshot faithful to its source.
-
-Project-specific exceptions belong in Project Decisions so the difference between reusable Rule and local authority remains visible.
-
-There is no implicit precedence rule between an adopted Rule and another accepted Decision.
-
-If they conflict, that is a semantic conflict requiring human judgement.
-
-## Project scaffolding
-
-Rulesets make scaffolding semantic rather than only structural.
-
-A new Project template might materialise:
-
-- a company security Ruleset;
-- a reliability Ruleset;
-- a data-governance Ruleset;
-- a product-family Ruleset.
-
-The Project can then begin with Decisions adopting those local snapshots before implementation is generated.
-
-Unlike the ceremonial "adopt Model-led" Decision, Ruleset adoption is substantive semantic authority and may be useful even for a brand-new Project.
-
-An implementation agent can start with:
-
-> Intent: create the service.
-
-plus:
-
-> Decision basis: DEC-SEC-01, DEC-REL-01, DEC-DATA-01, each adopting the relevant local Ruleset snapshot.
-
-This lets implementation be generated inside known non-negotiables from the beginning.
-
-## Rulesets are optional
-
-Model-led does not require a Project to use Rulesets.
-
-They are useful when normative constraints should be reused or distributed across Projects.
-
-A Project with no reusable standards can continue to use only local Decisions.
-
-## Portable repository convention
-
-For repositories that use Rulesets, the recommended portable location is:
-
-```text
-.rulesets/
-  <ruleset-name>/
-    <snapshot-id>/
-      ...
-```
-
-The snapshot ID should identify the exact imported revision/version/digest. For a Git-backed upstream Ruleset, use or record the exact commit SHA rather than a branch name.
-
-For every materialised snapshot:
-
-- do not modify it in place;
-- do not replace it with a symlink or remote reference;
-- add a new sibling snapshot for different content or updates.
-
-Once a snapshot is referenced by an accepted Decision, also do not delete it while historical Decisions depend on it.
-
-This repository layout is a portable convention, not a requirement that the upstream Ruleset itself use Git.
+That would still be Model-led.
