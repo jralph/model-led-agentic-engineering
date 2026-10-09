@@ -28,9 +28,7 @@ Which **accepted Decisions** already govern this work?
 
 - 
 
-Which adopted Ruleset snapshots are brought into scope by those Decisions?
-
-- 
+If the reference framework supplies accepted Decisions through an adopted Ruleset revision, include those Decision IDs in the basis above rather than treating Rules as a separate authority type.
 
 If none are known, say so explicitly rather than inferring authority from current implementation.
 
