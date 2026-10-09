@@ -1,8 +1,12 @@
 # .decisions
 
-This directory is the project's append-only library of human-accepted semantic Decisions.
+This directory is this repository's use of the **Model-led reference framework**.
 
-Read [Decision library](../docs/decision-library.md) for the methodology.
+It is the framework's append-only representation of human-accepted semantic Decisions.
+
+The Model-led methodology itself does not require this directory or file format.
+
+Read [Decisions](../docs/decisions.md) for methodology semantics and [Reference framework: Decision library](../docs/decision-library.md) for this representation.
 
 ## Rules
 
