@@ -54,11 +54,11 @@ Agents can explore, challenge, reason about, propose, write and review semantic 
 
 The distinction is authority: a semantic Decision becomes authoritative only through human acceptance.
 
-That acceptance may happen before the record is written, during review, or through another explicit workflow event. A pull-request merge after human review is a useful acceptance mechanism, but Model-led does not require Git or pull requests to define authority.
+That acceptance may happen before a Decision is recorded, during review, through team governance or through another explicit workflow event. Model-led does not prescribe the mechanism.
 
 Agents may make ordinary local implementation decisions inside delegated authority without separate human approval for every choice.
 
-When a semantic Decision materially constrains future engineering, record it in the durable Decision library. A proposal may change before acceptance; once accepted its record becomes immutable and is changed only through an explicit later Decision that supersedes it.
+When a semantic Decision materially constrains future engineering, preserve it in durable Decision history. A proposal may change before acceptance; once accepted, later authority changes should supersede rather than silently rewrite the historical Decision.
 
 ## 7. Preserve unresolved questions as Challenges
 
@@ -137,19 +137,7 @@ Externalise the parts another engineer or future agent would need to safely cont
 
 Do not attempt to document every thought.
 
-## 14. Reusable Rulesets are adopted as immutable snapshots
-
-Reusable standards should not need to be rewritten as independent Decisions in every Project.
-
-Rules and Rulesets may be maintained and distributed outside a Project, but they do not become Project authority merely by existing.
-
-A Project adopts an exact local Ruleset snapshot through a human-accepted Decision.
-
-The local snapshot is copied into the Project and remains immutable once adopted. Upstream changes never silently alter Project authority.
-
-Updating means adding a new snapshot and accepting a new Decision; historical snapshots remain available.
-
-## 15. The human should be able to explain the system
+## 14. The human should be able to explain the system
 
 A useful ownership test is whether the engineer can explain the logic and behaviour of the system without hiding behind the generated source.
 
