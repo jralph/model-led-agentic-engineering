@@ -105,7 +105,7 @@ Review should report issues. It should not quietly move the goalposts or "fix" t
 
 **Output:** findings with severity, evidence and suggested next action. Material unresolved findings may be preserved as Challenges.
 
-Where a decision library exists, Review mode should retrieve the active decisions relevant to the changed areas and explicitly check the implementation for conformance and conflicts.
+Review mode should retrieve the accepted Decisions relevant to the changed semantic area and explicitly check the implementation for conformance and conflicts.
 
 ## Qualify
 
