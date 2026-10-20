@@ -86,6 +86,37 @@ A new Decision is needed only when the existing Decision basis cannot authorise 
 
 See [Decisions](docs/decisions.md), [Intents](docs/intents.md) and [Challenges](docs/challenges.md).
 
+### Methodology flow
+
+```mermaid
+flowchart TD
+    I["Intent"] --> R["Explore and research"]
+    C["Challenge"] --> Q["Investigate"]
+
+    R -->|"Existing Decisions are sufficient"| M["Implement and review"]
+    R -->|"New authority needed"| D["Proposed Decision"]
+    R -->|"No change needed"| N["Close or defer"]
+    R -.->|"Question or concern found"| C
+
+    D --> A["Human acceptance"]
+    A --> M
+    M --> E["Qualify evidence and observe"]
+
+    A -.->|"Decision may be challenged"| C
+    M -.->|"Implementation concern"| C
+    E -.->|"Evidence or observed behaviour concern"| C
+
+    Q -->|"Disproved or no change justified"| N
+    Q -->|"Correct implementation under existing Decisions"| M
+    Q -->|"Correct or strengthen evidence"| E
+    Q -->|"Reframe the outcome"| I
+    Q -->|"New semantic choice needed"| D
+```
+
+Intent and Challenge are peer entry points: either can start useful work, and either may end without implementation or a new Decision.
+
+Candidate implementation may also be explored and reviewed against a proposed Decision before human acceptance. Human acceptance is the boundary that allows semantics depending on that Decision to become authoritative or releasable.
+
 ### Decisions become rules for later work
 
 A Decision is a semantic choice while it is being considered.
